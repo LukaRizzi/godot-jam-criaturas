@@ -9,8 +9,8 @@ float random(vec2 uv) {
 }
 
 void fragment() {
-	float d = distance(UV, vec2(0.5)) * 1.; // DISTANCE
-    d += (random(UV * 10.0) - 0.5) * 0.02; // RANDOMNESS
+	float d = distance(UV, vec2(0.5)) * 1.3; // DISTANCE
+    d += (random(UV * 10.0) - 0.5) * 0.05; // RANDOMNESS
 	float animated_fill = 0.5 - fract(TIME * speed - fract(d*10.0)) * 0.5; //TIME
 	ALPHA = 0.0;
 
