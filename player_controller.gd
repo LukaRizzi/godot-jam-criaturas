@@ -24,8 +24,10 @@ func _ready():
 func _input(event):
 	if !fishing && event is InputEventMouseMotion:
 		yaw -= event.relative.x * mouse_sensitivity
+		yaw = clamp(yaw, deg_to_rad(-160), deg_to_rad(80))
 		pitch -= event.relative.y * mouse_sensitivity
 		pitch = clamp(pitch, deg_to_rad(-20), deg_to_rad(80)) # limit up/down look
+		
 		rotation.y = yaw
 		rotation.x = pitch
 
@@ -62,8 +64,8 @@ func _unhandled_input(event):
 
 func _update_fishing_spot(delta):
 	if cast_idx != -1 && fishing:
-			var new_fishing_angle = fishing_angle.rotated(Vector3.UP, randf_range(-3, 3))
-			if new_fishing_angle.dot(og_fishing_angle) > 0.5:
+			var new_fishing_angle = fishing_angle.rotated(Vector3.UP, randf_range(-20 * delta, 20 * delta))
+			if new_fishing_angle.dot(og_fishing_angle) > 0.2:
 				fishing_angle = new_fishing_angle
 			fish_position += fishing_angle * delta * 10;
 			
