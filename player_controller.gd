@@ -12,6 +12,9 @@ var yaw: float = 0.0
 var pitch: float = 0.0
 var fishing : bool = false
 var fishing_timer : float = 0
+var fish_position : Vector3 = Vector3.ZERO
+var fishing_angle : Vector3 = Vector3.ZERO
+var og_fishing_angle : Vector3 = Vector3.ZERO
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -42,6 +45,16 @@ func _process(delta):
 				fish_indicator.visible = true
 				_update_fishing_spot(delta)
 				fishing_timer = 5
+				var distance = 15.0
+				var forward_vec = -global_transform.basis.z
+				forward_vec.y = 0
+				forward_vec = forward_vec.normalized()
+				fish_position = global_transform.origin + forward_vec * distance
+				fish_position.y = -4.4
+				fishing_angle = fish_position - global_position
+				fishing_angle.y = 0
+				fishing_angle = fishing_angle.normalized()
+				og_fishing_angle = fishing_angle
 
 func _unhandled_input(event):
 	if event.is_action_pressed("ui_cancel"):
@@ -49,11 +62,10 @@ func _unhandled_input(event):
 
 func _update_fishing_spot(delta):
 	if cast_idx != -1 && fishing:
-			var distance = 15.0
-			var forward_vec = -global_transform.basis.z
-			forward_vec.y = 0
-			forward_vec = forward_vec.normalized()
-			var forward_position = global_transform.origin + forward_vec * distance
-			forward_position.y = -4.4;
-			fish_indicator.global_position = forward_position
-			bone.global_position = lerp(bone.global_position, forward_position, delta * 20);
+			var new_fishing_angle = fishing_angle.rotated(Vector3.UP, randf_range(-3, 3))
+			if new_fishing_angle.dot(og_fishing_angle) > 0.5:
+				fishing_angle = new_fishing_angle
+			fish_position += fishing_angle * delta * 10;
+			
+			fish_indicator.global_position = fish_position
+			bone.global_position = lerp(bone.global_position, fish_position, delta * 20);
