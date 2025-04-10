@@ -55,12 +55,12 @@ script = ExtResource("2_bcbcq")
 transform = Transform3D(0.112806, -0.0194365, -0.993427, 0.862922, 0.497571, 0.0882518, 0.492585, -0.867206, 0.0729011, 2.61335, -1.18776, -1.45687)
 
 [node name="Skeleton3D" parent="Camera3D/FishingRod/Armature" index="0"]
-bones/7/position = Vector3(-12.8577, -3.21891, 11.9488)
+bones/7/position = Vector3(0.00111723, 0.902123, -0.0229305)
 bones/7/rotation = Quaternion(0.0578169, -0.11601, 0.449342, 0.883907)
 bones/7/scale = Vector3(1, 1, 1)
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="Camera3D/FishingRod/Armature/Skeleton3D" index="1"]
-transform = Transform3D(0.569268, -0.807767, -0.153125, 0.780937, 0.589499, -0.206466, 0.257043, -0.00204676, 0.966398, -12.8577, 11.6331, 11.9488)
+transform = Transform3D(0.569268, -0.807767, -0.153125, 0.780937, 0.589499, -0.206466, 0.257043, -0.00204685, 0.966398, 0.00111723, 15.7541, -0.0229305)
 bone_name = "Cast"
 bone_idx = 7
 override_pose = true
