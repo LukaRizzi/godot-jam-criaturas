@@ -15,6 +15,8 @@ var fishing_timer : float = 0
 var fish_position : Vector3 = Vector3.ZERO
 var fishing_angle : Vector3 = Vector3.ZERO
 var og_fishing_angle : Vector3 = Vector3.ZERO
+var mouse_movement_x : float = 0
+var mouse_movement_y : float = 0
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -22,14 +24,9 @@ func _ready():
 	ogPos = bone.position
 
 func _input(event):
-	if !fishing && event is InputEventMouseMotion:
-		yaw -= event.relative.x * mouse_sensitivity
-		yaw = clamp(yaw, deg_to_rad(-160), deg_to_rad(80))
-		pitch -= event.relative.y * mouse_sensitivity
-		pitch = clamp(pitch, deg_to_rad(-20), deg_to_rad(80)) # limit up/down look
-		
-		rotation.y = yaw
-		rotation.x = pitch
+	if event is InputEventMouseMotion:
+		mouse_movement_x += event.relative.x
+		mouse_movement_y += event.relative.y
 
 func _process(delta):
 	if fishing:
@@ -38,9 +35,21 @@ func _process(delta):
 			fishing = false
 			fish_indicator.visible = false
 			pass
-			
+		var forward_vec = -global_transform.basis.z
+		forward_vec.y = 0
+		forward_vec = forward_vec.normalized()
+		#hacer relativo a dónde miras
+		fish_position += Vector3(mouse_movement_y, 0, mouse_movement_x) * .01
 		_update_fishing_spot(delta)
 	else:
+		yaw -= mouse_movement_x * mouse_sensitivity
+		yaw = clamp(yaw, deg_to_rad(-160), deg_to_rad(80))
+		pitch -= mouse_movement_y * mouse_sensitivity
+		pitch = clamp(pitch, deg_to_rad(-20), deg_to_rad(80)) # limit up/down look
+		
+		rotation.y = yaw
+		rotation.x = pitch
+		
 		bone.position = lerp(bone.position, ogPos, delta * 20)
 		if (Input.is_action_just_pressed("Click")):
 				fishing = true
@@ -57,6 +66,8 @@ func _process(delta):
 				fishing_angle.y = 0
 				fishing_angle = fishing_angle.normalized()
 				og_fishing_angle = fishing_angle
+	mouse_movement_x = 0
+	mouse_movement_y = 0
 
 func _unhandled_input(event):
 	if event.is_action_pressed("ui_cancel"):
