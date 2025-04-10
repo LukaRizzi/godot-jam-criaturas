@@ -1,8 +1,37 @@
-[gd_scene load_steps=2 format=3 uid="uid://br8pkh1gfqnj0"]
+[gd_scene load_steps=5 format=3 uid="uid://br8pkh1gfqnj0"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_cmany"]
+[ext_resource type="PackedScene" uid="uid://3nisyeuwa2p2" path="res://FishingRod.blend" id="1_c6gwx"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_c6gwx"]
+sky_top_color = Color(0.329143, 0.126733, 0.0815402, 1)
+sky_horizon_color = Color(0.332738, 0.290988, 0.288963, 1)
+ground_bottom_color = Color(0.079623, 0.115031, 0.152125, 1)
+ground_horizon_color = Color(0.332738, 0.290988, 0.288963, 1)
+energy_multiplier = 0.5
+
+[sub_resource type="Sky" id="Sky_2dftf"]
+sky_material = SubResource("ProceduralSkyMaterial_c6gwx")
+
+[sub_resource type="Environment" id="Environment_bcbcq"]
+background_mode = 2
+sky = SubResource("Sky_2dftf")
+ambient_light_color = Color(1, 1, 1, 1)
+tonemap_mode = 2
+tonemap_exposure = 0.3
+glow_enabled = true
 
 [node name="World" type="Node3D"]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_cmany")
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_bcbcq")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.105587, 0, 0.99441, 0, 1, 0, -0.99441, 0, 0.105587, 1.76682, 1.74447, 3.9091)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.524655, 0.851315, -4.55173e-09, -0.0688373, -0.0424236, 0.996725, 0.848528, 0.522937, 0.08086, 0.431281, 8.42055, -0.193101)
+light_energy = 0.0
+sky_mode = 1
+
+[node name="FishingRod" parent="." instance=ExtResource("1_c6gwx")]
+transform = Transform3D(0.573105, -0.819482, 0, 0.819482, 0.573105, 0, 0, 0, 1, -0.0305049, 0, 0.126551)
