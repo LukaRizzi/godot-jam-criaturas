@@ -28,21 +28,17 @@ glow_enabled = true
 environment = SubResource("Environment_bcbcq")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.567897, 0.778246, -0.268002, -0.0518573, 0.291126, 0.955278, 0.821464, 0.556398, -0.124972, 0.43452, 8.45118, -0.194522)
+transform = Transform3D(-0.446993, 0.764327, 0.46476, 0.354111, -0.325922, 0.876573, 0.821464, 0.556398, -0.124972, 0.43452, 8.45118, -0.194522)
 light_color = Color(0.979857, 0.859848, 0.731772, 1)
 light_energy = 1.496
 sky_mode = 1
-
-[node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(-0.367895, -0.635539, 0.678781, 0.144339, 0.682097, 0.716875, -0.918597, 0.361709, -0.159207, -7.51927, -0.347662, 0.806644)
-spot_range = 17.2848
 
 [node name="Boat" parent="." instance=ExtResource("2_2dftf")]
 transform = Transform3D(-0.0291533, 0, 1.29967, 0, 1.3, 0, -1.29967, 0, -0.0291533, -8.02304, -5.06478, -0.258812)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.0635218, 0, 0.99798, 0, 1, 0, -0.99798, 0, 0.0635218, -2.3957, 1.18776, 0.44856)
+transform = Transform3D(0.880146, 0, -0.474703, 0, 1, 0, 0.474703, 0, 0.880146, -2.81744, 1.18776, -0.61234)
 script = ExtResource("2_bcbcq")
 
 [node name="FishingRod" parent="Camera3D" instance=ExtResource("1_c6gwx")]
-transform = Transform3D(0.112806, -0.0194364, -0.993427, 0.862922, 0.497571, 0.0882518, 0.492585, -0.867206, 0.0729011, 2.61335, -1.18776, -1.45687)
+transform = Transform3D(0.112806, -0.0194365, -0.993427, 0.862922, 0.497571, 0.0882518, 0.492585, -0.867206, 0.0729011, 2.61335, -1.18776, -1.45687)
