@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://br8pkh1gfqnj0"]
+[gd_scene load_steps=11 format=3 uid="uid://br8pkh1gfqnj0"]
 
 [ext_resource type="PackedScene" uid="uid://ci3e6q6b5b7ti" path="res://3D Models/FishingRod.glb" id="1_c6gwx"]
 [ext_resource type="PackedScene" uid="uid://c0fciiybllia4" path="res://3D Models/Boat.glb" id="2_2dftf"]
 [ext_resource type="Script" uid="uid://mnlyw2c4sguv" path="res://player_controller.gd" id="2_bcbcq"]
 [ext_resource type="PackedScene" uid="uid://7q0r2p4oudei" path="res://3D Models/River.blend" id="4_js7pq"]
+[ext_resource type="Shader" uid="uid://iitmsoygnfo8" path="res://FishIndicator.gdshader" id="5_eu7l1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_c6gwx"]
 sky_top_color = Color(0.329143, 0.126733, 0.0815402, 1)
@@ -22,6 +23,15 @@ ambient_light_color = Color(1, 1, 1, 1)
 tonemap_mode = 2
 tonemap_exposure = 0.3
 glow_enabled = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p1v5b"]
+render_priority = 0
+shader = ExtResource("5_eu7l1")
+shader_parameter/aoe_color = Color(1, 1, 1, 0.556863)
+shader_parameter/speed = 1.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_js7pq"]
+material = SubResource("ShaderMaterial_p1v5b")
 
 [node name="World" type="Node3D"]
 
@@ -44,5 +54,22 @@ script = ExtResource("2_bcbcq")
 [node name="FishingRod" parent="Camera3D" instance=ExtResource("1_c6gwx")]
 transform = Transform3D(0.112806, -0.0194365, -0.993427, 0.862922, 0.497571, 0.0882518, 0.492585, -0.867206, 0.0729011, 2.61335, -1.18776, -1.45687)
 
+[node name="Skeleton3D" parent="Camera3D/FishingRod/Armature" index="0"]
+bones/7/position = Vector3(-12.8577, -3.21891, 11.9488)
+bones/7/rotation = Quaternion(0.0578169, -0.11601, 0.449342, 0.883907)
+bones/7/scale = Vector3(1, 1, 1)
+
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="Camera3D/FishingRod/Armature/Skeleton3D" index="1"]
+transform = Transform3D(0.569268, -0.807767, -0.153125, 0.780937, 0.589499, -0.206466, 0.257043, -0.00204676, 0.966398, -12.8577, 11.6331, 11.9488)
+bone_name = "Cast"
+bone_idx = 7
+override_pose = true
+
 [node name="River" parent="." instance=ExtResource("4_js7pq")]
 transform = Transform3D(-0.0288499, 0, 2.99986, 0, 3, 0, -2.99986, 0, -0.0288499, -8.97043, -4.60167, 0.655631)
+
+[node name="FishIndicator" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 3.87181, -4.92706, -9.59418)
+mesh = SubResource("PlaneMesh_js7pq")
+
+[editable path="Camera3D/FishingRod"]
