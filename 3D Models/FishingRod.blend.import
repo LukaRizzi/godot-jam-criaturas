@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cf2kfbqy7ndqt"
-path="res://.godot/imported/Boat.blend-8df4aada7e389daa24e2c2b3cdff0ad8.scn"
+uid="uid://3nisyeuwa2p2"
+path="res://.godot/imported/FishingRod.blend-36492b8808c03d6424a07ffa3ec504f8.scn"
 
 [deps]
 
-source_file="res://Boat.blend"
-dest_files=["res://.godot/imported/Boat.blend-8df4aada7e389daa24e2c2b3cdff0ad8.scn"]
+source_file="res://3D Models/FishingRod.blend"
+dest_files=["res://.godot/imported/FishingRod.blend-36492b8808c03d6424a07ffa3ec504f8.scn"]
 
 [params]
 
@@ -32,7 +32,14 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"materials": {
+"Material": {
+"use_external/enabled": true,
+"use_external/path": "uid://dusiiri112rr7"
+}
+}
+}
 blender/nodes/visible=0
 blender/nodes/active_collection_only=false
 blender/nodes/punctual_lights=true

@@ -2,17 +2,18 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8q6a20wttm7p"
-path.s3tc="res://.godot/imported/Rod.png-8237b7432ef19a74546988d4d6fdd3f9.s3tc.ctex"
+uid="uid://bbnd80hts4jxp"
+path.s3tc="res://.godot/imported/River.jpg-75f2db1549cef780494c3d7d0cf1fef4.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={}
 
 [deps]
 
-source_file="res://Rod.png"
-dest_files=["res://.godot/imported/Rod.png-8237b7432ef19a74546988d4d6fdd3f9.s3tc.ctex"]
+source_file="res://Textures/River.jpg"
+dest_files=["res://.godot/imported/River.jpg-75f2db1549cef780494c3d7d0cf1fef4.s3tc.ctex"]
 
 [params]
 
@@ -22,7 +23,7 @@ compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://br8pkh1gfqnj0"]
+[gd_scene load_steps=8 format=3 uid="uid://br8pkh1gfqnj0"]
 
-[ext_resource type="PackedScene" uid="uid://ci3e6q6b5b7ti" path="res://FishingRod.glb" id="1_c6gwx"]
-[ext_resource type="PackedScene" uid="uid://c0fciiybllia4" path="res://Boat.glb" id="2_2dftf"]
+[ext_resource type="PackedScene" uid="uid://ci3e6q6b5b7ti" path="res://3D Models/FishingRod.glb" id="1_c6gwx"]
+[ext_resource type="PackedScene" uid="uid://c0fciiybllia4" path="res://3D Models/Boat.glb" id="2_2dftf"]
 [ext_resource type="Script" uid="uid://mnlyw2c4sguv" path="res://player_controller.gd" id="2_bcbcq"]
+[ext_resource type="PackedScene" uid="uid://7q0r2p4oudei" path="res://3D Models/River.blend" id="4_js7pq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_c6gwx"]
 sky_top_color = Color(0.329143, 0.126733, 0.0815402, 1)
@@ -42,3 +43,6 @@ script = ExtResource("2_bcbcq")
 
 [node name="FishingRod" parent="Camera3D" instance=ExtResource("1_c6gwx")]
 transform = Transform3D(0.112806, -0.0194365, -0.993427, 0.862922, 0.497571, 0.0882518, 0.492585, -0.867206, 0.0729011, 2.61335, -1.18776, -1.45687)
+
+[node name="River" parent="." instance=ExtResource("4_js7pq")]
+transform = Transform3D(-0.0288499, 0, 2.99986, 0, 3, 0, -2.99986, 0, -0.0288499, -8.97043, -4.60167, 0.655631)
