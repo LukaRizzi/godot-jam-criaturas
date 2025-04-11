@@ -30,16 +30,31 @@ func _input(event):
 
 func _process(delta):
 	if fishing:
-		fishing_timer -= delta
-		if fishing_timer <= 0:
+		var dist = global_position.distance_to(fish_position)
+		if dist > 26:
+			#PERDISTE
+			print("perdiste")
 			fishing = false
 			fish_indicator.visible = false
-			pass
+		else:
+			if dist < 13:
+				fishing_timer -= delta
+				if fishing_timer <= 0:
+					#GANASTEEE
+					print("ganaste")
+					fishing = false
+					fish_indicator.visible = false
+					pass
+		
 		var forward_vec = -global_transform.basis.z
 		forward_vec.y = 0
 		forward_vec = forward_vec.normalized()
-		#hacer relativo a dónde miras
-		fish_position += Vector3(mouse_movement_y, 0, mouse_movement_x) * .01
+		
+		if mouse_movement_x != 0:
+			fish_position += forward_vec.cross(Vector3.UP).normalized() * mouse_movement_x * .1
+		if mouse_movement_y != 0:
+			fish_position += forward_vec * -mouse_movement_y * .1
+		
 		_update_fishing_spot(delta)
 	else:
 		yaw -= mouse_movement_x * mouse_sensitivity
