@@ -2,6 +2,7 @@ class_name FishingManager extends Camera3D
 
 @export var mouse_sensitivity: float = 0.003
 @export var fishes : Array[Node3D]
+@export var fishes_in_bucket : Array[Node3D]
 
 @onready var fish_showcase_timer: Timer = $FishShowcaseTimer
 @onready var game_manager: GameManager = $".."
@@ -107,6 +108,6 @@ func _update_fishing_spot(delta):
 			fish_indicator.global_position = fish_position
 			bone.global_position = lerp(bone.global_position, fish_position, delta * 20);
 
-
 func _on_fish_showcase_timer_timeout() -> void:
 	fishes[current_fish].visible = false
+	fishes_in_bucket[current_fish].visible = true
