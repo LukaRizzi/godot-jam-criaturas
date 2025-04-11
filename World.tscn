@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://br8pkh1gfqnj0"]
+[gd_scene load_steps=19 format=3 uid="uid://br8pkh1gfqnj0"]
 
 [ext_resource type="Script" uid="uid://60j47smb1y1x" path="res://Scripts/GameManager.gd" id="1_bah7m"]
 [ext_resource type="PackedScene" uid="uid://ci3e6q6b5b7ti" path="res://3D Models/FishingRod.glb" id="1_c6gwx"]
@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://bdxy1fgwo05xj" path="res://Sounds/Rule of Rose turn page.mp3" id="10_kva58"]
 [ext_resource type="AudioStream" uid="uid://b7sn2gta6jygw" path="res://Sounds/sad-violin-150146.mp3" id="11_f5c0m"]
 [ext_resource type="PackedScene" uid="uid://btooy0d5snudp" path="res://3D Models/Tararera.blend" id="12_f5c0m"]
+[ext_resource type="PackedScene" uid="uid://dytggkaf51pye" path="res://3D Models/MixamoRuiz.fbx" id="13_b2ar6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_c6gwx"]
 sky_top_color = Color(0.329143, 0.126733, 0.0815402, 1)
@@ -115,9 +116,44 @@ one_shot = true
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="DialogueBox"]
 
+[node name="MixamoRuiz" parent="." instance=ExtResource("13_b2ar6")]
+transform = Transform3D(-0.741262, 0, -0.00928964, -0.0007135, 0.739131, 0.0569334, 0.0092622, 0.0569379, -0.739073, -9.7205, -4.40301, -0.507669)
+
+[node name="Skeleton3D" parent="MixamoRuiz" index="0"]
+bones/0/position = Vector3(-0.0019725, 3.42201, 0.288851)
+bones/0/rotation = Quaternion(0.0302109, 0.0341538, -0.0341796, 0.998375)
+bones/1/rotation = Quaternion(0.110408, 0.00667225, 0.0343092, 0.993272)
+bones/2/rotation = Quaternion(0.150892, 0.0451281, 0.0145032, 0.987413)
+bones/3/rotation = Quaternion(-0.0670134, 0.00176696, -0.0458439, 0.996697)
+bones/4/rotation = Quaternion(-0.0892546, -0.0209141, -0.00778976, 0.995759)
+bones/5/rotation = Quaternion(-0.0643493, 0.0481077, -0.0113788, 0.996702)
+bones/7/rotation = Quaternion(0.644592, 0.356409, -0.419403, 0.530636)
+bones/8/rotation = Quaternion(0.180307, -0.109797, 0.563987, 0.798343)
+bones/9/rotation = Quaternion(-0.148694, 0.254759, 0.47244, 0.830535)
+bones/10/rotation = Quaternion(0.313353, -0.022207, -0.0623127, 0.94733)
+bones/11/rotation = Quaternion(0.215019, 0.0139063, -0.0503864, 0.97521)
+bones/12/rotation = Quaternion(0.0494592, -0.0174595, 0.114878, 0.991994)
+bones/13/rotation = Quaternion(-0.300992, 0.0683133, 0.015387, 0.951052)
+bones/15/rotation = Quaternion(0.62786, -0.39521, 0.451961, 0.495311)
+bones/16/rotation = Quaternion(0.0239794, -0.00306531, -0.528413, 0.848643)
+bones/17/rotation = Quaternion(-0.0995677, -0.189252, -0.505494, 0.83591)
+bones/18/rotation = Quaternion(0.271846, 0.0761933, 0.139461, 0.949129)
+bones/19/rotation = Quaternion(-0.00108207, -0.607997, -0.0357668, 0.793133)
+bones/20/rotation = Quaternion(-0.138613, 0.0362591, -0.265302, 0.95346)
+bones/21/rotation = Quaternion(-0.106044, -0.0410502, 0.0475073, 0.992377)
+bones/23/rotation = Quaternion(0.1551, 0.643533, 0.670557, -0.334907)
+bones/24/rotation = Quaternion(-0.783602, 0.0208449, -0.0403048, 0.619604)
+bones/25/rotation = Quaternion(0.643112, -0.0487832, -0.0870272, 0.759246)
+bones/26/rotation = Quaternion(0.251977, -0.0415074, 0.00890069, 0.966802)
+bones/28/rotation = Quaternion(-0.301776, 0.608989, 0.671951, 0.294185)
+bones/29/rotation = Quaternion(-0.792116, -0.0517575, 0.0740943, 0.603642)
+bones/30/rotation = Quaternion(0.684373, -0.00301375, 0.0269346, 0.728628)
+bones/31/rotation = Quaternion(0.222959, 0.0410788, -0.00840839, 0.973926)
+
 [connection signal="timeout" from="Camera3D/FishShowcaseTimer" to="Camera3D" method="_on_fish_showcase_timer_timeout"]
 [connection signal="dialogue_generated" from="DialogueBox" to="DialogueBox" method="_on_dialogue_generated"]
 [connection signal="end_of_dialogue_reached" from="DialogueBox" to="DialogueBox" method="_on_end_of_dialogue_reached"]
 [connection signal="timeout" from="DialogueBox/AdvanceDialogueTimer" to="DialogueBox" method="_on_timer_timeout"]
 
 [editable path="Camera3D/FishingRod"]
+[editable path="MixamoRuiz"]
