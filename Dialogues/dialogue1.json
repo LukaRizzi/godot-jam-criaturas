@@ -1,6 +1,6 @@
 [
 	{
-		"commands_raw": "wachin, estás acá\n\n?> -> dialogue1_1",
+		"commands_raw": "wachin, estás acá |0\n\n?> -> dialogue1_1",
 		"gnode_name": "start",
 		"id": 0.0,
 		"name": "start",
@@ -20,7 +20,7 @@
 		]
 	},
 	{
-		"commands_raw": "bueno ahora vas a pescar. apretá click para pescar",
+		"commands_raw": "bueno ahora vas a pescar. apretá click para pescar |0",
 		"gnode_name": "dialogue1_2",
 		"id": 2.0,
 		"name": "dialogue1_2",

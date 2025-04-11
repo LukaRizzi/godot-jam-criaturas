@@ -1,6 +1,6 @@
 [
 	{
-		"commands_raw": "bien pescado wachi\n\n?> -> dialogue2_1",
+		"commands_raw": "bien pescado wachi |2\n\n?> -> dialogue2_1",
 		"gnode_name": "start",
 		"id": 0.0,
 		"name": "start",
@@ -10,7 +10,7 @@
 		]
 	},
 	{
-		"commands_raw": "bueno ya no tengo diálogo",
+		"commands_raw": "bueno ya no tengo diálogo |1",
 		"gnode_name": "dialogue2_1",
 		"id": 1.0,
 		"name": "dialogue2_1",

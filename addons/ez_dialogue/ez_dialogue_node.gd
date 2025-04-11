@@ -2,18 +2,27 @@
 class_name EzDialogue extends EzDialogueReader
 
 @export var dialogues : Array[JSON]
+@export var dialogue_voices : Array[AudioStream]
 var current_dialogue : int = 0
 
 @onready var label : Label = $Label
 @onready var state = {}
 @onready var timer: Timer = $AdvanceDialogueTimer
 @onready var game_manager: GameManager = $".."
+@onready var audio_player: AudioStreamPlayer3D = $AudioStreamPlayer3D
 
 var ended : bool = false
 var is_one_shot : bool = false
 
 func _on_dialogue_generated(response: DialogueResponse) -> void:
-	label.text = response.text
+	var text_parts = response.text.split("|")
+	label.text = text_parts[0]
+	
+	if text_parts.size() > 1:
+		var dialogue_voice_index = int(text_parts[1])
+		if dialogue_voice_index < dialogue_voices.size():
+			audio_player.stream = dialogue_voices[dialogue_voice_index]
+			audio_player.play()
 	
 	if is_one_shot:
 		return
@@ -23,13 +32,14 @@ func _on_dialogue_generated(response: DialogueResponse) -> void:
 		timer.start(3)
 	else:
 		game_manager._ended_segment()
+		audio_player.stop()
+		current_dialogue += 1
 
 func _on_timer_timeout() -> void:
 	next()
 
 func _start_next_dialogue():
 	start_dialogue(dialogues[current_dialogue], state)
-	current_dialogue += 1
 	timer.start(3)
 
 func say_custom(text : String):
