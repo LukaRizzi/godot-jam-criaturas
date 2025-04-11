@@ -100,11 +100,13 @@ dialogues = Array[JSON]([ExtResource("7_wygdx"), ExtResource("9_fv4w7")])
 dialogue_voices = Array[AudioStream]([ExtResource("10_kva58"), ExtResource("11_f5c0m")])
 metadata/_custom_type_script = "uid://cr5vcyq10fcdo"
 
-[node name="Label" type="Label" parent="DialogueBox"]
+[node name="Label" type="RichTextLabel" parent="DialogueBox"]
 offset_top = 528.0
 offset_right = 1152.0
 offset_bottom = 551.0
+bbcode_enabled = true
 text = "wachin soy un diálogo"
+scroll_active = false
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 

@@ -5,7 +5,7 @@ class_name EzDialogue extends EzDialogueReader
 @export var dialogue_voices : Array[AudioStream]
 var current_dialogue : int = 0
 
-@onready var label : Label = $Label
+@onready var label : RichTextLabel = $Label
 @onready var state = {}
 @onready var timer: Timer = $AdvanceDialogueTimer
 @onready var game_manager: GameManager = $".."
@@ -19,7 +19,15 @@ func _on_dialogue_generated(response: DialogueResponse) -> void:
 	label.text = text_parts[0]
 	
 	if text_parts.size() > 1:
-		var dialogue_voice_index = int(text_parts[1])
+		match text_parts[1]:
+			"player":
+				label.text = "[color=white]" + label.text + "[/color]"
+			"willemdafoe":
+				label.text = "[color=yellow]" + label.text + "[/color]"
+				pass
+	
+	if text_parts.size() > 2:
+		var dialogue_voice_index = int(text_parts[2])
 		if dialogue_voice_index < dialogue_voices.size():
 			audio_player.stream = dialogue_voices[dialogue_voice_index]
 			audio_player.play()

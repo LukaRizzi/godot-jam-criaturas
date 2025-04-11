@@ -1,6 +1,6 @@
 [
 	{
-		"commands_raw": "una tararera. la más rápida del oeste. ahre qué decía |2\n\n?> -> dialogue2_1",
+		"commands_raw": "una tararera. la más rápida del oeste. ahre qué decía |player|2\n\n?> -> dialogue2_1",
 		"gnode_name": "start",
 		"id": 0.0,
 		"name": "start",
@@ -10,7 +10,7 @@
 		]
 	},
 	{
-		"commands_raw": "bien pescado, wachi",
+		"commands_raw": "bien pescado, wachi|willemdafoe",
 		"gnode_name": "dialogue2_1",
 		"id": 1.0,
 		"name": "dialogue2_1",
