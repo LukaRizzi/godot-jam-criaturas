@@ -1,0 +1,22 @@
+[
+	{
+		"commands_raw": "this is a dialogue text.\n\n?> -> dialogue1_1",
+		"gnode_name": "start",
+		"id": 0.0,
+		"name": "start",
+		"position": [
+			560.0,
+			520.0
+		]
+	},
+	{
+		"commands_raw": "hola soy el dialogo1",
+		"gnode_name": "dialogue1_1",
+		"id": 1.0,
+		"name": "dialogue1_1",
+		"position": [
+			0.0,
+			0.0
+		]
+	}
+]

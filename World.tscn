@@ -1,10 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://br8pkh1gfqnj0"]
+[gd_scene load_steps=13 format=3 uid="uid://br8pkh1gfqnj0"]
 
 [ext_resource type="PackedScene" uid="uid://ci3e6q6b5b7ti" path="res://3D Models/FishingRod.glb" id="1_c6gwx"]
 [ext_resource type="PackedScene" uid="uid://c0fciiybllia4" path="res://3D Models/Boat.glb" id="2_2dftf"]
 [ext_resource type="Script" uid="uid://mnlyw2c4sguv" path="res://player_controller.gd" id="2_bcbcq"]
 [ext_resource type="PackedScene" uid="uid://7q0r2p4oudei" path="res://3D Models/River.blend" id="4_js7pq"]
 [ext_resource type="Shader" uid="uid://iitmsoygnfo8" path="res://FishIndicator.gdshader" id="5_eu7l1"]
+[ext_resource type="Script" uid="uid://cr5vcyq10fcdo" path="res://addons/ez_dialogue/ez_dialogue_node.gd" id="6_p1v5b"]
+[ext_resource type="JSON" path="res://Dialogues/dialogue1.json" id="7_wygdx"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_c6gwx"]
 sky_top_color = Color(0.329143, 0.126733, 0.0815402, 1)
@@ -71,5 +73,25 @@ transform = Transform3D(-0.0288499, 0, 2.99986, 0, 3, 0, -2.99986, 0, -0.0288499
 [node name="FishIndicator" type="MeshInstance3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 3.87181, -4.92706, -9.59418)
 mesh = SubResource("PlaneMesh_js7pq")
+
+[node name="DialogueBox" type="Node" parent="."]
+script = ExtResource("6_p1v5b")
+dialogue_json = ExtResource("7_wygdx")
+metadata/_custom_type_script = "uid://cr5vcyq10fcdo"
+
+[node name="Label" type="Label" parent="DialogueBox"]
+offset_top = 528.0
+offset_right = 1152.0
+offset_bottom = 551.0
+text = "wachin soy un diálogo"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Timer" type="Timer" parent="DialogueBox"]
+one_shot = true
+
+[connection signal="dialogue_generated" from="DialogueBox" to="DialogueBox" method="_on_dialogue_generated"]
+[connection signal="end_of_dialogue_reached" from="DialogueBox" to="DialogueBox" method="_on_end_of_dialogue_reached"]
+[connection signal="timeout" from="DialogueBox/Timer" to="DialogueBox" method="_on_timer_timeout"]
 
 [editable path="Camera3D/FishingRod"]
