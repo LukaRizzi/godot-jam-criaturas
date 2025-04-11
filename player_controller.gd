@@ -37,6 +37,7 @@ func _process(delta):
 		if dist > 26:
 			fishing = false
 			fish_indicator.visible = false
+			game_manager._lost_fishing_minigame()
 		else:
 			if dist < 13:
 				fishing_timer -= delta
@@ -45,6 +46,7 @@ func _process(delta):
 					fish_indicator.visible = false
 					can_fish = false
 					game_manager._ended_segment()
+					return
 		
 		var forward_vec = -global_transform.basis.z
 		forward_vec.y = 0

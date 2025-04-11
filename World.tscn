@@ -91,11 +91,11 @@ text = "wachin soy un diálogo"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Timer" type="Timer" parent="DialogueBox"]
+[node name="AdvanceDialogueTimer" type="Timer" parent="DialogueBox"]
 one_shot = true
 
 [connection signal="dialogue_generated" from="DialogueBox" to="DialogueBox" method="_on_dialogue_generated"]
 [connection signal="end_of_dialogue_reached" from="DialogueBox" to="DialogueBox" method="_on_end_of_dialogue_reached"]
-[connection signal="timeout" from="DialogueBox/Timer" to="DialogueBox" method="_on_timer_timeout"]
+[connection signal="timeout" from="DialogueBox/AdvanceDialogueTimer" to="DialogueBox" method="_on_timer_timeout"]
 
 [editable path="Camera3D/FishingRod"]

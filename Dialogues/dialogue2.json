@@ -1,1 +1,22 @@
-[{"commands_raw":"bien pescado wachi\n\n?> -> dialogue2_1","gnode_name":"start","id":0,"name":"start","position":[280.0,240.0]},{"commands_raw":"bueno ya no tengo diálogo","gnode_name":"dialogue2_1","id":1,"name":"dialogue2_1","position":[400.0,240.0]}]
+[
+	{
+		"commands_raw": "bien pescado wachi\n\n?> -> dialogue2_1",
+		"gnode_name": "start",
+		"id": 0.0,
+		"name": "start",
+		"position": [
+			280.0,
+			240.0
+		]
+	},
+	{
+		"commands_raw": "bueno ya no tengo diálogo",
+		"gnode_name": "dialogue2_1",
+		"id": 1.0,
+		"name": "dialogue2_1",
+		"position": [
+			400.0,
+			240.0
+		]
+	}
+]
