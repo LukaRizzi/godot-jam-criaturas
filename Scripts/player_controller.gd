@@ -67,9 +67,9 @@ func _process(delta):
 		_update_fishing_spot(delta)
 	else:
 		yaw -= mouse_movement_x * mouse_sensitivity
-		yaw = clamp(yaw, deg_to_rad(-160), deg_to_rad(80))
+		yaw = clamp(yaw, deg_to_rad(-110), deg_to_rad(80))
 		pitch -= mouse_movement_y * mouse_sensitivity
-		pitch = clamp(pitch, deg_to_rad(-20), deg_to_rad(80)) # limit up/down look
+		pitch = clamp(pitch, deg_to_rad(-30), deg_to_rad(60)) # limit up/down look
 		
 		rotation.y = yaw
 		rotation.x = pitch
