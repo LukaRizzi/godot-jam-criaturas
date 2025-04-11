@@ -10,7 +10,7 @@
 		]
 	},
 	{
-		"commands_raw": "bueno ya no tengo diálogo |1",
+		"commands_raw": "bueno ya no tengo diálogo",
 		"gnode_name": "dialogue2_1",
 		"id": 1.0,
 		"name": "dialogue2_1",

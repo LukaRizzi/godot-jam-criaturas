@@ -16,6 +16,7 @@ func _play_current_segment():
 	match game_state:
 		1:
 			fishingManager.can_fish = true
+			fishingManager.current_fish = 0
 		2:
 			dialogue._start_next_dialogue()
 

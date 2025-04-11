@@ -1,7 +1,9 @@
 class_name FishingManager extends Camera3D
 
 @export var mouse_sensitivity: float = 0.003
+@export var fishes : Array[Node3D]
 
+@onready var fish_showcase_timer: Timer = $FishShowcaseTimer
 @onready var game_manager: GameManager = $".."
 @onready var fish_indicator: MeshInstance3D = $"../FishIndicator"
 @onready var bone : BoneAttachment3D = $FishingRod/Armature/Skeleton3D/BoneAttachment3D
@@ -19,7 +21,7 @@ var og_fishing_angle : Vector3 = Vector3.ZERO
 var mouse_movement_x : float = 0
 var mouse_movement_y : float = 0
 var can_fish : bool = false
-var next_fish = null
+var current_fish : int = 0
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -32,6 +34,9 @@ func _input(event):
 		mouse_movement_y += event.relative.y
 
 func _process(delta):
+	if fishes[current_fish].visible:
+		fishes[current_fish].position = fishes[current_fish].position.move_toward(Vector3(0.167, -0.35, -3.722), 3 * delta)
+	
 	if fishing:
 		var dist = global_position.distance_to(fish_position)
 		if dist > 26:
@@ -46,6 +51,8 @@ func _process(delta):
 					fish_indicator.visible = false
 					can_fish = false
 					game_manager._ended_segment()
+					fishes[current_fish].visible = true
+					fish_showcase_timer.start(3)
 					return
 		
 		var forward_vec = -global_transform.basis.z
@@ -99,3 +106,7 @@ func _update_fishing_spot(delta):
 			
 			fish_indicator.global_position = fish_position
 			bone.global_position = lerp(bone.global_position, fish_position, delta * 20);
+
+
+func _on_fish_showcase_timer_timeout() -> void:
+	fishes[current_fish].visible = false

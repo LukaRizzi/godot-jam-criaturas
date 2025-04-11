@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://br8pkh1gfqnj0"]
+[gd_scene load_steps=18 format=3 uid="uid://br8pkh1gfqnj0"]
 
 [ext_resource type="Script" uid="uid://60j47smb1y1x" path="res://Scripts/GameManager.gd" id="1_bah7m"]
 [ext_resource type="PackedScene" uid="uid://ci3e6q6b5b7ti" path="res://3D Models/FishingRod.glb" id="1_c6gwx"]
@@ -11,6 +11,7 @@
 [ext_resource type="JSON" path="res://Dialogues/dialogue2.json" id="9_fv4w7"]
 [ext_resource type="AudioStream" uid="uid://bdxy1fgwo05xj" path="res://Sounds/Rule of Rose turn page.mp3" id="10_kva58"]
 [ext_resource type="AudioStream" uid="uid://b7sn2gta6jygw" path="res://Sounds/sad-violin-150146.mp3" id="11_f5c0m"]
+[ext_resource type="PackedScene" uid="uid://btooy0d5snudp" path="res://3D Models/Tararera.blend" id="12_f5c0m"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_c6gwx"]
 sky_top_color = Color(0.329143, 0.126733, 0.0815402, 1)
@@ -45,18 +46,24 @@ script = ExtResource("1_bah7m")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_bcbcq")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="SkyLight" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.446993, 0.764327, 0.46476, 0.354111, -0.325922, 0.876573, 0.821464, 0.556398, -0.124972, 0.43452, 8.45118, -0.194522)
 light_color = Color(0.979857, 0.859848, 0.731772, 1)
 light_energy = 1.496
 sky_mode = 1
 
+[node name="SecondaryLight" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.39101, 0, 0)
+light_color = Color(0.994888, 0.99436, 0.792511, 1)
+omni_range = 10.1958
+
 [node name="Boat" parent="." instance=ExtResource("2_2dftf")]
 transform = Transform3D(-0.0291533, 0, 1.29967, 0, 1.3, 0, -1.29967, 0, -0.0291533, -8.02304, -5.06478, -0.258812)
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("fishes")]
 transform = Transform3D(0.880146, 0, -0.474703, 0, 1, 0, 0.474703, 0, 0.880146, -2.81744, 1.18776, -0.61234)
 script = ExtResource("2_bcbcq")
+fishes = [NodePath("Tararera")]
 
 [node name="FishingRod" parent="Camera3D" instance=ExtResource("1_c6gwx")]
 transform = Transform3D(0.112806, -0.0194365, -0.993427, 0.862922, 0.497571, 0.0882518, 0.492585, -0.867206, 0.0729011, 2.61335, -1.18776, -1.45687)
@@ -71,6 +78,13 @@ transform = Transform3D(0.569268, -0.807767, -0.153125, 0.780937, 0.589499, -0.2
 bone_name = "Cast"
 bone_idx = 7
 override_pose = true
+
+[node name="Tararera" parent="Camera3D" instance=ExtResource("12_f5c0m")]
+transform = Transform3D(-0.0329454, -0.496755, -0.0463578, 0.0549056, 0.0425665, -0.49515, 0.495883, -0.0377165, 0.0517445, 0.167, -5.69988, -3.722)
+visible = false
+
+[node name="FishShowcaseTimer" type="Timer" parent="Camera3D"]
+one_shot = true
 
 [node name="River" parent="." instance=ExtResource("4_js7pq")]
 transform = Transform3D(-0.0288499, 0, 2.99986, 0, 3, 0, -2.99986, 0, -0.0288499, -8.97043, -4.60167, 0.655631)
@@ -99,6 +113,7 @@ one_shot = true
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="DialogueBox"]
 
+[connection signal="timeout" from="Camera3D/FishShowcaseTimer" to="Camera3D" method="_on_fish_showcase_timer_timeout"]
 [connection signal="dialogue_generated" from="DialogueBox" to="DialogueBox" method="_on_dialogue_generated"]
 [connection signal="end_of_dialogue_reached" from="DialogueBox" to="DialogueBox" method="_on_end_of_dialogue_reached"]
 [connection signal="timeout" from="DialogueBox/AdvanceDialogueTimer" to="DialogueBox" method="_on_timer_timeout"]
