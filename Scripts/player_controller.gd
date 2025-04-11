@@ -35,7 +35,7 @@ func _input(event):
 
 func _process(delta):
 	if fishes[current_fish].visible:
-		fishes[current_fish].position = fishes[current_fish].position.move_toward(Vector3(0.167, -0.35, -3.722), 3 * delta)
+		fishes[current_fish].position = fishes[current_fish].position.move_toward(Vector3(0.167, -0.35, -3.722), 6 * delta)
 	
 	if fishing:
 		var dist = global_position.distance_to(fish_position)
