@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://br8pkh1gfqnj0"]
+[gd_scene load_steps=21 format=3 uid="uid://br8pkh1gfqnj0"]
 
 [ext_resource type="Script" uid="uid://60j47smb1y1x" path="res://Scripts/GameManager.gd" id="1_bah7m"]
 [ext_resource type="PackedScene" uid="uid://ci3e6q6b5b7ti" path="res://3D Models/FishingRod.glb" id="1_c6gwx"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://mnlyw2c4sguv" path="res://Scripts/player_controller.gd" id="2_bcbcq"]
 [ext_resource type="PackedScene" uid="uid://7q0r2p4oudei" path="res://3D Models/River.blend" id="4_js7pq"]
 [ext_resource type="Shader" uid="uid://iitmsoygnfo8" path="res://Scripts/FishIndicator.gdshader" id="5_eu7l1"]
+[ext_resource type="PackedScene" uid="uid://bvruxstrj41yk" path="res://3D Models/Bucket.glb" id="6_ee7l0"]
 [ext_resource type="Script" uid="uid://cr5vcyq10fcdo" path="res://addons/ez_dialogue/ez_dialogue_node.gd" id="6_p1v5b"]
 [ext_resource type="JSON" path="res://Dialogues/dialogue1.json" id="7_wygdx"]
 [ext_resource type="JSON" path="res://Dialogues/dialogue2.json" id="9_fv4w7"]
@@ -13,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://b7sn2gta6jygw" path="res://Sounds/sad-violin-150146.mp3" id="11_f5c0m"]
 [ext_resource type="PackedScene" uid="uid://btooy0d5snudp" path="res://3D Models/Tararera.blend" id="12_f5c0m"]
 [ext_resource type="PackedScene" uid="uid://dytggkaf51pye" path="res://3D Models/MixamoRuiz.fbx" id="13_b2ar6"]
+[ext_resource type="PackedScene" uid="uid://btcj2tou2t05l" path="res://3D Models/BeerCan.fbx" id="14_gn8l5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_c6gwx"]
 sky_top_color = Color(0.329143, 0.126733, 0.0815402, 1)
@@ -62,8 +64,11 @@ omni_range = 10.1958
 [node name="Boat" parent="." instance=ExtResource("2_2dftf")]
 transform = Transform3D(-0.0291533, 0, 1.29967, 0, 1.3, 0, -1.29967, 0, -0.0291533, -8.02304, -5.06478, -0.258812)
 
+[node name="Bucket" parent="." instance=ExtResource("6_ee7l0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.56466, -4.88054, 1.19844)
+
 [node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("fishes")]
-transform = Transform3D(0.880146, 0, -0.474703, 0, 1, 0, 0.474703, 0, 0.880146, -5.19102, 1.18776, -2.83383)
+transform = Transform3D(0.880146, 0, -0.474703, 0, 1, 0, 0.474703, 0, 0.880146, -4.67114, 1.18776, -1.12051)
 script = ExtResource("2_bcbcq")
 fishes = [NodePath("Tararera")]
 
@@ -211,6 +216,14 @@ bones/35/scale = Vector3(1, 1, 1)
 bones/36/position = Vector3(-4.33383e-09, 0.538784, 6.74055e-08)
 bones/36/rotation = Quaternion(1.83356e-08, -3.71452e-08, -7.1347e-10, 1)
 bones/36/scale = Vector3(1, 1, 1)
+
+[node name="BeerCans" type="Node3D" parent="."]
+
+[node name="BeerCan" parent="BeerCans" instance=ExtResource("14_gn8l5")]
+transform = Transform3D(0.999999, 1.49012e-08, -2.23517e-08, 0, 0.999998, -4.65661e-10, 1.86265e-09, 0, 0.999998, -7.47264, -4.96045, -1.43381)
+
+[node name="BeerCan2" parent="BeerCans" instance=ExtResource("14_gn8l5")]
+transform = Transform3D(0.85723, -0.367847, -0.360336, 0.0870289, 0.793206, -0.6027, 0.507523, 0.485294, 0.711974, -7.6122, -1.96887, -1.57015)
 
 [connection signal="timeout" from="Camera3D/FishShowcaseTimer" to="Camera3D" method="_on_fish_showcase_timer_timeout"]
 [connection signal="dialogue_generated" from="DialogueBox" to="DialogueBox" method="_on_dialogue_generated"]
