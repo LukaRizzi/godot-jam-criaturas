@@ -1,26 +1,27 @@
 @tool
 class_name EzDialogue extends EzDialogueReader
 
-@export var dialogue_json: JSON
+@export var dialogues : Array[JSON]
+var current_dialogue : int = 0
 
 @onready var label : Label = $Label
 @onready var state = {}
 @onready var timer: Timer = $Timer
+@onready var game_manager: GameManager = $".."
 
 var ended : bool = false
-
-func _ready():
-	start_dialogue(dialogue_json, state)
-	timer.start(3)
 
 func _on_dialogue_generated(response: DialogueResponse) -> void:
 	label.text = response.text
 	if response.text != "":
 		timer.start(3)
 	else:
-		#SE TERMINÓ EL DIÁLOGO, CONTINUAR
-		pass
+		game_manager._ended_segment()
 
 func _on_timer_timeout() -> void:
-	print("timeout")
 	next()
+
+func _start_next_dialogue():
+	start_dialogue(dialogues[current_dialogue], state)
+	current_dialogue += 1
+	timer.start(3)

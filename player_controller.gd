@@ -1,7 +1,8 @@
-extends Camera3D
+class_name FishingManager extends Camera3D
 
 @export var mouse_sensitivity: float = 0.003
 
+@onready var game_manager: GameManager = $".."
 @onready var fish_indicator: MeshInstance3D = $"../FishIndicator"
 @onready var bone : BoneAttachment3D = $FishingRod/Armature/Skeleton3D/BoneAttachment3D
 @onready var skeleton_3d: Skeleton3D = $FishingRod/Armature/Skeleton3D
@@ -17,6 +18,8 @@ var fishing_angle : Vector3 = Vector3.ZERO
 var og_fishing_angle : Vector3 = Vector3.ZERO
 var mouse_movement_x : float = 0
 var mouse_movement_y : float = 0
+var can_fish : bool = false
+var next_fish = null
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -32,19 +35,16 @@ func _process(delta):
 	if fishing:
 		var dist = global_position.distance_to(fish_position)
 		if dist > 26:
-			#PERDISTE
-			print("perdiste")
 			fishing = false
 			fish_indicator.visible = false
 		else:
 			if dist < 13:
 				fishing_timer -= delta
 				if fishing_timer <= 0:
-					#GANASTEEE
-					print("ganaste")
 					fishing = false
 					fish_indicator.visible = false
-					pass
+					can_fish = false
+					game_manager._ended_segment()
 		
 		var forward_vec = -global_transform.basis.z
 		forward_vec.y = 0
@@ -66,7 +66,7 @@ func _process(delta):
 		rotation.x = pitch
 		
 		bone.position = lerp(bone.position, ogPos, delta * 20)
-		if (Input.is_action_just_pressed("Click")):
+		if can_fish && Input.is_action_just_pressed("Click"):
 				fishing = true
 				fish_indicator.visible = true
 				_update_fishing_spot(delta)

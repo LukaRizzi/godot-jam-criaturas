@@ -1,5 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://br8pkh1gfqnj0"]
+[gd_scene load_steps=15 format=3 uid="uid://br8pkh1gfqnj0"]
 
+[ext_resource type="Script" uid="uid://60j47smb1y1x" path="res://GameManager.gd" id="1_bah7m"]
 [ext_resource type="PackedScene" uid="uid://ci3e6q6b5b7ti" path="res://3D Models/FishingRod.glb" id="1_c6gwx"]
 [ext_resource type="PackedScene" uid="uid://c0fciiybllia4" path="res://3D Models/Boat.glb" id="2_2dftf"]
 [ext_resource type="Script" uid="uid://mnlyw2c4sguv" path="res://player_controller.gd" id="2_bcbcq"]
@@ -7,6 +8,7 @@
 [ext_resource type="Shader" uid="uid://iitmsoygnfo8" path="res://FishIndicator.gdshader" id="5_eu7l1"]
 [ext_resource type="Script" uid="uid://cr5vcyq10fcdo" path="res://addons/ez_dialogue/ez_dialogue_node.gd" id="6_p1v5b"]
 [ext_resource type="JSON" path="res://Dialogues/dialogue1.json" id="7_wygdx"]
+[ext_resource type="JSON" path="res://Dialogues/dialogue2.json" id="9_fv4w7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_c6gwx"]
 sky_top_color = Color(0.329143, 0.126733, 0.0815402, 1)
@@ -36,6 +38,7 @@ shader_parameter/speed = 1.0
 material = SubResource("ShaderMaterial_p1v5b")
 
 [node name="World" type="Node3D"]
+script = ExtResource("1_bah7m")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_bcbcq")
@@ -57,8 +60,8 @@ script = ExtResource("2_bcbcq")
 transform = Transform3D(0.112806, -0.0194365, -0.993427, 0.862922, 0.497571, 0.0882518, 0.492585, -0.867206, 0.0729011, 2.61335, -1.18776, -1.45687)
 
 [node name="Skeleton3D" parent="Camera3D/FishingRod/Armature" index="0"]
-bones/7/position = Vector3(0.00111723, 0.902123, -0.0229305)
-bones/7/rotation = Quaternion(0.0578169, -0.11601, 0.449342, 0.883907)
+bones/7/position = Vector3(0.00111724, 0.902129, -0.0229305)
+bones/7/rotation = Quaternion(0.0578168, -0.11601, 0.449341, 0.883907)
 bones/7/scale = Vector3(1, 1, 1)
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="Camera3D/FishingRod/Armature/Skeleton3D" index="1"]
@@ -72,11 +75,12 @@ transform = Transform3D(-0.0288499, 0, 2.99986, 0, 3, 0, -2.99986, 0, -0.0288499
 
 [node name="FishIndicator" type="MeshInstance3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 3.87181, -4.92706, -9.59418)
+visible = false
 mesh = SubResource("PlaneMesh_js7pq")
 
 [node name="DialogueBox" type="Node" parent="."]
 script = ExtResource("6_p1v5b")
-dialogue_json = ExtResource("7_wygdx")
+dialogues = Array[JSON]([ExtResource("7_wygdx"), ExtResource("9_fv4w7")])
 metadata/_custom_type_script = "uid://cr5vcyq10fcdo"
 
 [node name="Label" type="Label" parent="DialogueBox"]

@@ -1,6 +1,6 @@
 [
 	{
-		"commands_raw": "this is a dialogue text.\n\n?> -> dialogue1_1",
+		"commands_raw": "wachin, estás acá\n\n?> -> dialogue1_1",
 		"gnode_name": "start",
 		"id": 0.0,
 		"name": "start",
@@ -10,13 +10,23 @@
 		]
 	},
 	{
-		"commands_raw": "hola soy el dialogo1",
+		"commands_raw": "al fin viniste, te tomó un tiempo e\n\n?> -> dialogue1_2",
 		"gnode_name": "dialogue1_1",
 		"id": 1.0,
 		"name": "dialogue1_1",
 		"position": [
-			0.0,
-			0.0
+			720.0,
+			520.0
+		]
+	},
+	{
+		"commands_raw": "bueno ahora vas a pescar. apretá click para pescar",
+		"gnode_name": "dialogue1_2",
+		"id": 2.0,
+		"name": "dialogue1_2",
+		"position": [
+			940.0,
+			520.0
 		]
 	}
 ]
