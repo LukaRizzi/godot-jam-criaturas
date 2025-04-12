@@ -94,10 +94,6 @@ func _process(delta):
 	mouse_movement_x = 0
 	mouse_movement_y = 0
 
-func _unhandled_input(event):
-	if event.is_action_pressed("ui_cancel"):
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-
 func _update_fishing_spot(delta):
 	if cast_idx != -1 && fishing:
 			var new_fishing_angle = fishing_angle.rotated(Vector3.UP, randf_range(-20 * delta, 20 * delta))

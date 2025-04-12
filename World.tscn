@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://br8pkh1gfqnj0"]
+[gd_scene load_steps=26 format=3 uid="uid://br8pkh1gfqnj0"]
 
 [ext_resource type="Script" uid="uid://60j47smb1y1x" path="res://Scripts/GameManager.gd" id="1_bah7m"]
 [ext_resource type="PackedScene" uid="uid://ci3e6q6b5b7ti" path="res://3D Models/FishingRod.glb" id="1_c6gwx"]
@@ -19,6 +19,7 @@
 [ext_resource type="Script" uid="uid://dbrgef4iwdjep" path="res://Scripts/play_animation.gd" id="15_sjtuv"]
 [ext_resource type="PackedScene" uid="uid://fptie67tyvea" path="res://3D Models/Sirena fea.blend" id="16_1fphk"]
 [ext_resource type="PackedScene" uid="uid://bjulrdymsjnnu" path="res://3D Models/Sirena.blend" id="16_6w02q"]
+[ext_resource type="Script" uid="uid://ho8ssu1n0178" path="res://ending_sequence.gd" id="20_6tx0c"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_c6gwx"]
 sky_top_color = Color(0.329143, 0.126733, 0.0815402, 1)
@@ -256,6 +257,9 @@ script = ExtResource("15_sjtuv")
 
 [node name="AnimationPlayer" parent="Sirena" index="1"]
 reset_on_save = false
+
+[node name="EndingSequence" type="Node" parent="."]
+script = ExtResource("20_6tx0c")
 
 [connection signal="timeout" from="Camera3D/FishShowcaseTimer" to="Camera3D" method="_on_fish_showcase_timer_timeout"]
 [connection signal="dialogue_generated" from="DialogueBox" to="DialogueBox" method="_on_dialogue_generated"]
