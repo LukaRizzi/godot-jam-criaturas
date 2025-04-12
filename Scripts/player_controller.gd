@@ -5,6 +5,7 @@ class_name FishingManager extends Camera3D
 @export var fishes_in_bucket : Array[Node3D]
 
 @onready var reel_sound: AudioStreamPlayer3D = $ReelSound
+@onready var catch_sound: AudioStreamPlayer3D = $CatchSound
 @onready var fish_showcase_timer: Timer = $FishShowcaseTimer
 @onready var game_manager: GameManager = $".."
 @onready var fish_indicator: MeshInstance3D = $"../FishIndicator"
@@ -47,14 +48,16 @@ func _process(delta):
 		
 		var dist = global_position.distance_to(fish_position)
 		if dist > 26:
+			reel_sound.stop()
 			fishing = false
 			fish_indicator.visible = false
 			game_manager._lost_fishing_minigame()
 		else:
 			if dist < 13:
+				reel_sound.stop()
 				fishing_timer -= delta
 				if fishing_timer <= 0:
-					reel_sound.play()
+					catch_sound.play()
 					fishing = false
 					fish_indicator.visible = false
 					can_fish = false
@@ -84,28 +87,29 @@ func _process(delta):
 		
 		bone.position = lerp(bone.position, ogPos, delta * 20)
 		if can_fish && Input.is_action_just_pressed("Click"):
-				fishing = true
-				fish_indicator.visible = true
-				_update_fishing_spot(delta)
-				fishing_timer = 5
-				var distance = 15.0
-				var forward_vec = -global_transform.basis.z
-				forward_vec.y = 0
-				forward_vec = forward_vec.normalized()
-				fish_position = global_transform.origin + forward_vec * distance
-				fish_position.y = -4.4
-				fishing_angle = fish_position - global_position
-				fishing_angle.y = 0
-				fishing_angle = fishing_angle.normalized()
-				og_fishing_angle = fishing_angle
-				
-				if current_fish == -1: #Setup Mermaid
-					fishing_timer = 0
-					fish_position = Vector3(-4, -4.4, -21.5) #-12.5 Y
-					yaw = .29
-					pitch = -.28
-					rotation.y = yaw
-					rotation.x = pitch
+			reel_sound.play()
+			fishing = true
+			fish_indicator.visible = true
+			_update_fishing_spot(delta)
+			fishing_timer = 5
+			var distance = 15.0
+			var forward_vec = -global_transform.basis.z
+			forward_vec.y = 0
+			forward_vec = forward_vec.normalized()
+			fish_position = global_transform.origin + forward_vec * distance
+			fish_position.y = -4.4
+			fishing_angle = fish_position - global_position
+			fishing_angle.y = 0
+			fishing_angle = fishing_angle.normalized()
+			og_fishing_angle = fishing_angle
+			
+			if current_fish == -1: #Setup Mermaid
+				fishing_timer = 0
+				fish_position = Vector3(-4, -4.4, -21.5) #-12.5 Y
+				yaw = .29
+				pitch = -.28
+				rotation.y = yaw
+				rotation.x = pitch
 	mouse_movement_x = 0
 	mouse_movement_y = 0
 

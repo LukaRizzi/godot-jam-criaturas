@@ -1,4 +1,4 @@
-[gd_scene load_steps=103 format=3 uid="uid://br8pkh1gfqnj0"]
+[gd_scene load_steps=104 format=3 uid="uid://br8pkh1gfqnj0"]
 
 [ext_resource type="Script" uid="uid://60j47smb1y1x" path="res://Scripts/GameManager.gd" id="1_bah7m"]
 [ext_resource type="PackedScene" uid="uid://ci3e6q6b5b7ti" path="res://3D Models/FishingRod.glb" id="1_c6gwx"]
@@ -24,11 +24,12 @@
 [ext_resource type="Script" uid="uid://dbrgef4iwdjep" path="res://Scripts/play_animation.gd" id="15_sjtuv"]
 [ext_resource type="PackedScene" uid="uid://fptie67tyvea" path="res://3D Models/Sirena fea.blend" id="16_1fphk"]
 [ext_resource type="PackedScene" uid="uid://bjulrdymsjnnu" path="res://3D Models/Sirena.blend" id="16_6w02q"]
+[ext_resource type="AudioStream" uid="uid://be6ia8yyqnl4d" path="res://Sounds/reeling_mid_loop.ogg" id="16_v1pkh"]
 [ext_resource type="PackedScene" uid="uid://kwwio3ea8qvy" path="res://3D Models/Dorado.blend" id="19_0to5b"]
 [ext_resource type="JSON" path="res://Dialogues/dialogue3YVosQueHaces.json" id="19_pn1ak"]
 [ext_resource type="Script" uid="uid://ho8ssu1n0178" path="res://Scripts/ending_sequence.gd" id="20_6tx0c"]
 [ext_resource type="JSON" path="res://Dialogues/dialogue4Bagre.json" id="20_i1svi"]
-[ext_resource type="PackedScene" uid="uid://cujughsivf6bs" path="res://3D Models/tree.blend" id="21_5j71u"]
+[ext_resource type="PackedScene" uid="uid://cujughsivf6bs" path="res://3D Models/Tree.blend" id="21_5j71u"]
 [ext_resource type="JSON" path="res://Dialogues/dialogue5PorqueYo.json" id="21_o57cg"]
 [ext_resource type="JSON" path="res://Dialogues/dialogue6Soco.json" id="22_ac58q"]
 [ext_resource type="PackedScene" uid="uid://bb8kdm1dlkvn3" path="res://3D Models/BG.blend" id="23_jyqkj"]
@@ -261,10 +262,16 @@ surface_material_override/0 = ExtResource("14_bun23")
 [node name="FishShowcaseTimer" type="Timer" parent="Camera3D"]
 one_shot = true
 
-[node name="ReelSound" type="AudioStreamPlayer3D" parent="Camera3D"]
+[node name="CatchSound" type="AudioStreamPlayer3D" parent="Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.565211, 1.13346, -4.90671)
 stream = ExtResource("15_o57cg")
 volume_db = -18.0
+
+[node name="ReelSound" type="AudioStreamPlayer3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.565211, 1.13346, -4.90671)
+stream = ExtResource("16_v1pkh")
+volume_db = -18.0
+parameters/looping = true
 
 [node name="FishIndicator" type="MeshInstance3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 3.87181, -4.92706, -9.59418)
@@ -691,7 +698,7 @@ transform = Transform3D(1.00001, 0, 2.57045e-06, 0, 1, 0, -2.57045e-06, 0, 1.000
 [node name="AmbienceSound" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.03084, 3.28789, -1.5649)
 stream = ExtResource("91_i1svi")
-volume_db = -42.0
+volume_db = -30.0
 autoplay = true
 parameters/looping = true
 
