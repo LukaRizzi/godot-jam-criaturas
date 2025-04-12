@@ -278,7 +278,7 @@ scroll_active = false
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="AdvanceDialogueTimer" type="Timer" parent="DialogueBox"]
+[node name="WaitForNextTimer" type="Timer" parent="DialogueBox"]
 one_shot = true
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="DialogueBox"]
@@ -647,7 +647,7 @@ transform = Transform3D(0.423346, 0.903153, 0.0713652, 2.44627e-09, 0.0787722, -
 [connection signal="timeout" from="Camera3D/FishShowcaseTimer" to="Camera3D" method="_on_fish_showcase_timer_timeout"]
 [connection signal="dialogue_generated" from="DialogueBox" to="DialogueBox" method="_on_dialogue_generated"]
 [connection signal="end_of_dialogue_reached" from="DialogueBox" to="DialogueBox" method="_on_end_of_dialogue_reached"]
-[connection signal="timeout" from="DialogueBox/AdvanceDialogueTimer" to="DialogueBox" method="_on_timer_timeout"]
+[connection signal="timeout" from="DialogueBox/WaitForNextTimer" to="DialogueBox" method="_on_timer_timeout"]
 [connection signal="finished" from="DialogueBox/AudioStreamPlayer3D" to="DialogueBox" method="_on_audio_stream_player_3d_finished"]
 [connection signal="timeout" from="EndingSequence/Timer" to="EndingSequence" method="_on_timer_timeout"]
 

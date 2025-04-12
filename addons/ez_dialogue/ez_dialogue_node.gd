@@ -7,7 +7,7 @@ var current_dialogue : int = 0
 
 @onready var label : RichTextLabel = $Label
 @onready var state = {}
-@onready var timer: Timer = $AdvanceDialogueTimer
+@onready var timer: Timer = $WaitForNextTimer
 @onready var game_manager: GameManager = $".."
 @onready var audio_player: AudioStreamPlayer3D = $AudioStreamPlayer3D
 
@@ -37,24 +37,19 @@ func _on_dialogue_generated(response: DialogueResponse) -> void:
 	
 	if response.text != "":
 		is_one_shot = false
-		timer.start(3)
 	else:
 		current_dialogue += 1
 		game_manager._ended_segment()
-		audio_player.stop()
 
 func _on_timer_timeout() -> void:
-	pass
+	next()
 
 func _start_next_dialogue():
 	start_dialogue(dialogues[current_dialogue], state)
-	timer.start(3)
 
 func say_custom(text : String):
 	is_one_shot = true
 	label.text = text
-	timer.start(3)
-
 
 func _on_audio_stream_player_3d_finished() -> void:
-	next()
+	timer.start(.5)
