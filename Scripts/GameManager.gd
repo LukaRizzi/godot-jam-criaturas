@@ -62,8 +62,8 @@ func _play_current_segment():
 
 func _process(delta: float) -> void:
 	if darken:
-		sky_light.light_energy = lerp(sky_light.light_energy, 1.4, delta * 2)
-		if sky_light.light_energy < 1.4:
+		sky_light.light_energy = lerp(sky_light.light_energy, .9, delta * 2)
+		if sky_light.light_energy < 1:
 			darken = false
 
 func _lost_fishing_minigame():
