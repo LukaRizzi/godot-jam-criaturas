@@ -23,6 +23,7 @@ var mouse_movement_x : float = 0
 var mouse_movement_y : float = 0
 var can_fish : bool = false
 var current_fish : int = 0
+var played_sound : bool = false
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -125,9 +126,15 @@ func _on_fish_showcase_timer_timeout() -> void:
 
 func do_mermaid_sequence(delta):
 	var dist = global_position.distance_to(fish_position)
+	
+	if dist < 16 && !played_sound:
+		played_sound = true
+		game_manager.dialogue.say_custom("MIRA, MIRA PIBE, AHÍ SALE, DALE QUE VOS PODÉS, TRAELA AL BOTE, TRAELA.|willemdafoe|48")
+	
 	if dist < 8.3:
 		fishing_timer -= delta
 		if fishing_timer <= 0:
+			game_manager.dialogue.say_custom("Vaaaamos pibe, pero mira lo que es ésto, es de oro sólido, y cómo es la cosa, ahora te pedimos un deseo?|willemdafoe|49")
 			fishing = false
 			fish_indicator.visible = false
 			can_fish = false

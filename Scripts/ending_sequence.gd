@@ -67,6 +67,7 @@ func _process(delta: float) -> void:
 		_material2.albedo_color.a = lerp(0, 1, opacity)
 		_material3.albedo_color.a = lerp(1, 0, opacity)
 		_material4.albedo_color.a = lerp(0, 1, opacity)
+		dialogue.say_custom("Ey pará, qué es esto, qué mierda esta pasando, dónde esta mi oro, sirena del orto devolvem-|willemdafoe|50")
 		if opacity == 1:
 			sirena.visible = false
 			lerp_alpha = false
