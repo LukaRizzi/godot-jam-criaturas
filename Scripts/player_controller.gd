@@ -39,6 +39,10 @@ func _process(delta):
 		fishes[current_fish].position = fishes[current_fish].position.move_toward(Vector3(0.167, -0.35, -3.722), 6 * delta)
 	
 	if fishing:
+		if current_fish == -1:
+			do_mermaid_sequence(delta)
+			return
+		
 		var dist = global_position.distance_to(fish_position)
 		if dist > 26:
 			fishing = false
@@ -91,6 +95,14 @@ func _process(delta):
 				fishing_angle.y = 0
 				fishing_angle = fishing_angle.normalized()
 				og_fishing_angle = fishing_angle
+				
+				if current_fish == -1: #Setup Mermaid
+					fishing_timer = 0
+					fish_position = Vector3(-4, -4.4, -21.5) #-12.5 Y
+					yaw = -.07
+					pitch = -.3
+					rotation.y = yaw
+					rotation.x = pitch
 	mouse_movement_x = 0
 	mouse_movement_y = 0
 
@@ -107,3 +119,33 @@ func _update_fishing_spot(delta):
 func _on_fish_showcase_timer_timeout() -> void:
 	fishes[current_fish].visible = false
 	fishes_in_bucket[current_fish].visible = true
+
+@onready var sirena: PlayAnimation = $"../Sirena"
+
+func do_mermaid_sequence(delta):
+	var dist = global_position.distance_to(fish_position)
+	if dist < 7.6:
+		fishing_timer -= delta
+		if fishing_timer <= 0:
+			fishing = false
+			fish_indicator.visible = false
+			can_fish = false
+			game_manager._ended_segment()
+			fishes[current_fish].visible = true
+			fish_showcase_timer.start(3)
+			return
+	
+	var forward_vec = -global_transform.basis.z
+	forward_vec.y = 0
+	forward_vec = forward_vec.normalized()
+	
+	if mouse_movement_y != 0:
+		fish_position += forward_vec * min(max(-5 * delta, -mouse_movement_y * .1), 0)
+	
+	mouse_movement_x = 0
+	mouse_movement_y = 0
+	
+	sirena.global_position = fish_position
+	sirena.global_position.y = lerp(-3.4,-12.5, dist / 20)
+	fish_indicator.global_position = fish_position
+	bone.global_position = lerp(bone.global_position, fish_position, delta * 20);

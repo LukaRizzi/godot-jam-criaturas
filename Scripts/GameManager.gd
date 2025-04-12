@@ -26,7 +26,9 @@ func _play_current_segment():
 			dialogue._start_next_dialogue()
 		3: #sequencia final
 			fishingManager.can_fish = true
-			fishingManager.current_fish = 1
+			fishingManager.current_fish = -1
+			sirena.visible = true
+			sirena.play_animation("Move")
 		4:
 			ending_sequence._play(0)
 

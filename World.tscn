@@ -251,9 +251,22 @@ visible = false
 script = ExtResource("15_sjtuv")
 
 [node name="Sirena" parent="." instance=ExtResource("16_6w02q")]
-transform = Transform3D(0.798039, 0, 0.0559862, 0, 0.8, 0, -0.0559862, 0, 0.798039, -4.98685, -6.7274, -8.58681)
-visible = false
+transform = Transform3D(0.798039, 0, 0.0559862, 0, 0.8, 0, -0.0559862, 0, 0.798039, -4.03245, -12.5602, -21.572)
 script = ExtResource("15_sjtuv")
+
+[node name="Skeleton3D" parent="Sirena/Armature" index="0"]
+bones/1/rotation = Quaternion(0.109817, 1.18488e-07, 1.30912e-08, 0.993952)
+bones/2/rotation = Quaternion(0.0580374, 8.45194e-15, 1.38372e-08, 0.998314)
+bones/4/rotation = Quaternion(-7.45058e-09, 1.33227e-15, -1.33227e-15, 1)
+bones/5/rotation = Quaternion(-5.06894e-09, -4.22741e-08, -0.975147, 0.221559)
+bones/6/rotation = Quaternion(-1.29669e-09, -8.44452e-08, -0.0153597, 0.999882)
+bones/7/rotation = Quaternion(3.37197e-09, 1.22645e-07, 0.00973913, 0.999953)
+bones/8/rotation = Quaternion(-3.21962e-07, 1.11297e-08, 0.96131, 0.275468)
+bones/9/rotation = Quaternion(-5.53044e-09, -2.64682e-07, 0.0153597, 0.999882)
+bones/11/rotation = Quaternion(0.996656, 0.0139381, 8.71444e-07, 0.0805189)
+bones/12/rotation = Quaternion(0.0805192, 7.07792e-08, 0.013938, 0.996656)
+bones/13/rotation = Quaternion(0.996656, 0.013938, 2.77088e-07, 0.0805186)
+bones/14/rotation = Quaternion(0.0805186, 6.26426e-08, 0.013938, 0.996656)
 
 [node name="AnimationPlayer" parent="Sirena" index="1"]
 reset_on_save = false
