@@ -54,9 +54,9 @@ func _process(delta):
 			game_manager._lost_fishing_minigame()
 		else:
 			if dist < 13:
-				reel_sound.stop()
 				fishing_timer -= delta
 				if fishing_timer <= 0:
+					reel_sound.stop()
 					catch_sound.play()
 					fishing = false
 					fish_indicator.visible = false
@@ -77,9 +77,6 @@ func _process(delta):
 		
 		_update_fishing_spot(delta)
 	else:
-		if !reel_sound.playing:
-			reel_sound.play()
-		
 		yaw -= mouse_movement_x * mouse_sensitivity
 		yaw = clamp(yaw, deg_to_rad(-110), deg_to_rad(80))
 		pitch -= mouse_movement_y * mouse_sensitivity
