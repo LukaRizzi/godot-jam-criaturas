@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cxswv84d58qi0"
+path="res://.godot/imported/53_dale_campeon.ogg-224a00c92c826a4fad542acfc82cf512.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/Voices/Voice Lines/53_dale_campeon.ogg"
+dest_files=["res://.godot/imported/53_dale_campeon.ogg-224a00c92c826a4fad542acfc82cf512.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
