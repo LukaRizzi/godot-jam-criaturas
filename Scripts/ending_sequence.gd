@@ -46,7 +46,7 @@ func _play(value : int):
 			timer_id = 6
 			timer.start(2)
 		6:
-			dialogue.say_custom("FINNNN XDD")
+			dialogue.say_custom("Todavia no se si nada de esto fue real, tengo el dorado gigante que lo prueba supongo pero, a quien le voy a contar esto? me van a tratar de loco, o peor, de chanta. Por lo que averigue de las leyendas, la mayup maman es la madre del rio, y es generosa, pero solo mientras seas respetuoso con sus aguas.|player|50")
 
 @onready var dialogue : EzDialogue = $"../DialogueBox"
 

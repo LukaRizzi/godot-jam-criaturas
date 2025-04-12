@@ -1,1 +1,92 @@
-[{"commands_raw":"Viste eso de ahi?|willemdafoe|21\n\n?> -> dialogue1_1","gnode_name":"start","id":0,"name":"start","position":[560.0,520.0]},{"commands_raw":"Donde?|player|22\n\n?> -> dialogue1_2","gnode_name":"dialogue1_1","id":1,"name":"dialogue1_1","position":[720.0,520.0]},{"commands_raw":"Alla pendejo, no lo viste?|willemdafoe|23\n\n?> -> dialogue1_3","gnode_name":"dialogue1_2","id":2,"name":"dialogue1_2","position":[940.0,520.0]},{"commands_raw":"No, pero, que viste? El dorado?|player|24\n\n?> -> dialogue1_4","gnode_name":"dialogue1_3","id":3,"name":"dialogue1_3","position":[1140.0,520.0]},{"commands_raw":"Vos crees en lo sobrenatural?|willemdafoe|25\n\n?> -> dialogue1_5","gnode_name":"dialogue1_4","id":4,"name":"dialogue1_4","position":[1320.0,520.0]},{"commands_raw":"Mis viejos me criaron catolico…|player|26\n\n?> -> dialogue1_6","gnode_name":"dialogue1_5","id":5,"name":"dialogue1_5","position":[1500.0,520.0]},{"commands_raw":"No pibe, criaturas sobrenaturales, el lobizon, el nahuelito, las sirenas, la luz mala.|willemdafoe|27\n\n?> -> dialogue1_7","gnode_name":"dialogue1_6","id":6,"name":"dialogue1_6","position":[1680.0,520.0]},{"commands_raw":"Y que se yo, puede ser|player|28\n\n?> -> dialogue1_8","gnode_name":"dialogue1_7","id":7,"name":"dialogue1_7","position":[1860.0,520.0]},{"commands_raw":"Vos porque te falta vivir, uno ve cosas, más acá, solo, en el medio de la nada, cosas que no tienen explicación.|willemdafoe|29","gnode_name":"dialogue1_8","id":8,"name":"dialogue1_8","position":[2040.0,520.0]}]
+[
+	{
+		"commands_raw": "¿Viste eso de ahi?|willemdafoe|21\n\n?> -> dialogue1_1",
+		"gnode_name": "start",
+		"id": 0.0,
+		"name": "start",
+		"position": [
+			560.0,
+			520.0
+		]
+	},
+	{
+		"commands_raw": "¿Dónde?|player|22\n\n?> -> dialogue1_2",
+		"gnode_name": "dialogue1_1",
+		"id": 1.0,
+		"name": "dialogue1_1",
+		"position": [
+			720.0,
+			520.0
+		]
+	},
+	{
+		"commands_raw": "Allá pendejo, ¿No lo viste?|willemdafoe|23\n\n?> -> dialogue1_3",
+		"gnode_name": "dialogue1_2",
+		"id": 2.0,
+		"name": "dialogue1_2",
+		"position": [
+			940.0,
+			520.0
+		]
+	},
+	{
+		"commands_raw": "No, pero, ¿Qué viste? ¿El dorado?|player|24\n\n?> -> dialogue1_4",
+		"gnode_name": "dialogue1_3",
+		"id": 3.0,
+		"name": "dialogue1_3",
+		"position": [
+			1140.0,
+			520.0
+		]
+	},
+	{
+		"commands_raw": "¿Vos crees en lo sobrenatural?|willemdafoe|25\n\n?> -> dialogue1_5",
+		"gnode_name": "dialogue1_4",
+		"id": 4.0,
+		"name": "dialogue1_4",
+		"position": [
+			1320.0,
+			520.0
+		]
+	},
+	{
+		"commands_raw": "Mis viejos me criaron catolico…|player|26\n\n?> -> dialogue1_6",
+		"gnode_name": "dialogue1_5",
+		"id": 5.0,
+		"name": "dialogue1_5",
+		"position": [
+			1500.0,
+			520.0
+		]
+	},
+	{
+		"commands_raw": "No pibe, criaturas sobrenaturales. El lobizón, el nahuelito, las sirenas, la luz mala.|willemdafoe|27\n\n?> -> dialogue1_7",
+		"gnode_name": "dialogue1_6",
+		"id": 6.0,
+		"name": "dialogue1_6",
+		"position": [
+			1680.0,
+			520.0
+		]
+	},
+	{
+		"commands_raw": "Y qué se yo, puede ser.|player|28\n\n?> -> dialogue1_8",
+		"gnode_name": "dialogue1_7",
+		"id": 7.0,
+		"name": "dialogue1_7",
+		"position": [
+			1860.0,
+			520.0
+		]
+	},
+	{
+		"commands_raw": "Vos porque te falta vivir, uno ve cosas, más acá, solo, en el medio de la nada, cosas que no tienen explicación.|willemdafoe|29",
+		"gnode_name": "dialogue1_8",
+		"id": 8.0,
+		"name": "dialogue1_8",
+		"position": [
+			2040.0,
+			520.0
+		]
+	}
+]

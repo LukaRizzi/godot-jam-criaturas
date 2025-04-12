@@ -27,7 +27,7 @@
 [ext_resource type="JSON" path="res://Dialogues/dialogue3YVosQueHaces.json" id="19_pn1ak"]
 [ext_resource type="Script" uid="uid://ho8ssu1n0178" path="res://Scripts/ending_sequence.gd" id="20_6tx0c"]
 [ext_resource type="JSON" path="res://Dialogues/dialogue4Bagre.json" id="20_i1svi"]
-[ext_resource type="PackedScene" uid="uid://cujughsivf6bs" path="res://3D Models/tree.blend" id="21_5j71u"]
+[ext_resource type="PackedScene" uid="uid://cujughsivf6bs" path="res://3D Models/Tree.blend" id="21_5j71u"]
 [ext_resource type="JSON" path="res://Dialogues/dialogue5PorqueYo.json" id="21_o57cg"]
 [ext_resource type="JSON" path="res://Dialogues/dialogue6Soco.json" id="22_ac58q"]
 [ext_resource type="PackedScene" uid="uid://bb8kdm1dlkvn3" path="res://3D Models/BG.blend" id="23_jyqkj"]
@@ -37,7 +37,6 @@
 [ext_resource type="JSON" path="res://Dialogues/dialogue9Tarde.json" id="25_mmptr"]
 [ext_resource type="JSON" path="res://Dialogues/dialogue10sabalo.json" id="26_6jkyd"]
 [ext_resource type="JSON" path="res://Dialogues/dialogue11.json" id="27_ntswa"]
-[ext_resource type="JSON" path="res://Dialogues/dialogue12.json" id="28_xakhq"]
 [ext_resource type="AudioStream" uid="uid://cgw7clsc4a2jf" path="res://Sounds/Voices/Voice Lines/1_bueno_pibe.ogg" id="29_npddc"]
 [ext_resource type="AudioStream" uid="uid://cuib7e4bgkeo3" path="res://Sounds/Voices/Voice Lines/2_no_es_magia.ogg" id="30_ymcl6"]
 [ext_resource type="AudioStream" uid="uid://cr4qrk1xf7oiq" path="res://Sounds/Voices/Voice Lines/3_el_pedo.ogg" id="31_yp71y"]
@@ -118,6 +117,17 @@ shader_parameter/speed = 1.0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_js7pq"]
 material = SubResource("ShaderMaterial_p1v5b")
+
+[sub_resource type="JSON" id="JSON_av2ye"]
+data = [{
+"commands_raw": "Todavia no se si nada de esto fue real, tengo el dorado gigante que lo prueba supongo pero, a quien le voy a contar esto? me van a tratar de loco, o peor, de chanta. Por lo que averigue de las leyendas, la mayup maman es la madre del rio, y es generosa, pero solo mientras seas respetuoso con sus aguas.|player|50
+
+",
+"gnode_name": "start",
+"id": 0.0,
+"name": "start",
+"position": [280.0, 240.0]
+}]
 
 [sub_resource type="Animation" id="Animation_0to5b"]
 resource_name = "Fade_out"
@@ -205,6 +215,11 @@ fishes_in_bucket = [NodePath("../Bucket/Tararera"), NodePath("../Bucket/Bagre"),
 [node name="FishingRod" parent="Camera3D" instance=ExtResource("1_c6gwx")]
 transform = Transform3D(0.112806, -0.0194365, -0.993427, 0.862922, 0.497571, 0.0882518, 0.492585, -0.867206, 0.0729011, 2.61335, -1.18776, -1.45687)
 
+[node name="Skeleton3D" parent="Camera3D/FishingRod/Armature" index="0"]
+bones/7/position = Vector3(0.00111724, 0.902129, -0.0229305)
+bones/7/rotation = Quaternion(0.0578168, -0.11601, 0.449341, 0.883907)
+bones/7/scale = Vector3(1, 1, 1)
+
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="Camera3D/FishingRod/Armature/Skeleton3D" index="1"]
 transform = Transform3D(0.569268, -0.807767, -0.153125, 0.780937, 0.589499, -0.206466, 0.257043, -0.00204685, 0.966398, 0.00111723, 15.7541, -0.0229305)
 bone_name = "Cast"
@@ -249,7 +264,7 @@ mesh = SubResource("PlaneMesh_js7pq")
 
 [node name="DialogueBox" type="Node" parent="."]
 script = ExtResource("6_p1v5b")
-dialogues = Array[JSON]([ExtResource("7_wygdx"), ExtResource("9_fv4w7"), ExtResource("19_pn1ak"), ExtResource("20_i1svi"), ExtResource("21_o57cg"), ExtResource("22_ac58q"), ExtResource("23_v1pkh"), ExtResource("24_hejkj"), ExtResource("25_mmptr"), ExtResource("26_6jkyd"), ExtResource("27_ntswa"), ExtResource("28_xakhq")])
+dialogues = Array[JSON]([ExtResource("7_wygdx"), ExtResource("9_fv4w7"), ExtResource("19_pn1ak"), ExtResource("20_i1svi"), ExtResource("21_o57cg"), ExtResource("22_ac58q"), ExtResource("23_v1pkh"), ExtResource("24_hejkj"), ExtResource("25_mmptr"), ExtResource("26_6jkyd"), ExtResource("27_ntswa"), SubResource("JSON_av2ye")])
 dialogue_voices = Array[AudioStream]([ExtResource("29_npddc"), ExtResource("30_ymcl6"), ExtResource("31_yp71y"), ExtResource("32_gpw4f"), ExtResource("33_6fgup"), ExtResource("34_d8xu2"), ExtResource("35_3k5od"), ExtResource("36_xq1iw"), ExtResource("37_oi2wb"), ExtResource("38_bvno0"), ExtResource("39_rpm7y"), ExtResource("40_dg2i1"), ExtResource("41_pn1ak"), ExtResource("42_mdca4"), ExtResource("43_7h5j5"), ExtResource("44_mjdub"), ExtResource("45_oor4l"), ExtResource("46_yfycu"), ExtResource("47_ovskc"), ExtResource("48_f366x"), ExtResource("49_7qq70"), ExtResource("50_liur3"), ExtResource("51_j6o5d"), ExtResource("52_tt81a"), ExtResource("53_74p3j"), ExtResource("54_pelt2"), ExtResource("55_k738s"), ExtResource("56_tgbay"), ExtResource("57_xsm2m"), ExtResource("58_au851"), ExtResource("59_ceqik"), ExtResource("60_o4crb"), ExtResource("61_cd3li"), ExtResource("62_08w2q"), ExtResource("63_3vo7e"), ExtResource("64_3iu3c"), ExtResource("65_2rfk5"), ExtResource("66_g6ria"), ExtResource("67_e1pfh"), ExtResource("68_0figy"), ExtResource("69_unmma"), ExtResource("70_v5idl"), ExtResource("71_vo3dn"), ExtResource("72_owyqb"), ExtResource("73_p0d1i"), ExtResource("74_wromm"), ExtResource("75_qhemt"), ExtResource("76_78tn5"), ExtResource("77_gjihl"), ExtResource("78_um2m0"), ExtResource("79_bvnna"), ExtResource("80_aktbs")])
 metadata/_custom_type_script = "uid://cr5vcyq10fcdo"
 
@@ -313,7 +328,6 @@ bones/14/rotation = Quaternion(3.30727e-07, -1.67522e-08, -1.31575e-08, 1)
 bones/14/scale = Vector3(1, 1, 1)
 bones/15/position = Vector3(0.00967506, 0.0298376, 0.0629327)
 bones/15/rotation = Quaternion(1.09114e-08, -6.08152e-08, 3.00662e-09, 1)
-bones/15/scale = Vector3(1, 1, 1)
 bones/17/position = Vector3(-0.547238, 0.873633, 0.000360738)
 bones/17/rotation = Quaternion(0.549302, -0.445344, 0.548935, 0.445652)
 bones/17/scale = Vector3(1, 1, 1)
@@ -337,7 +351,6 @@ bones/23/rotation = Quaternion(4.05541e-07, 4.43489e-07, -1.63138e-07, 1)
 bones/23/scale = Vector3(1, 1, 1)
 bones/24/position = Vector3(-0.00428868, 0.0727917, 0.0506558)
 bones/24/rotation = Quaternion(-4.06154e-08, -1.85678e-07, -4.07157e-08, 1)
-bones/24/scale = Vector3(1, 1, 1)
 bones/26/position = Vector3(0.748673, -0.365612, -0.0074059)
 bones/26/rotation = Quaternion(0.00187945, 0.0533111, 0.997956, -0.0351985)
 bones/26/scale = Vector3(0.999999, 1, 0.999998)

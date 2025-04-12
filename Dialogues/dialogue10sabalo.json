@@ -1,1 +1,82 @@
-[{"commands_raw":"Un sábalo, al final ya ni pican los dorados.|player|38\n\n?> -> dialogue1_1","gnode_name":"start","id":0,"name":"start","position":[560.0,520.0]},{"commands_raw":"Mira, te voy a decir la verdad. No hay ningún Dorado gigante.|willemdafoe|39\n\n?> -> dialogue1_2","gnode_name":"dialogue1_1","id":1,"name":"dialogue1_1","position":[720.0,520.0]},{"commands_raw":"Lo que estamos buscando, es a la Mayup Maman, una sirena de agua dulce.|willemdafoe|40\n\n?> -> dialogue1_3","gnode_name":"dialogue1_2","id":2,"name":"dialogue1_2","position":[940.0,520.0]},{"commands_raw":"Los mitos hablan de oraciones y fórmulas mágicas para atraerla, ganarte su favor.|willemdafoe|41\n\n?> -> dialogue1_4","gnode_name":"dialogue1_3","id":3,"name":"dialogue1_3","position":[1140.0,520.0]},{"commands_raw":"Pero las curanderas no me las quisieron dar, brujas de mierda.|willemdafoe|42\n\n?> -> dialogue1_5","gnode_name":"dialogue1_4","id":4,"name":"dialogue1_4","position":[1320.0,520.0]},{"commands_raw":"Yo averigue, y a la sirena  le encanta ayudar a los buenos pibes como vos, pescadores honestos, que respetan el rio.|willemdafoe|43\n\n?> -> dialogue1_6","gnode_name":"dialogue1_5","id":5,"name":"dialogue1_5","position":[1500.0,520.0]},{"commands_raw":"Y tiene un peine dorado, mágico, sabes la plata que podemos  hacer con todo esto? no vas a tener que volver a pescar en toda tu vida.|willemdafoe|44\n\n?> -> dialogue1_7","gnode_name":"dialogue1_6","id":6,"name":"dialogue1_6","position":[1680.0,520.0]},{"commands_raw":"Pero no da la cara la hija de puta. Tal vez, si te estas ahogando… si necesitas ayuda… aparece…|willemdafoe|45\n\n?> -> dialogue1_8","gnode_name":"dialogue1_7","id":7,"name":"dialogue1_7","position":[1860.0,520.0]}]
+[
+	{
+		"commands_raw": "Un sábalo, al final ya ni pican los dorados.|player|38\n\n?> -> dialogue1_1",
+		"gnode_name": "start",
+		"id": 0.0,
+		"name": "start",
+		"position": [
+			560.0,
+			520.0
+		]
+	},
+	{
+		"commands_raw": "Mira, te voy a decir la verdad. No hay ningún Dorado gigante.|willemdafoe|39\n\n?> -> dialogue1_2",
+		"gnode_name": "dialogue1_1",
+		"id": 1.0,
+		"name": "dialogue1_1",
+		"position": [
+			720.0,
+			520.0
+		]
+	},
+	{
+		"commands_raw": "Lo que estamos buscando es a la Mayup Maman, una sirena de agua dulce.|willemdafoe|40\n\n?> -> dialogue1_3",
+		"gnode_name": "dialogue1_2",
+		"id": 2.0,
+		"name": "dialogue1_2",
+		"position": [
+			940.0,
+			520.0
+		]
+	},
+	{
+		"commands_raw": "Los mitos hablan de oraciones y fórmulas mágicas para atraerla, ganarte su favor.|willemdafoe|41\n\n?> -> dialogue1_4",
+		"gnode_name": "dialogue1_3",
+		"id": 3.0,
+		"name": "dialogue1_3",
+		"position": [
+			1140.0,
+			520.0
+		]
+	},
+	{
+		"commands_raw": "Pero las curanderas no me las quisieron dar, brujas de mierda.|willemdafoe|42\n\n?> -> dialogue1_5",
+		"gnode_name": "dialogue1_4",
+		"id": 4.0,
+		"name": "dialogue1_4",
+		"position": [
+			1320.0,
+			520.0
+		]
+	},
+	{
+		"commands_raw": "Yo averigüe, y a la sirena le encanta ayudar a los buenos pibes como vos, pescadores honestos, que respetan el río.|willemdafoe|43\n\n?> -> dialogue1_6",
+		"gnode_name": "dialogue1_5",
+		"id": 5.0,
+		"name": "dialogue1_5",
+		"position": [
+			1500.0,
+			520.0
+		]
+	},
+	{
+		"commands_raw": "Y tiene un peine dorado, mágico, ¿Sabés la plata que podemos hacer con todo esto? No vas a tener que volver a pescar en toda tu vida.|willemdafoe|44\n\n?> -> dialogue1_7",
+		"gnode_name": "dialogue1_6",
+		"id": 6.0,
+		"name": "dialogue1_6",
+		"position": [
+			1680.0,
+			520.0
+		]
+	},
+	{
+		"commands_raw": "Pero no da la cara la hija de puta. Tal vez, si te estás ahogando… Si necesitas ayuda… Aparece…|willemdafoe|45\n\n?> -> dialogue1_8",
+		"gnode_name": "dialogue1_7",
+		"id": 7.0,
+		"name": "dialogue1_7",
+		"position": [
+			1860.0,
+			520.0
+		]
+	}
+]
