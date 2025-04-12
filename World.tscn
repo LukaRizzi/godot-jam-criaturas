@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://br8pkh1gfqnj0"]
+[gd_scene load_steps=39 format=3 uid="uid://br8pkh1gfqnj0"]
 
 [ext_resource type="Script" uid="uid://60j47smb1y1x" path="res://Scripts/GameManager.gd" id="1_bah7m"]
 [ext_resource type="PackedScene" uid="uid://ci3e6q6b5b7ti" path="res://3D Models/FishingRod.glb" id="1_c6gwx"]
@@ -19,6 +19,8 @@
 [ext_resource type="PackedScene" uid="uid://btooy0d5snudp" path="res://3D Models/Tararera.blend" id="12_f5c0m"]
 [ext_resource type="Material" uid="uid://c0am71trdy421" path="res://Materials/SocoReward.tres" id="12_rp4qs"]
 [ext_resource type="PackedScene" uid="uid://dytggkaf51pye" path="res://3D Models/MixamoRuiz.fbx" id="13_b2ar6"]
+[ext_resource type="PackedScene" uid="uid://c4fegab0a7fup" path="res://3D Models/Sabaco.blend" id="13_rhl3w"]
+[ext_resource type="Material" uid="uid://co5bqxdty3s7o" path="res://Materials/SabacoReward.tres" id="14_bun23"]
 [ext_resource type="PackedScene" uid="uid://btcj2tou2t05l" path="res://3D Models/BeerCan.fbx" id="14_gn8l5"]
 [ext_resource type="Script" uid="uid://dbrgef4iwdjep" path="res://Scripts/play_animation.gd" id="15_sjtuv"]
 [ext_resource type="PackedScene" uid="uid://fptie67tyvea" path="res://3D Models/Sirena fea.blend" id="16_1fphk"]
@@ -130,11 +132,15 @@ visible = false
 transform = Transform3D(0.129569, -0.310367, 0.107955, -0.282174, -0.0456154, 0.207527, -0.168404, -0.162362, -0.264667, 0.386915, 1.33147, -0.0563368)
 visible = false
 
+[node name="Sabaco" parent="Bucket" instance=ExtResource("13_rhl3w")]
+transform = Transform3D(0.365112, -0.134796, -0.157871, 0.178275, 0.039959, 0.378182, -0.106354, -0.395769, 0.0919527, -0.0920506, 0.912899, 0.0604134)
+visible = false
+
 [node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("fishes", "fishes_in_bucket")]
 transform = Transform3D(0.880146, 0, -0.474703, 0, 1, 0, 0.474703, 0, 0.880146, -4.67114, 1.18776, -1.12051)
 script = ExtResource("2_bcbcq")
-fishes = [NodePath("Tararera"), NodePath("Bagre"), NodePath("Soco")]
-fishes_in_bucket = [NodePath("../Bucket/Tararera"), NodePath("../Bucket/Bagre"), NodePath("../Bucket/Soco")]
+fishes = [NodePath("Tararera"), NodePath("Bagre"), NodePath("Soco"), NodePath("Sabaco")]
+fishes_in_bucket = [NodePath("../Bucket/Tararera"), NodePath("../Bucket/Bagre"), NodePath("../Bucket/Soco"), NodePath("../Bucket/Sabaco")]
 
 [node name="FishingRod" parent="Camera3D" instance=ExtResource("1_c6gwx")]
 transform = Transform3D(0.112806, -0.0194365, -0.993427, 0.862922, 0.497571, 0.0882518, 0.492585, -0.867206, 0.0729011, 2.61335, -1.18776, -1.45687)
@@ -165,6 +171,13 @@ visible = false
 
 [node name="Cube" parent="Camera3D/Soco" index="0"]
 surface_material_override/0 = ExtResource("12_rp4qs")
+
+[node name="Sabaco" parent="Camera3D" instance=ExtResource("13_rhl3w")]
+transform = Transform3D(-0.199727, 0.304704, 0.0221247, -1.19676e-09, 0.0264332, -0.364042, -0.305506, -0.199203, -0.0144642, 0.109216, -5.43837, -3.87807)
+visible = false
+
+[node name="Cube" parent="Camera3D/Sabaco" index="0"]
+surface_material_override/0 = ExtResource("14_bun23")
 
 [node name="FishShowcaseTimer" type="Timer" parent="Camera3D"]
 one_shot = true
@@ -568,6 +581,7 @@ transform = Transform3D(0.423346, 0.903153, 0.0713652, 2.44627e-09, 0.0787722, -
 [editable path="Camera3D/Tararera"]
 [editable path="Camera3D/Bagre"]
 [editable path="Camera3D/Soco"]
+[editable path="Camera3D/Sabaco"]
 [editable path="WillemDafoe"]
 [editable path="Sirena"]
 [editable path="Dorado"]

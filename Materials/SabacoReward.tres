@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://co5bqxdty3s7o"]
+
+[ext_resource type="Texture2D" uid="uid://c3rf0vh6u1xj5" path="res://Textures/Mullet Texture.png" id="1_l6kv4"]
+
+[resource]
+no_depth_test = true
+shading_mode = 2
+specular_mode = 2
+albedo_texture = ExtResource("1_l6kv4")
+texture_filter = 0
