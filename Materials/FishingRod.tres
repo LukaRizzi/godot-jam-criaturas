@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://b8q6a20wttm7p" path="res://Textures/Rod.png" id="1_1xdmv"]
 
 [resource]
-no_depth_test = true
 shading_mode = 2
 specular_mode = 2
 albedo_texture = ExtResource("1_1xdmv")
