@@ -25,7 +25,7 @@ func _play_current_segment():
 		2:
 			dialogue._start_next_dialogue()
 		3:
-			ending_sequence.play()
+			ending_sequence._play()
 
 func _lost_fishing_minigame():
 	dialogue.say_custom("ufa amigo no eras un pescador re capo vos? probá de nuevo, dale. asegurate que no se aleje lo suficiente tirando de la caña con el mouse.")
