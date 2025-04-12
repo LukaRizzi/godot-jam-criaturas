@@ -16,7 +16,7 @@ var is_one_shot : bool = false
 
 func _on_dialogue_generated(response: DialogueResponse) -> void:
 	var text_parts = response.text.split("|")
-	label.text = text_parts[0]
+	label.text = "[font=res://Tillana/Tillana-Bold.ttf]" + text_parts[0]
 	
 	if text_parts.size() > 1:
 		match text_parts[1]:
@@ -46,7 +46,7 @@ func _start_next_dialogue():
 func say_custom(text : String):
 	is_one_shot = true
 	var text_parts = text.split("|")
-	label.text = text_parts[0]
+	label.text = "[font=res://Tillana/Tillana-Bold.ttf]" + text_parts[0]
 	
 	if text_parts.size() > 1:
 		match text_parts[1]:

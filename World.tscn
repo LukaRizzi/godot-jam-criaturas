@@ -276,6 +276,7 @@ offset_top = 528.0
 offset_right = 1152.0
 offset_bottom = 551.0
 bbcode_enabled = true
+text = "holaasdadad"
 scroll_active = false
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
