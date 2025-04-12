@@ -269,11 +269,12 @@ dialogue_voices = Array[AudioStream]([ExtResource("29_npddc"), ExtResource("30_y
 metadata/_custom_type_script = "uid://cr5vcyq10fcdo"
 
 [node name="Label" type="RichTextLabel" parent="DialogueBox"]
+anchors_preset = -1
+anchor_bottom = 0.146605
 offset_top = 528.0
 offset_right = 1152.0
 offset_bottom = 551.0
 bbcode_enabled = true
-text = "wachin soy un diálogo"
 scroll_active = false
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
