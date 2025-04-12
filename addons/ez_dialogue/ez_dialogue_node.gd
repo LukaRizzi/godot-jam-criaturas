@@ -21,9 +21,9 @@ func _on_dialogue_generated(response: DialogueResponse) -> void:
 	if text_parts.size() > 1:
 		match text_parts[1]:
 			"player":
-				label.text = "[color=white]" + label.text + "[/color]"
+				label.text = "[color=white]" + label.text
 			"willemdafoe":
-				label.text = "[color=yellow]" + label.text + "[/color]"
+				label.text = "[color=yellow]" + label.text
 				pass
 	
 	if text_parts.size() > 2:
@@ -51,9 +51,9 @@ func say_custom(text : String):
 	if text_parts.size() > 1:
 		match text_parts[1]:
 			"player":
-				label.text = "[color=white]" + label.text + "[/color]"
+				label.text = "[color=white]" + label.text
 			"willemdafoe":
-				label.text = "[color=yellow]" + label.text + "[/color]"
+				label.text = "[color=yellow]" + label.text
 				pass
 	
 	if text_parts.size() > 2:

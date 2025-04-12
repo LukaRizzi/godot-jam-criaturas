@@ -1,4 +1,4 @@
-[gd_scene load_steps=100 format=3 uid="uid://br8pkh1gfqnj0"]
+[gd_scene load_steps=101 format=3 uid="uid://br8pkh1gfqnj0"]
 
 [ext_resource type="Script" uid="uid://60j47smb1y1x" path="res://Scripts/GameManager.gd" id="1_bah7m"]
 [ext_resource type="PackedScene" uid="uid://ci3e6q6b5b7ti" path="res://3D Models/FishingRod.glb" id="1_c6gwx"]
@@ -90,6 +90,7 @@
 [ext_resource type="AudioStream" uid="uid://buhfshljr1lc7" path="res://Sounds/Voices/Voice Lines/50_sirena_del_orto.ogg" id="79_bvnna"]
 [ext_resource type="AudioStream" uid="uid://fm3h7q8pocr6" path="res://Sounds/Voices/Voice Lines/51_todo_esto_fue_real.ogg" id="80_aktbs"]
 [ext_resource type="AudioStream" uid="uid://cxswv84d58qi0" path="res://Sounds/Voices/Voice Lines/53_dale_campeon.ogg" id="80_pn1ak"]
+[ext_resource type="AudioStream" uid="uid://nbg70ur5b31f" path="res://Sounds/amb_natural_all_loop.ogg" id="91_i1svi"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_jyqkj"]
 resource_local_to_scene = true
@@ -285,6 +286,7 @@ metadata/_edit_use_anchors_ = true
 one_shot = true
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="DialogueBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.95255, 0, 0)
 
 [node name="WillemDafoe" parent="." instance=ExtResource("13_b2ar6")]
 transform = Transform3D(-0.0170499, -0.0569348, 0.738934, -0.000713499, 0.739131, 0.0569334, -0.741124, 0.000598229, -0.0170543, -9.74711, -4.30545, -1.44654)
@@ -646,6 +648,13 @@ transform = Transform3D(-0.0964538, 0.992245, 0.078405, 3.16491e-09, 0.0787722, 
 
 [node name="BG12" parent="BGs" instance=ExtResource("23_jyqkj")]
 transform = Transform3D(0.423346, 0.903153, 0.0713652, 2.44627e-09, 0.0787722, -0.996893, -0.905968, 0.42203, 0.0333479, -806.249, 38.0153, -173.551)
+
+[node name="AmbienceSound" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.03084, 3.28789, -1.5649)
+stream = ExtResource("91_i1svi")
+volume_db = -42.0
+autoplay = true
+parameters/looping = true
 
 [connection signal="timeout" from="Camera3D/FishShowcaseTimer" to="Camera3D" method="_on_fish_showcase_timer_timeout"]
 [connection signal="dialogue_generated" from="DialogueBox" to="DialogueBox" method="_on_dialogue_generated"]
