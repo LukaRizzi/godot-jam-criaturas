@@ -1,4 +1,4 @@
-[gd_scene load_steps=99 format=3 uid="uid://br8pkh1gfqnj0"]
+[gd_scene load_steps=100 format=3 uid="uid://br8pkh1gfqnj0"]
 
 [ext_resource type="Script" uid="uid://60j47smb1y1x" path="res://Scripts/GameManager.gd" id="1_bah7m"]
 [ext_resource type="PackedScene" uid="uid://ci3e6q6b5b7ti" path="res://3D Models/FishingRod.glb" id="1_c6gwx"]
@@ -89,6 +89,7 @@
 [ext_resource type="AudioStream" uid="uid://0e6mqsgxdou0" path="res://Sounds/Voices/Voice Lines/49_deseo.ogg" id="78_um2m0"]
 [ext_resource type="AudioStream" uid="uid://buhfshljr1lc7" path="res://Sounds/Voices/Voice Lines/50_sirena_del_orto.ogg" id="79_bvnna"]
 [ext_resource type="AudioStream" uid="uid://fm3h7q8pocr6" path="res://Sounds/Voices/Voice Lines/51_todo_esto_fue_real.ogg" id="80_aktbs"]
+[ext_resource type="AudioStream" uid="uid://cxswv84d58qi0" path="res://Sounds/Voices/Voice Lines/53_dale_campeon.ogg" id="80_pn1ak"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_jyqkj"]
 resource_local_to_scene = true
@@ -265,7 +266,7 @@ mesh = SubResource("PlaneMesh_js7pq")
 [node name="DialogueBox" type="Node" parent="."]
 script = ExtResource("6_p1v5b")
 dialogues = Array[JSON]([ExtResource("7_wygdx"), ExtResource("9_fv4w7"), ExtResource("19_pn1ak"), ExtResource("20_i1svi"), ExtResource("21_o57cg"), ExtResource("22_ac58q"), ExtResource("23_v1pkh"), ExtResource("24_hejkj"), ExtResource("25_mmptr"), ExtResource("26_6jkyd"), ExtResource("27_ntswa"), SubResource("JSON_av2ye")])
-dialogue_voices = Array[AudioStream]([ExtResource("29_npddc"), ExtResource("30_ymcl6"), ExtResource("31_yp71y"), ExtResource("32_gpw4f"), ExtResource("33_6fgup"), ExtResource("34_d8xu2"), ExtResource("35_3k5od"), ExtResource("36_xq1iw"), ExtResource("37_oi2wb"), ExtResource("38_bvno0"), ExtResource("39_rpm7y"), ExtResource("40_dg2i1"), ExtResource("41_pn1ak"), ExtResource("42_mdca4"), ExtResource("43_7h5j5"), ExtResource("44_mjdub"), ExtResource("45_oor4l"), ExtResource("46_yfycu"), ExtResource("47_ovskc"), ExtResource("48_f366x"), ExtResource("49_7qq70"), ExtResource("50_liur3"), ExtResource("51_j6o5d"), ExtResource("52_tt81a"), ExtResource("53_74p3j"), ExtResource("54_pelt2"), ExtResource("55_k738s"), ExtResource("56_tgbay"), ExtResource("57_xsm2m"), ExtResource("58_au851"), ExtResource("59_ceqik"), ExtResource("60_o4crb"), ExtResource("61_cd3li"), ExtResource("62_08w2q"), ExtResource("63_3vo7e"), ExtResource("64_3iu3c"), ExtResource("65_2rfk5"), ExtResource("66_g6ria"), ExtResource("67_e1pfh"), ExtResource("68_0figy"), ExtResource("69_unmma"), ExtResource("70_v5idl"), ExtResource("71_vo3dn"), ExtResource("72_owyqb"), ExtResource("73_p0d1i"), ExtResource("74_wromm"), ExtResource("75_qhemt"), ExtResource("76_78tn5"), ExtResource("77_gjihl"), ExtResource("78_um2m0"), ExtResource("79_bvnna"), ExtResource("80_aktbs")])
+dialogue_voices = Array[AudioStream]([ExtResource("29_npddc"), ExtResource("30_ymcl6"), ExtResource("31_yp71y"), ExtResource("32_gpw4f"), ExtResource("33_6fgup"), ExtResource("34_d8xu2"), ExtResource("35_3k5od"), ExtResource("36_xq1iw"), ExtResource("37_oi2wb"), ExtResource("38_bvno0"), ExtResource("39_rpm7y"), ExtResource("40_dg2i1"), ExtResource("41_pn1ak"), ExtResource("42_mdca4"), ExtResource("43_7h5j5"), ExtResource("44_mjdub"), ExtResource("45_oor4l"), ExtResource("46_yfycu"), ExtResource("47_ovskc"), ExtResource("48_f366x"), ExtResource("49_7qq70"), ExtResource("50_liur3"), ExtResource("51_j6o5d"), ExtResource("52_tt81a"), ExtResource("53_74p3j"), ExtResource("54_pelt2"), ExtResource("55_k738s"), ExtResource("56_tgbay"), ExtResource("57_xsm2m"), ExtResource("58_au851"), ExtResource("59_ceqik"), ExtResource("60_o4crb"), ExtResource("61_cd3li"), ExtResource("62_08w2q"), ExtResource("63_3vo7e"), ExtResource("64_3iu3c"), ExtResource("65_2rfk5"), ExtResource("66_g6ria"), ExtResource("67_e1pfh"), ExtResource("68_0figy"), ExtResource("69_unmma"), ExtResource("70_v5idl"), ExtResource("71_vo3dn"), ExtResource("72_owyqb"), ExtResource("73_p0d1i"), ExtResource("74_wromm"), ExtResource("75_qhemt"), ExtResource("76_78tn5"), ExtResource("77_gjihl"), ExtResource("78_um2m0"), ExtResource("79_bvnna"), ExtResource("80_aktbs"), ExtResource("80_pn1ak")])
 metadata/_custom_type_script = "uid://cr5vcyq10fcdo"
 
 [node name="Label" type="RichTextLabel" parent="DialogueBox"]

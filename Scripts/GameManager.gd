@@ -58,4 +58,4 @@ func _play_current_segment():
 			ending_sequence._play(0)
 
 func _lost_fishing_minigame():
-	dialogue.say_custom("Dale, campeón, mirá si justo era el Dorado gigante y se te escapo. Tira de vuelta, y asegurate que no se aleje lo suficiente tirando de la caña [color=SILVED]con el mouse[/color]")
+	dialogue.say_custom("Dale, campeón, mirá si justo era el Dorado gigante y se te escapo. Tira de vuelta, y asegurate que no se aleje lo suficiente tirando de la caña [color=SILVER]con el mouse[/color]|willemdafoe|52")
