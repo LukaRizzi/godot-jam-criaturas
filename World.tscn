@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://br8pkh1gfqnj0"]
+[gd_scene load_steps=35 format=3 uid="uid://br8pkh1gfqnj0"]
 
 [ext_resource type="Script" uid="uid://60j47smb1y1x" path="res://Scripts/GameManager.gd" id="1_bah7m"]
 [ext_resource type="PackedScene" uid="uid://ci3e6q6b5b7ti" path="res://3D Models/FishingRod.glb" id="1_c6gwx"]
@@ -12,6 +12,7 @@
 [ext_resource type="Material" uid="uid://bxr4x7gdv7pyq" path="res://Materials/TarareraReward.tres" id="7_cvq6i"]
 [ext_resource type="JSON" path="res://Dialogues/dialogue1.json" id="7_wygdx"]
 [ext_resource type="JSON" path="res://Dialogues/dialogue2.json" id="9_fv4w7"]
+[ext_resource type="Material" uid="uid://bg544av40bqex" path="res://Materials/BagreReward.tres" id="10_d7dfr"]
 [ext_resource type="AudioStream" uid="uid://bdxy1fgwo05xj" path="res://Sounds/Rule of Rose turn page.mp3" id="10_kva58"]
 [ext_resource type="AudioStream" uid="uid://b7sn2gta6jygw" path="res://Sounds/sad-violin-150146.mp3" id="11_f5c0m"]
 [ext_resource type="PackedScene" uid="uid://btooy0d5snudp" path="res://3D Models/Tararera.blend" id="12_f5c0m"]
@@ -24,6 +25,7 @@
 [ext_resource type="Script" uid="uid://ho8ssu1n0178" path="res://Scripts/ending_sequence.gd" id="20_6tx0c"]
 [ext_resource type="PackedScene" uid="uid://cujughsivf6bs" path="res://3D Models/Tree.blend" id="21_5j71u"]
 [ext_resource type="PackedScene" uid="uid://bb8kdm1dlkvn3" path="res://3D Models/BG.blend" id="23_jyqkj"]
+[ext_resource type="PackedScene" uid="uid://dr4afbsk8tlpl" path="res://3D Models/Bagre.blend" id="25_aj1ai"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_jyqkj"]
 resource_local_to_scene = true
@@ -118,11 +120,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.56466, -4.88054, 1.19844)
 transform = Transform3D(-0.439603, 0.0949681, 0.218473, -0.229838, -0.0485006, -0.441387, -0.062643, -0.488497, 0.0862965, -0.23265, 1.46717, -0.234061)
 visible = false
 
+[node name="Bagre" parent="Bucket" instance=ExtResource("25_aj1ai")]
+transform = Transform3D(-0.0803316, -0.524786, 0, -0.236778, 0.0362448, 0.473789, -0.468334, 0.0716902, -0.239536, -0.124902, 0.856861, -0.272956)
+visible = false
+
 [node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("fishes", "fishes_in_bucket")]
 transform = Transform3D(0.880146, 0, -0.474703, 0, 1, 0, 0.474703, 0, 0.880146, -4.67114, 1.18776, -1.12051)
 script = ExtResource("2_bcbcq")
-fishes = [NodePath("Tararera")]
-fishes_in_bucket = [NodePath("../Bucket/Tararera")]
+fishes = [NodePath("Tararera"), null]
+fishes_in_bucket = [NodePath("../Bucket/Tararera"), null]
 
 [node name="FishingRod" parent="Camera3D" instance=ExtResource("1_c6gwx")]
 transform = Transform3D(0.112806, -0.0194365, -0.993427, 0.862922, 0.497571, 0.0882518, 0.492585, -0.867206, 0.0729011, 2.61335, -1.18776, -1.45687)
@@ -139,6 +145,13 @@ visible = false
 
 [node name="Cube" parent="Camera3D/Tararera" index="0"]
 surface_material_override/0 = ExtResource("7_cvq6i")
+
+[node name="Bagre" parent="Camera3D" instance=ExtResource("25_aj1ai")]
+transform = Transform3D(-0.0460198, -0.695563, 0.0638243, 0.118732, -0.0708218, -0.686212, 0.68832, -0.0342878, 0.122635, 0.167, -5.48493, -3.722)
+visible = false
+
+[node name="Cube" parent="Camera3D/Bagre" index="0"]
+surface_material_override/0 = ExtResource("10_d7dfr")
 
 [node name="FishShowcaseTimer" type="Timer" parent="Camera3D"]
 one_shot = true
@@ -540,6 +553,7 @@ transform = Transform3D(0.423346, 0.903153, 0.0713652, 2.44627e-09, 0.0787722, -
 
 [editable path="Camera3D/FishingRod"]
 [editable path="Camera3D/Tararera"]
+[editable path="Camera3D/Bagre"]
 [editable path="WillemDafoe"]
 [editable path="Sirena"]
 [editable path="Dorado"]

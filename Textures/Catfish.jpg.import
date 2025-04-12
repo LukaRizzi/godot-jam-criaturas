@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cb2o44lbaasam"
-path.s3tc="res://.godot/imported/BG.png-3f1f25a3a859d8c3970efae1c5c8f6ab.s3tc.ctex"
+uid="uid://bfekl5o5jddlr"
+path.s3tc="res://.godot/imported/Catfish.jpg-a9514462021a8bf36affcb561e00ecbe.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Textures/BG.png"
-dest_files=["res://.godot/imported/BG.png-3f1f25a3a859d8c3970efae1c5c8f6ab.s3tc.ctex"]
+source_file="res://Textures/Catfish.jpg"
+dest_files=["res://.godot/imported/Catfish.jpg-a9514462021a8bf36affcb561e00ecbe.s3tc.ctex"]
 
 [params]
 
