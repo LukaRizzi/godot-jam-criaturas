@@ -6,6 +6,7 @@ class_name GameManager extends Node3D
 @onready var sirena_fea: PlayAnimation = $"Sirena fea"
 @onready var sirena: PlayAnimation = $Sirena
 @onready var ending_sequence: EndingSequence = $EndingSequence
+@onready var beer_can_in_hand: Node3D = $WillemDafoe/BeerCanInHand
 
 var game_state : int = 0
 
@@ -18,6 +19,7 @@ func _ended_segment():
 	_play_current_segment()
 
 func _play_current_segment():
+	game_state = 3 #SACAR ESTO AL FINAL
 	match game_state:
 		1:
 			fishingManager.can_fish = true
@@ -25,6 +27,7 @@ func _play_current_segment():
 		2:
 			dialogue._start_next_dialogue()
 		3: #sequencia final
+			beer_can_in_hand.visible = false
 			fishingManager.can_fish = true
 			fishingManager.current_fish = -1
 			sirena.visible = true

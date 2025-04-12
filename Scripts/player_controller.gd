@@ -99,8 +99,8 @@ func _process(delta):
 				if current_fish == -1: #Setup Mermaid
 					fishing_timer = 0
 					fish_position = Vector3(-4, -4.4, -21.5) #-12.5 Y
-					yaw = -.07
-					pitch = -.3
+					yaw = .29
+					pitch = -.28
 					rotation.y = yaw
 					rotation.x = pitch
 	mouse_movement_x = 0
@@ -124,7 +124,7 @@ func _on_fish_showcase_timer_timeout() -> void:
 
 func do_mermaid_sequence(delta):
 	var dist = global_position.distance_to(fish_position)
-	if dist < 7.6:
+	if dist < 8.3:
 		fishing_timer -= delta
 		if fishing_timer <= 0:
 			fishing = false
@@ -135,7 +135,7 @@ func do_mermaid_sequence(delta):
 			fish_showcase_timer.start(3)
 			return
 	
-	var forward_vec = -global_transform.basis.z
+	var forward_vec = fish_position - Vector3(-7.283, -6.638, -6.622)
 	forward_vec.y = 0
 	forward_vec = forward_vec.normalized()
 	
