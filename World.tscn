@@ -146,6 +146,7 @@ bones/3/rotation = Quaternion(-1.62979e-09, 0, 0, 1)
 bones/3/scale = Vector3(1, 1, 1)
 bones/4/position = Vector3(0, 0.987063, 4.91754e-09)
 bones/4/rotation = Quaternion(-0.0028985, 0, 0, 0.999996)
+bones/4/scale = Vector3(1, 1, 1)
 bones/5/position = Vector3(1.19209e-09, 0.402429, -0.00210829)
 bones/5/rotation = Quaternion(8.60267e-11, 0, 0, 1)
 bones/5/scale = Vector3(1, 1, 1)
@@ -153,6 +154,7 @@ bones/6/position = Vector3(1.73472e-18, 1.81312, -0.0094988)
 bones/6/rotation = Quaternion(0, 0, 0, 1)
 bones/8/position = Vector3(0.547238, 0.873637, 0.000954369)
 bones/8/rotation = Quaternion(0.549598, 0.445105, -0.548636, 0.445894)
+bones/8/scale = Vector3(1, 1, 1)
 bones/9/position = Vector3(-4.64373e-10, 1.12238, -1.1148e-06)
 bones/9/rotation = Quaternion(-0.0410896, 0.00035636, -0.00866586, 0.999118)
 bones/9/scale = Vector3(1, 1, 1)
@@ -241,11 +243,6 @@ transform = Transform3D(-0.711147, -0.644079, -0.948197, 0.0287926, 1.10547, -0.
 [node name="BeerCan" parent="." instance=ExtResource("14_gn8l5")]
 transform = Transform3D(0.999999, 1.49012e-08, -2.23517e-08, 0, 0.999998, -4.65661e-10, 1.86265e-09, 0, 0.999998, -7.47264, -4.96045, -1.43381)
 
-[node name="Sirena fea" parent="." instance=ExtResource("16_1fphk")]
-transform = Transform3D(0.7976, 0, -0.0619181, 0, 0.8, 0, 0.0619181, 0, 0.7976, -5.87073, -6.81951, -6.17666)
-visible = false
-script = ExtResource("15_sjtuv")
-
 [node name="Sirena" parent="." instance=ExtResource("16_6w02q")]
 transform = Transform3D(0.798039, 0, 0.0559862, 0, 0.8, 0, -0.0559862, 0, 0.798039, -7.28257, -14.8971, -6.62203)
 script = ExtResource("15_sjtuv")
@@ -253,10 +250,27 @@ script = ExtResource("15_sjtuv")
 [node name="AnimationPlayer" parent="Sirena" index="1"]
 reset_on_save = false
 
+[node name="Sirena fea" parent="." instance=ExtResource("16_1fphk")]
+transform = Transform3D(0.7976, 0, -0.0619181, 0, 0.8, 0, 0.0619181, 0, 0.7976, -5.87073, -6.81951, -6.17666)
+visible = false
+script = ExtResource("15_sjtuv")
+
+[node name="Skeleton3D" parent="Sirena fea/Armature" index="0"]
+bones/1/rotation = Quaternion(0.109817, 1.18488e-07, 1.30912e-08, 0.993952)
+bones/2/rotation = Quaternion(0.0580374, 8.45194e-15, 1.38372e-08, 0.998314)
+bones/4/rotation = Quaternion(-7.45058e-09, 1.33227e-15, -1.33227e-15, 1)
+bones/5/rotation = Quaternion(-5.06894e-09, -4.22741e-08, -0.975147, 0.221559)
+bones/8/rotation = Quaternion(-3.21962e-07, 1.11297e-08, 0.96131, 0.275468)
+bones/11/rotation = Quaternion(0.996656, 0.0139381, 8.71444e-07, 0.0805189)
+bones/12/rotation = Quaternion(0.0805192, 7.07792e-08, 0.013938, 0.996656)
+bones/13/rotation = Quaternion(0.996656, 0.013938, 2.77088e-07, 0.0805186)
+bones/14/rotation = Quaternion(0.0805186, 6.26426e-08, 0.013938, 0.996656)
+
 [node name="EndingSequence" type="Node" parent="."]
 script = ExtResource("20_6tx0c")
 
 [node name="Timer" type="Timer" parent="EndingSequence"]
+one_shot = true
 
 [connection signal="timeout" from="Camera3D/FishShowcaseTimer" to="Camera3D" method="_on_fish_showcase_timer_timeout"]
 [connection signal="dialogue_generated" from="DialogueBox" to="DialogueBox" method="_on_dialogue_generated"]
@@ -267,5 +281,5 @@ script = ExtResource("20_6tx0c")
 [editable path="Camera3D/FishingRod"]
 [editable path="Camera3D/Tararera"]
 [editable path="WillemDafoe"]
-[editable path="Sirena fea"]
 [editable path="Sirena"]
+[editable path="Sirena fea"]

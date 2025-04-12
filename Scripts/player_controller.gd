@@ -121,6 +121,7 @@ func _on_fish_showcase_timer_timeout() -> void:
 	fishes_in_bucket[current_fish].visible = true
 
 @onready var sirena: PlayAnimation = $"../Sirena"
+@onready var sirena_fea: PlayAnimation = $"../Sirena fea"
 
 func do_mermaid_sequence(delta):
 	var dist = global_position.distance_to(fish_position)
@@ -130,6 +131,10 @@ func do_mermaid_sequence(delta):
 			fishing = false
 			fish_indicator.visible = false
 			can_fish = false
+			sirena_fea.global_position = sirena.global_position + global_transform.basis.z * .2 + Vector3(.2, 0, 0)
+			sirena_fea.visible = true
+			sirena_fea.play_animation("Move")
+			sirena_fea.animation_player.seek(sirena.animation_player.current_animation_position, true)
 			game_manager._ended_segment()
 			return
 	
