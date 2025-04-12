@@ -1,4 +1,4 @@
-[gd_scene load_steps=101 format=3 uid="uid://br8pkh1gfqnj0"]
+[gd_scene load_steps=102 format=3 uid="uid://br8pkh1gfqnj0"]
 
 [ext_resource type="Script" uid="uid://60j47smb1y1x" path="res://Scripts/GameManager.gd" id="1_bah7m"]
 [ext_resource type="PackedScene" uid="uid://ci3e6q6b5b7ti" path="res://3D Models/FishingRod.glb" id="1_c6gwx"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://c4fegab0a7fup" path="res://3D Models/Sabaco.blend" id="13_rhl3w"]
 [ext_resource type="Material" uid="uid://co5bqxdty3s7o" path="res://Materials/SabacoReward.tres" id="14_bun23"]
 [ext_resource type="PackedScene" uid="uid://btcj2tou2t05l" path="res://3D Models/BeerCan.fbx" id="14_gn8l5"]
+[ext_resource type="AudioStream" uid="uid://q1piouk0mr4d" path="res://Sounds/catch_pullOut_1.ogg" id="15_o57cg"]
 [ext_resource type="Script" uid="uid://dbrgef4iwdjep" path="res://Scripts/play_animation.gd" id="15_sjtuv"]
 [ext_resource type="PackedScene" uid="uid://fptie67tyvea" path="res://3D Models/Sirena fea.blend" id="16_1fphk"]
 [ext_resource type="PackedScene" uid="uid://bjulrdymsjnnu" path="res://3D Models/Sirena.blend" id="16_6w02q"]
@@ -258,6 +259,11 @@ surface_material_override/0 = ExtResource("14_bun23")
 
 [node name="FishShowcaseTimer" type="Timer" parent="Camera3D"]
 one_shot = true
+
+[node name="ReelSound" type="AudioStreamPlayer3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.565211, 1.13346, -4.90671)
+stream = ExtResource("15_o57cg")
+volume_db = -18.0
 
 [node name="FishIndicator" type="MeshInstance3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 3.87181, -4.92706, -9.59418)

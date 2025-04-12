@@ -4,13 +4,14 @@ class_name FishingManager extends Camera3D
 @export var fishes : Array[Node3D]
 @export var fishes_in_bucket : Array[Node3D]
 
+@onready var reel_sound: AudioStreamPlayer3D = $ReelSound
 @onready var fish_showcase_timer: Timer = $FishShowcaseTimer
 @onready var game_manager: GameManager = $".."
 @onready var fish_indicator: MeshInstance3D = $"../FishIndicator"
 @onready var bone : BoneAttachment3D = $FishingRod/Armature/Skeleton3D/BoneAttachment3D
 @onready var skeleton_3d: Skeleton3D = $FishingRod/Armature/Skeleton3D
-var cast_idx: int
 
+var cast_idx: int
 var ogPos : Vector3 = Vector3.ZERO
 var yaw: float = 0.0
 var pitch: float = 0.0
@@ -53,6 +54,7 @@ func _process(delta):
 			if dist < 13:
 				fishing_timer -= delta
 				if fishing_timer <= 0:
+					reel_sound.play()
 					fishing = false
 					fish_indicator.visible = false
 					can_fish = false
