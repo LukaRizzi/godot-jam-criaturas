@@ -16,7 +16,6 @@ func _ready() -> void:
 
 func _ended_segment():
 	game_state += 1
-	game_state = max(game_state, 3) # SACAR ESTO AL FINAL
 	_play_current_segment()
 
 func _play_current_segment():
@@ -30,12 +29,12 @@ func _play_current_segment():
 			dialogue._start_next_dialogue()
 		4:
 			fishingManager.can_fish = true
-			fishingManager.current_fish = 0
+			fishingManager.current_fish = 1
 		5:
 			dialogue._start_next_dialogue()
 		6:
 			fishingManager.can_fish = true
-			fishingManager.current_fish = 0
+			fishingManager.current_fish = 2
 		7:
 			dialogue._start_next_dialogue()
 		8:
@@ -46,7 +45,7 @@ func _play_current_segment():
 			dialogue._start_next_dialogue()
 		11:
 			fishingManager.can_fish = true
-			fishingManager.current_fish = 0	
+			fishingManager.current_fish = 3
 		12:
 			dialogue._start_next_dialogue()
 		13: #sequencia final
@@ -54,7 +53,7 @@ func _play_current_segment():
 			fishingManager.can_fish = true
 			fishingManager.current_fish = -1
 			sirena.visible = true
-			sirena.play_animation("Move")			
+			sirena.play_animation("Move")
 		14:
 			ending_sequence._play(0)
 
