@@ -13,10 +13,10 @@ func _play(value : int):
 		0:
 			willem_dafoe.play_animation("Armature|GrabHeirloom")
 			timer_id = 1
-			timer.start(1.2)
+			timer.start(.9)
 		1:
 			timer_id = 2
-			timer.start(.5)
+			timer.start(.6)
 			peine_dorado.visible = true
 			peine_feo.visible = true
 		2:
@@ -30,7 +30,7 @@ var opacity : float = 0
 
 func _process(delta: float) -> void:
 	if lerp_alpha:
-		opacity = min(1, opacity + delta * .3)
+		opacity = min(1, opacity + delta * .5)
 		_material1.albedo_color.a = lerp(1, 0, opacity)
 		_material2.albedo_color.a = lerp(0, 1, opacity)
 		pass
