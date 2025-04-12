@@ -7,8 +7,10 @@ class_name GameManager extends Node3D
 @onready var sirena: PlayAnimation = $Sirena
 @onready var ending_sequence: EndingSequence = $EndingSequence
 @onready var beer_can_in_hand: Node3D = $WillemDafoe/BeerCanInHand
+@onready var sky_light: DirectionalLight3D = $SkyLight
 
 var game_state : int = 0
+var darken : bool = false
 
 func _ready() -> void:
 	dialogue._start_next_dialogue()
@@ -47,6 +49,7 @@ func _play_current_segment():
 		11:
 			dialogue._start_next_dialogue()
 		12:
+			darken = true
 			dialogue._start_next_dialogue()
 		13: #sequencia final
 			beer_can_in_hand.visible = false
@@ -56,6 +59,12 @@ func _play_current_segment():
 			sirena.play_animation("Move")
 		14:
 			ending_sequence._play(0)
+
+func _process(delta: float) -> void:
+	if darken:
+		sky_light.light_energy = lerp(sky_light.light_energy, 1.4, delta * 2)
+		if sky_light.light_energy < 1.4:
+			darken = false
 
 func _lost_fishing_minigame():
 	dialogue.say_custom("Dale, campeón, mirá si justo era el Dorado gigante y se te escapó. Tira de vuelta, y asegurate que no se aleje lo suficiente tirando de la caña [color=SILVER]con el mouse[/color]|willemdafoe|52")

@@ -177,7 +177,7 @@ environment = SubResource("Environment_bcbcq")
 [node name="SkyLight" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.446993, 0.764327, 0.46476, 0.354111, -0.325922, 0.876573, 0.821464, 0.556398, -0.124972, 0.43452, 8.45118, -0.194522)
 light_color = Color(0.979857, 0.859848, 0.731772, 1)
-light_energy = 1.496
+light_energy = 3.0
 sky_mode = 1
 
 [node name="SecondaryLight" type="OmniLight3D" parent="."]
