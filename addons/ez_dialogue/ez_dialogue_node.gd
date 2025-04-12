@@ -40,11 +40,8 @@ func _on_dialogue_generated(response: DialogueResponse) -> void:
 	else:
 		current_dialogue += 1
 		game_manager._ended_segment()
-		audio_player.stop()
 
 func _on_timer_timeout() -> void:
-	print("timeout")
-	timer.stop()
 	next()
 
 func _start_next_dialogue():
