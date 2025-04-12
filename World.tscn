@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://br8pkh1gfqnj0"]
+[gd_scene load_steps=25 format=3 uid="uid://br8pkh1gfqnj0"]
 
 [ext_resource type="Script" uid="uid://60j47smb1y1x" path="res://Scripts/GameManager.gd" id="1_bah7m"]
 [ext_resource type="PackedScene" uid="uid://ci3e6q6b5b7ti" path="res://3D Models/FishingRod.glb" id="1_c6gwx"]
@@ -8,6 +8,7 @@
 [ext_resource type="Shader" uid="uid://iitmsoygnfo8" path="res://Scripts/FishIndicator.gdshader" id="5_eu7l1"]
 [ext_resource type="PackedScene" uid="uid://bvruxstrj41yk" path="res://3D Models/Bucket.glb" id="6_ee7l0"]
 [ext_resource type="Script" uid="uid://cr5vcyq10fcdo" path="res://addons/ez_dialogue/ez_dialogue_node.gd" id="6_p1v5b"]
+[ext_resource type="Material" uid="uid://bxr4x7gdv7pyq" path="res://Materials/TarareraReward.tres" id="7_cvq6i"]
 [ext_resource type="JSON" path="res://Dialogues/dialogue1.json" id="7_wygdx"]
 [ext_resource type="JSON" path="res://Dialogues/dialogue2.json" id="9_fv4w7"]
 [ext_resource type="AudioStream" uid="uid://bdxy1fgwo05xj" path="res://Sounds/Rule of Rose turn page.mp3" id="10_kva58"]
@@ -92,6 +93,9 @@ override_pose = true
 [node name="Tararera" parent="Camera3D" instance=ExtResource("12_f5c0m")]
 transform = Transform3D(-0.0329454, -0.496755, -0.0463578, 0.0549056, 0.0425665, -0.49515, 0.495883, -0.0377165, 0.0517445, 0.167, -5.69988, -3.722)
 visible = false
+
+[node name="Cube" parent="Camera3D/Tararera" index="0"]
+surface_material_override/0 = ExtResource("7_cvq6i")
 
 [node name="FishShowcaseTimer" type="Timer" parent="Camera3D"]
 one_shot = true
@@ -256,6 +260,7 @@ reset_on_save = false
 [connection signal="timeout" from="DialogueBox/AdvanceDialogueTimer" to="DialogueBox" method="_on_timer_timeout"]
 
 [editable path="Camera3D/FishingRod"]
+[editable path="Camera3D/Tararera"]
 [editable path="WillemDafoe"]
 [editable path="Sirena fea"]
 [editable path="Sirena"]
