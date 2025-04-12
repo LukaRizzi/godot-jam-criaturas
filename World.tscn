@@ -84,6 +84,11 @@ fishes_in_bucket = [NodePath("../Bucket/Tararera")]
 [node name="FishingRod" parent="Camera3D" instance=ExtResource("1_c6gwx")]
 transform = Transform3D(0.112806, -0.0194365, -0.993427, 0.862922, 0.497571, 0.0882518, 0.492585, -0.867206, 0.0729011, 2.61335, -1.18776, -1.45687)
 
+[node name="Skeleton3D" parent="Camera3D/FishingRod/Armature" index="0"]
+bones/7/position = Vector3(0.00111724, 0.902129, -0.0229305)
+bones/7/rotation = Quaternion(0.0578168, -0.11601, 0.449341, 0.883907)
+bones/7/scale = Vector3(1, 1, 1)
+
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="Camera3D/FishingRod/Armature/Skeleton3D" index="1"]
 transform = Transform3D(0.569268, -0.807767, -0.153125, 0.780937, 0.589499, -0.206466, 0.257043, -0.00204685, 0.966398, 0.00111723, 15.7541, -0.0229305)
 bone_name = "Cast"
@@ -174,7 +179,6 @@ bones/14/rotation = Quaternion(3.30727e-07, -1.67522e-08, -1.31575e-08, 1)
 bones/14/scale = Vector3(1, 1, 1)
 bones/15/position = Vector3(0.00967506, 0.0298376, 0.0629327)
 bones/15/rotation = Quaternion(1.09114e-08, -6.08152e-08, 3.00662e-09, 1)
-bones/15/scale = Vector3(1, 1, 1)
 bones/17/position = Vector3(-0.547238, 0.873633, 0.000360738)
 bones/17/rotation = Quaternion(0.549302, -0.445344, 0.548935, 0.445652)
 bones/17/scale = Vector3(1, 1, 1)
@@ -198,7 +202,6 @@ bones/23/rotation = Quaternion(4.05541e-07, 4.43489e-07, -1.63138e-07, 1)
 bones/23/scale = Vector3(1, 1, 1)
 bones/24/position = Vector3(-0.00428868, 0.0727917, 0.0506558)
 bones/24/rotation = Quaternion(-4.06154e-08, -1.85678e-07, -4.07157e-08, 1)
-bones/24/scale = Vector3(1, 1, 1)
 bones/26/position = Vector3(0.748673, -0.365612, -0.0074059)
 bones/26/rotation = Quaternion(0.00187945, 0.0533111, 0.997956, -0.0351985)
 bones/26/scale = Vector3(0.999999, 1, 0.999998)
