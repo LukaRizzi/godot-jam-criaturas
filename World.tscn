@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://br8pkh1gfqnj0"]
+[gd_scene load_steps=30 format=3 uid="uid://br8pkh1gfqnj0"]
 
 [ext_resource type="Script" uid="uid://60j47smb1y1x" path="res://Scripts/GameManager.gd" id="1_bah7m"]
 [ext_resource type="PackedScene" uid="uid://ci3e6q6b5b7ti" path="res://3D Models/FishingRod.glb" id="1_c6gwx"]
@@ -19,6 +19,7 @@
 [ext_resource type="Script" uid="uid://dbrgef4iwdjep" path="res://Scripts/play_animation.gd" id="15_sjtuv"]
 [ext_resource type="PackedScene" uid="uid://fptie67tyvea" path="res://3D Models/Sirena fea.blend" id="16_1fphk"]
 [ext_resource type="PackedScene" uid="uid://bjulrdymsjnnu" path="res://3D Models/Sirena.blend" id="16_6w02q"]
+[ext_resource type="PackedScene" uid="uid://kwwio3ea8qvy" path="res://3D Models/Dorado.blend" id="19_0to5b"]
 [ext_resource type="Script" uid="uid://ho8ssu1n0178" path="res://Scripts/ending_sequence.gd" id="20_6tx0c"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_c6gwx"]
@@ -47,6 +48,43 @@ shader_parameter/speed = 1.0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_js7pq"]
 material = SubResource("ShaderMaterial_p1v5b")
+
+[sub_resource type="Animation" id="Animation_0to5b"]
+resource_name = "Fade_out"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_5j71u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jyqkj"]
+_data = {
+&"Fade_out": SubResource("Animation_0to5b"),
+&"RESET": SubResource("Animation_5j71u")
+}
 
 [node name="World" type="Node3D"]
 script = ExtResource("1_bah7m")
@@ -250,6 +288,9 @@ script = ExtResource("15_sjtuv")
 [node name="AnimationPlayer" parent="Sirena" index="1"]
 reset_on_save = false
 
+[node name="Dorado" parent="." instance=ExtResource("19_0to5b")]
+transform = Transform3D(-0.0444566, -0.920764, 0.387578, -0.997122, 0.0647493, 0.0394509, -0.0614205, -0.384709, -0.920992, -9.44593, -2.29991, -0.54836)
+
 [node name="Sirena fea" parent="." instance=ExtResource("16_1fphk")]
 transform = Transform3D(0.7976, 0, -0.0619181, 0, 0.8, 0, 0.0619181, 0, 0.7976, -5.87073, -6.81951, -6.17666)
 visible = false
@@ -265,6 +306,22 @@ bones/11/rotation = Quaternion(0.996656, 0.0139381, 8.71444e-07, 0.0805189)
 bones/12/rotation = Quaternion(0.0805192, 7.07792e-08, 0.013938, 0.996656)
 bones/13/rotation = Quaternion(0.996656, 0.013938, 2.77088e-07, 0.0805186)
 bones/14/rotation = Quaternion(0.0805186, 6.26426e-08, 0.013938, 0.996656)
+
+[node name="FadeOut" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="FadeOut"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="FadeOut"]
+libraries = {
+&"": SubResource("AnimationLibrary_jyqkj")
+}
 
 [node name="EndingSequence" type="Node" parent="."]
 script = ExtResource("20_6tx0c")
@@ -282,4 +339,5 @@ one_shot = true
 [editable path="Camera3D/Tararera"]
 [editable path="WillemDafoe"]
 [editable path="Sirena"]
+[editable path="Dorado"]
 [editable path="Sirena fea"]

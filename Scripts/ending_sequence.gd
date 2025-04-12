@@ -11,6 +11,7 @@ class_name EndingSequence extends Node
 
 var timer_id : int = 0
 var lerp_alpha : bool = false
+var lerp_dorado : bool = false
 
 func _play(value : int):
 	match value:
@@ -30,14 +31,33 @@ func _play(value : int):
 			_material3 = sirena_mesh.get_active_material(0)
 			_material4 = sirena_fea_mesh.get_active_material(0)
 			timer_id = 3
-			timer.start(1)
+			timer.start(1.8)
 		3:
 			sirena_fea.play_animation("Grab")
+			timer_id = 4
+			timer.start(5)
+		4:
+			lerp_dorado = true
+			_material5 = dorado.get_active_material(0)
+			timer_id = 5
+			timer.start(5)
+		5:
+			fade_out = true
+			timer_id = 6
+			timer.start(2)
+		6:
+			dialogue.say_custom("FINNNN XDD")
 
+@onready var dialogue : EzDialogue = $"../DialogueBox"
+
+@onready var dorado: MeshInstance3D = $"../Dorado/Cube"
+
+var fade_out : bool = false
 var _material1: StandardMaterial3D
 var _material2: StandardMaterial3D
 var _material3: StandardMaterial3D
 var _material4: StandardMaterial3D
+var _material5: StandardMaterial3D
 var opacity : float = 0
 
 func _process(delta: float) -> void:
@@ -49,8 +69,20 @@ func _process(delta: float) -> void:
 		_material4.albedo_color.a = lerp(0, 1, opacity)
 		if opacity == 1:
 			sirena.visible = false
-		pass
+			lerp_alpha = false
+			opacity = 0
+		return
+	if lerp_dorado:
+		opacity = min(1, opacity + delta * .3)
+		_material5.albedo_color.a = lerp(0, 1, opacity)
+		if opacity >= 1:
+			lerp_dorado = false
+		return
+	if fade_out:
+		fadeout.play("Fade_out")
+		return
+
+@onready var fadeout: AnimationPlayer = $"../FadeOut/AnimationPlayer"
 
 func _on_timer_timeout() -> void:
-	print(timer_id)
 	_play(timer_id)
