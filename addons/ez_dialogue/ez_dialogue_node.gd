@@ -32,12 +32,7 @@ func _on_dialogue_generated(response: DialogueResponse) -> void:
 			audio_player.stream = dialogue_voices[dialogue_voice_index]
 			audio_player.play()
 	
-	if is_one_shot:
-		return
-	
-	if response.text != "":
-		is_one_shot = false
-	else:
+	if response.text == "":
 		current_dialogue += 1
 		game_manager._ended_segment()
 
