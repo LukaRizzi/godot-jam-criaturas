@@ -1,9 +1,10 @@
-[gd_scene load_steps=32 format=3 uid="uid://br8pkh1gfqnj0"]
+[gd_scene load_steps=33 format=3 uid="uid://br8pkh1gfqnj0"]
 
 [ext_resource type="Script" uid="uid://60j47smb1y1x" path="res://Scripts/GameManager.gd" id="1_bah7m"]
 [ext_resource type="PackedScene" uid="uid://ci3e6q6b5b7ti" path="res://3D Models/FishingRod.glb" id="1_c6gwx"]
 [ext_resource type="PackedScene" uid="uid://c0fciiybllia4" path="res://3D Models/Boat.glb" id="2_2dftf"]
 [ext_resource type="Script" uid="uid://mnlyw2c4sguv" path="res://Scripts/player_controller.gd" id="2_bcbcq"]
+[ext_resource type="Texture2D" uid="uid://cp1ytxum70ifp" path="res://Skyboxes/AllSkyFree_Sky_DeepDusk_Equirect.png" id="2_ydbc3"]
 [ext_resource type="PackedScene" uid="uid://7q0r2p4oudei" path="res://3D Models/River.blend" id="4_js7pq"]
 [ext_resource type="Shader" uid="uid://iitmsoygnfo8" path="res://Scripts/FishIndicator.gdshader" id="5_eu7l1"]
 [ext_resource type="PackedScene" uid="uid://bvruxstrj41yk" path="res://3D Models/Bucket.glb" id="6_ee7l0"]
@@ -24,22 +25,21 @@
 [ext_resource type="PackedScene" uid="uid://cujughsivf6bs" path="res://3D Models/Tree.blend" id="21_5j71u"]
 [ext_resource type="PackedScene" uid="uid://bb8kdm1dlkvn3" path="res://3D Models/BG.blend" id="23_jyqkj"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_c6gwx"]
-sky_top_color = Color(0.329143, 0.126733, 0.0815402, 1)
-sky_horizon_color = Color(0.332738, 0.290988, 0.288963, 1)
-ground_bottom_color = Color(0.079623, 0.115031, 0.152125, 1)
-ground_horizon_color = Color(0.332738, 0.290988, 0.288963, 1)
-energy_multiplier = 0.6
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_jyqkj"]
+resource_local_to_scene = true
+panorama = ExtResource("2_ydbc3")
+filter = false
 
-[sub_resource type="Sky" id="Sky_2dftf"]
-sky_material = SubResource("ProceduralSkyMaterial_c6gwx")
+[sub_resource type="Sky" id="Sky_ydbc3"]
+sky_material = SubResource("PanoramaSkyMaterial_jyqkj")
 
 [sub_resource type="Environment" id="Environment_bcbcq"]
 background_mode = 2
-sky = SubResource("Sky_2dftf")
+sky = SubResource("Sky_ydbc3")
 ambient_light_source = 3
 ambient_light_color = Color(0.942823, 0.942823, 0.942823, 1)
-ambient_light_energy = 0.08
+ambient_light_sky_contribution = 0.0
+ambient_light_energy = 0.18
 tonemap_mode = 2
 tonemap_exposure = 0.3
 glow_enabled = true
