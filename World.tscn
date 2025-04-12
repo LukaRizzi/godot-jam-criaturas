@@ -238,7 +238,7 @@ transform = Transform3D(-0.439603, 0.0949681, 0.218473, -0.229838, -0.0485006, -
 visible = false
 
 [node name="Sirena fea" parent="." instance=ExtResource("16_1fphk")]
-transform = Transform3D(0.796033, 0, 0.0795669, 0, 0.8, 0, -0.0795669, 0, 0.796033, -0.504116, -6.8195, -8.33286)
+transform = Transform3D(0.363317, 0, 0.712742, 0, 0.8, 0, -0.712742, 0, 0.363317, -8.03209, -6.81951, -7.88157)
 
 [node name="Sirena" parent="." instance=ExtResource("16_6w02q")]
 transform = Transform3D(0.798039, 0, 0.0559862, 0, 0.8, 0, -0.0559862, 0, 0.798039, -4.98685, -6.7274, -8.58681)
