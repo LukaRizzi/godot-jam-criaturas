@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://7q0r2p4oudei"
-path="res://.godot/imported/river.blend-df2a649cfab02afd9f7a7a7dc73cd428.scn"
+uid="uid://vfuudar5c56v"
+path="res://.godot/imported/River.blend-a7fe4aa6de386fbf8df6e0ad4c81fd4a.scn"
 
 [deps]
 
-source_file="res://3D Models/river.blend"
-dest_files=["res://.godot/imported/river.blend-df2a649cfab02afd9f7a7a7dc73cd428.scn"]
+source_file="res://3D Models/River.blend"
+dest_files=["res://.godot/imported/River.blend-a7fe4aa6de386fbf8df6e0ad4c81fd4a.scn"]
 
 [params]
 

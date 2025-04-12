@@ -1,11 +1,11 @@
-[gd_scene load_steps=39 format=3 uid="uid://br8pkh1gfqnj0"]
+[gd_scene load_steps=99 format=3 uid="uid://br8pkh1gfqnj0"]
 
 [ext_resource type="Script" uid="uid://60j47smb1y1x" path="res://Scripts/GameManager.gd" id="1_bah7m"]
 [ext_resource type="PackedScene" uid="uid://ci3e6q6b5b7ti" path="res://3D Models/FishingRod.glb" id="1_c6gwx"]
 [ext_resource type="PackedScene" uid="uid://c0fciiybllia4" path="res://3D Models/Boat.glb" id="2_2dftf"]
 [ext_resource type="Script" uid="uid://mnlyw2c4sguv" path="res://Scripts/player_controller.gd" id="2_bcbcq"]
 [ext_resource type="Texture2D" uid="uid://cp1ytxum70ifp" path="res://Skyboxes/AllSkyFree_Sky_DeepDusk_Equirect.png" id="2_ydbc3"]
-[ext_resource type="PackedScene" uid="uid://7q0r2p4oudei" path="res://3D Models/River.blend" id="4_js7pq"]
+[ext_resource type="PackedScene" uid="uid://vfuudar5c56v" path="res://3D Models/River.blend" id="4_js7pq"]
 [ext_resource type="Shader" uid="uid://iitmsoygnfo8" path="res://Scripts/FishIndicator.gdshader" id="5_eu7l1"]
 [ext_resource type="PackedScene" uid="uid://bvruxstrj41yk" path="res://3D Models/Bucket.glb" id="6_ee7l0"]
 [ext_resource type="Script" uid="uid://cr5vcyq10fcdo" path="res://addons/ez_dialogue/ez_dialogue_node.gd" id="6_p1v5b"]
@@ -13,9 +13,7 @@
 [ext_resource type="JSON" path="res://Dialogues/dialogue1.json" id="7_wygdx"]
 [ext_resource type="JSON" path="res://Dialogues/dialogue2.json" id="9_fv4w7"]
 [ext_resource type="Material" uid="uid://bg544av40bqex" path="res://Materials/BagreReward.tres" id="10_d7dfr"]
-[ext_resource type="AudioStream" uid="uid://bdxy1fgwo05xj" path="res://Sounds/Rule of Rose turn page.mp3" id="10_kva58"]
 [ext_resource type="PackedScene" uid="uid://mgs34hjpxwgo" path="res://3D Models/Soco.blend" id="11_c2gv2"]
-[ext_resource type="AudioStream" uid="uid://b7sn2gta6jygw" path="res://Sounds/sad-violin-150146.mp3" id="11_f5c0m"]
 [ext_resource type="PackedScene" uid="uid://btooy0d5snudp" path="res://3D Models/Tararera.blend" id="12_f5c0m"]
 [ext_resource type="Material" uid="uid://c0am71trdy421" path="res://Materials/SocoReward.tres" id="12_rp4qs"]
 [ext_resource type="PackedScene" uid="uid://dytggkaf51pye" path="res://3D Models/MixamoRuiz.fbx" id="13_b2ar6"]
@@ -26,10 +24,72 @@
 [ext_resource type="PackedScene" uid="uid://fptie67tyvea" path="res://3D Models/Sirena fea.blend" id="16_1fphk"]
 [ext_resource type="PackedScene" uid="uid://bjulrdymsjnnu" path="res://3D Models/Sirena.blend" id="16_6w02q"]
 [ext_resource type="PackedScene" uid="uid://kwwio3ea8qvy" path="res://3D Models/Dorado.blend" id="19_0to5b"]
+[ext_resource type="JSON" path="res://Dialogues/dialogue3YVosQueHaces.json" id="19_pn1ak"]
 [ext_resource type="Script" uid="uid://ho8ssu1n0178" path="res://Scripts/ending_sequence.gd" id="20_6tx0c"]
-[ext_resource type="PackedScene" uid="uid://cujughsivf6bs" path="res://3D Models/Tree.blend" id="21_5j71u"]
+[ext_resource type="JSON" path="res://Dialogues/dialogue4Bagre.json" id="20_i1svi"]
+[ext_resource type="PackedScene" uid="uid://cujughsivf6bs" path="res://3D Models/tree.blend" id="21_5j71u"]
+[ext_resource type="JSON" path="res://Dialogues/dialogue5PorqueYo.json" id="21_o57cg"]
+[ext_resource type="JSON" path="res://Dialogues/dialogue6Soco.json" id="22_ac58q"]
 [ext_resource type="PackedScene" uid="uid://bb8kdm1dlkvn3" path="res://3D Models/BG.blend" id="23_jyqkj"]
+[ext_resource type="JSON" path="res://Dialogues/dialogue7VisteEso.json" id="23_v1pkh"]
+[ext_resource type="JSON" path="res://Dialogues/dialogue8.json" id="24_hejkj"]
 [ext_resource type="PackedScene" uid="uid://dr4afbsk8tlpl" path="res://3D Models/Bagre.blend" id="25_aj1ai"]
+[ext_resource type="JSON" path="res://Dialogues/dialogue9Tarde.json" id="25_mmptr"]
+[ext_resource type="JSON" path="res://Dialogues/dialogue10sabalo.json" id="26_6jkyd"]
+[ext_resource type="JSON" path="res://Dialogues/dialogue11.json" id="27_ntswa"]
+[ext_resource type="JSON" path="res://Dialogues/dialogue12.json" id="28_xakhq"]
+[ext_resource type="AudioStream" uid="uid://cgw7clsc4a2jf" path="res://Sounds/Voices/Voice Lines/1_bueno_pibe.ogg" id="29_npddc"]
+[ext_resource type="AudioStream" uid="uid://cuib7e4bgkeo3" path="res://Sounds/Voices/Voice Lines/2_no_es_magia.ogg" id="30_ymcl6"]
+[ext_resource type="AudioStream" uid="uid://cr4qrk1xf7oiq" path="res://Sounds/Voices/Voice Lines/3_el_pedo.ogg" id="31_yp71y"]
+[ext_resource type="AudioStream" uid="uid://cxstiessslv0u" path="res://Sounds/Voices/Voice Lines/4_pibe_si_yo_te.ogg" id="32_gpw4f"]
+[ext_resource type="AudioStream" uid="uid://bn7hcrqnjaate" path="res://Sounds/Voices/Voice Lines/5_tararira.ogg" id="33_6fgup"]
+[ext_resource type="AudioStream" uid="uid://bxq1bs4tw0104" path="res://Sounds/Voices/Voice Lines/6_ah_mira.ogg" id="34_d8xu2"]
+[ext_resource type="AudioStream" uid="uid://dfpnfjklqgj12" path="res://Sounds/Voices/Voice Lines/7_la_primera_vez.ogg" id="35_3k5od"]
+[ext_resource type="AudioStream" uid="uid://d024ohonoqs65" path="res://Sounds/Voices/Voice Lines/8_vos_que_haces.ogg" id="36_xq1iw"]
+[ext_resource type="AudioStream" uid="uid://dbuox5egoq3di" path="res://Sounds/Voices/Voice Lines/9_muchas_cosas.ogg" id="37_oi2wb"]
+[ext_resource type="AudioStream" uid="uid://dgl42cho4p7eo" path="res://Sounds/Voices/Voice Lines/10_una_de_esas_cosas.ogg" id="38_bvno0"]
+[ext_resource type="AudioStream" uid="uid://doxdbvt6oea25" path="res://Sounds/Voices/Voice Lines/11_encuentro_cosas.ogg" id="39_rpm7y"]
+[ext_resource type="AudioStream" uid="uid://c0slt2yu6vcex" path="res://Sounds/Voices/Voice Lines/12_dorado_gigante.ogg" id="40_dg2i1"]
+[ext_resource type="AudioStream" uid="uid://fnmcb65pclee" path="res://Sounds/Voices/Voice Lines/13_seh.ogg" id="41_yoryt"]
+[ext_resource type="AudioStream" uid="uid://ctsn2pvcwi3cl" path="res://Sounds/Voices/Voice Lines/14_bagre.ogg" id="42_mdca4"]
+[ext_resource type="AudioStream" uid="uid://cr0dk652ntkgq" path="res://Sounds/Voices/Voice Lines/15_vos_encontra.ogg" id="43_7h5j5"]
+[ext_resource type="AudioStream" uid="uid://wyyqxxdtxw1g" path="res://Sounds/Voices/Voice Lines/16_por_que_traerme.ogg" id="44_mjdub"]
+[ext_resource type="AudioStream" uid="uid://b8sdohtu6fh85" path="res://Sounds/Voices/Voice Lines/17_vos_ganaste.ogg" id="45_oor4l"]
+[ext_resource type="AudioStream" uid="uid://c1x2bm28cl74c" path="res://Sounds/Voices/Voice Lines/18_este_soco.ogg" id="46_yfycu"]
+[ext_resource type="AudioStream" uid="uid://dofev07u1vuoj" path="res://Sounds/Voices/Voice Lines/19_los_he_visto.ogg" id="47_ovskc"]
+[ext_resource type="AudioStream" uid="uid://dsbtvj4i2cpv" path="res://Sounds/Voices/Voice Lines/20_estas_seguro.ogg" id="48_f366x"]
+[ext_resource type="AudioStream" uid="uid://7ylxg6d4lnrn" path="res://Sounds/Voices/Voice Lines/21_de_eso_me_ocupo.ogg" id="49_7qq70"]
+[ext_resource type="AudioStream" uid="uid://bgd4oj7micde6" path="res://Sounds/Voices/Voice Lines/22_viste_eso.ogg" id="50_liur3"]
+[ext_resource type="AudioStream" uid="uid://b8osjgmqtwd2t" path="res://Sounds/Voices/Voice Lines/23_donde.ogg" id="51_j6o5d"]
+[ext_resource type="AudioStream" uid="uid://c7o76hdmh50xl" path="res://Sounds/Voices/Voice Lines/24_alla_pendejo.ogg" id="52_tt81a"]
+[ext_resource type="AudioStream" uid="uid://cf6w50wenbbpq" path="res://Sounds/Voices/Voice Lines/25_que_viste_el_dorado.ogg" id="53_74p3j"]
+[ext_resource type="AudioStream" uid="uid://2lhvr5cvsi25" path="res://Sounds/Voices/Voice Lines/26_vos_crees.ogg" id="54_pelt2"]
+[ext_resource type="AudioStream" uid="uid://6ddxpskobrv1" path="res://Sounds/Voices/Voice Lines/27_catolico.ogg" id="55_k738s"]
+[ext_resource type="AudioStream" uid="uid://tgoq15seketo" path="res://Sounds/Voices/Voice Lines/28_criaturas_sobrenaturales.ogg" id="56_tgbay"]
+[ext_resource type="AudioStream" uid="uid://0g72ckbowapi" path="res://Sounds/Voices/Voice Lines/29_que_se_yo.ogg" id="57_xsm2m"]
+[ext_resource type="AudioStream" uid="uid://1djxurvro3vt" path="res://Sounds/Voices/Voice Lines/30_te_falta_vivir.ogg" id="58_au851"]
+[ext_resource type="AudioStream" uid="uid://piqwf70abt1t" path="res://Sounds/Voices/Voice Lines/31_me_voy_a_llenar.ogg" id="59_ceqik"]
+[ext_resource type="AudioStream" uid="uid://cl3loksef5qaj" path="res://Sounds/Voices/Voice Lines/32a_nos_vamos_a_llenar.ogg" id="60_o4crb"]
+[ext_resource type="AudioStream" uid="uid://yc1r30v321tc" path="res://Sounds/Voices/Voice Lines/32b_ir_volviendo.ogg" id="61_cd3li"]
+[ext_resource type="AudioStream" uid="uid://50nyhjbkoo1d" path="res://Sounds/Voices/Voice Lines/33_a_ver_pibe.ogg" id="62_08w2q"]
+[ext_resource type="AudioStream" uid="uid://ckhasfripe4iv" path="res://Sounds/Voices/Voice Lines/34_volver_a_probar.ogg" id="63_3vo7e"]
+[ext_resource type="AudioStream" uid="uid://dmn8rmw4g50lb" path="res://Sounds/Voices/Voice Lines/35_ta_perfecto.ogg" id="64_3iu3c"]
+[ext_resource type="AudioStream" uid="uid://ieerbjeigo68" path="res://Sounds/Voices/Voice Lines/36_silencio.ogg" id="65_2rfk5"]
+[ext_resource type="AudioStream" uid="uid://c20gvcq2fjgls" path="res://Sounds/Voices/Voice Lines/37_me_parecia.ogg" id="66_g6ria"]
+[ext_resource type="AudioStream" uid="uid://bt44jngdci36g" path="res://Sounds/Voices/Voice Lines/38_sabalo.ogg" id="67_e1pfh"]
+[ext_resource type="AudioStream" uid="uid://dusj6or16frm" path="res://Sounds/Voices/Voice Lines/39_la_verdad.ogg" id="68_0figy"]
+[ext_resource type="AudioStream" uid="uid://ba08dsdxt5a4d" path="res://Sounds/Voices/Voice Lines/40_lo_que_estamos_buscando.ogg" id="69_unmma"]
+[ext_resource type="AudioStream" uid="uid://8rqttdjevwq8" path="res://Sounds/Voices/Voice Lines/41_los_mitos.ogg" id="70_v5idl"]
+[ext_resource type="AudioStream" uid="uid://b40l7u3vhrqh7" path="res://Sounds/Voices/Voice Lines/42_garso.ogg" id="71_vo3dn"]
+[ext_resource type="AudioStream" uid="uid://85yw5kv56jrw" path="res://Sounds/Voices/Voice Lines/43_van_a_ver.ogg" id="72_owyqb"]
+[ext_resource type="AudioStream" uid="uid://bnnpq0a1htcv4" path="res://Sounds/Voices/Voice Lines/44_yo_averigue.ogg" id="73_p0d1i"]
+[ext_resource type="AudioStream" uid="uid://bjjc2i73ksjl3" path="res://Sounds/Voices/Voice Lines/45_peine_dorado.ogg" id="74_wromm"]
+[ext_resource type="AudioStream" uid="uid://ct8fmd8nmjf53" path="res://Sounds/Voices/Voice Lines/46_no_da_la_cara.ogg" id="75_qhemt"]
+[ext_resource type="AudioStream" uid="uid://dqdpq3edsa7c3" path="res://Sounds/Voices/Voice Lines/47_algo_raro.ogg" id="76_78tn5"]
+[ext_resource type="AudioStream" uid="uid://b5oajd6k8j1a4" path="res://Sounds/Voices/Voice Lines/48_traela_al_bote.ogg" id="77_gjihl"]
+[ext_resource type="AudioStream" uid="uid://0e6mqsgxdou0" path="res://Sounds/Voices/Voice Lines/49_deseo.ogg" id="78_um2m0"]
+[ext_resource type="AudioStream" uid="uid://buhfshljr1lc7" path="res://Sounds/Voices/Voice Lines/50_sirena_del_orto.ogg" id="79_bvnna"]
+[ext_resource type="AudioStream" uid="uid://fm3h7q8pocr6" path="res://Sounds/Voices/Voice Lines/51_todo_esto_fue_real.ogg" id="80_aktbs"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_jyqkj"]
 resource_local_to_scene = true
@@ -145,6 +205,11 @@ fishes_in_bucket = [NodePath("../Bucket/Tararera"), NodePath("../Bucket/Bagre"),
 [node name="FishingRod" parent="Camera3D" instance=ExtResource("1_c6gwx")]
 transform = Transform3D(0.112806, -0.0194365, -0.993427, 0.862922, 0.497571, 0.0882518, 0.492585, -0.867206, 0.0729011, 2.61335, -1.18776, -1.45687)
 
+[node name="Skeleton3D" parent="Camera3D/FishingRod/Armature" index="0"]
+bones/7/position = Vector3(0.00111724, 0.902129, -0.0229305)
+bones/7/rotation = Quaternion(0.0578168, -0.11601, 0.449341, 0.883907)
+bones/7/scale = Vector3(1, 1, 1)
+
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="Camera3D/FishingRod/Armature/Skeleton3D" index="1"]
 transform = Transform3D(0.569268, -0.807767, -0.153125, 0.780937, 0.589499, -0.206466, 0.257043, -0.00204685, 0.966398, 0.00111723, 15.7541, -0.0229305)
 bone_name = "Cast"
@@ -189,8 +254,8 @@ mesh = SubResource("PlaneMesh_js7pq")
 
 [node name="DialogueBox" type="Node" parent="."]
 script = ExtResource("6_p1v5b")
-dialogues = Array[JSON]([ExtResource("7_wygdx"), ExtResource("9_fv4w7")])
-dialogue_voices = Array[AudioStream]([ExtResource("10_kva58"), ExtResource("11_f5c0m")])
+dialogues = Array[JSON]([ExtResource("7_wygdx"), ExtResource("9_fv4w7"), ExtResource("19_pn1ak"), ExtResource("20_i1svi"), ExtResource("21_o57cg"), ExtResource("22_ac58q"), ExtResource("23_v1pkh"), ExtResource("24_hejkj"), ExtResource("25_mmptr"), ExtResource("26_6jkyd"), ExtResource("27_ntswa"), ExtResource("28_xakhq")])
+dialogue_voices = Array[AudioStream]([ExtResource("29_npddc"), ExtResource("30_ymcl6"), ExtResource("31_yp71y"), ExtResource("32_gpw4f"), ExtResource("33_6fgup"), ExtResource("34_d8xu2"), ExtResource("35_3k5od"), ExtResource("36_xq1iw"), ExtResource("37_oi2wb"), ExtResource("38_bvno0"), ExtResource("39_rpm7y"), ExtResource("40_dg2i1"), ExtResource("41_yoryt"), ExtResource("42_mdca4"), ExtResource("43_7h5j5"), ExtResource("44_mjdub"), ExtResource("45_oor4l"), ExtResource("46_yfycu"), ExtResource("47_ovskc"), ExtResource("48_f366x"), ExtResource("49_7qq70"), ExtResource("50_liur3"), ExtResource("51_j6o5d"), ExtResource("52_tt81a"), ExtResource("53_74p3j"), ExtResource("54_pelt2"), ExtResource("55_k738s"), ExtResource("56_tgbay"), ExtResource("57_xsm2m"), ExtResource("58_au851"), ExtResource("59_ceqik"), ExtResource("60_o4crb"), ExtResource("61_cd3li"), ExtResource("62_08w2q"), ExtResource("63_3vo7e"), ExtResource("64_3iu3c"), ExtResource("65_2rfk5"), ExtResource("66_g6ria"), ExtResource("67_e1pfh"), ExtResource("68_0figy"), ExtResource("69_unmma"), ExtResource("70_v5idl"), ExtResource("71_vo3dn"), ExtResource("72_owyqb"), ExtResource("73_p0d1i"), ExtResource("74_wromm"), ExtResource("75_qhemt"), ExtResource("76_78tn5"), ExtResource("77_gjihl"), ExtResource("78_um2m0"), ExtResource("79_bvnna"), ExtResource("80_aktbs")])
 metadata/_custom_type_script = "uid://cr5vcyq10fcdo"
 
 [node name="Label" type="RichTextLabel" parent="DialogueBox"]
@@ -253,7 +318,6 @@ bones/14/rotation = Quaternion(3.30727e-07, -1.67522e-08, -1.31575e-08, 1)
 bones/14/scale = Vector3(1, 1, 1)
 bones/15/position = Vector3(0.00967506, 0.0298376, 0.0629327)
 bones/15/rotation = Quaternion(1.09114e-08, -6.08152e-08, 3.00662e-09, 1)
-bones/15/scale = Vector3(1, 1, 1)
 bones/17/position = Vector3(-0.547238, 0.873633, 0.000360738)
 bones/17/rotation = Quaternion(0.549302, -0.445344, 0.548935, 0.445652)
 bones/17/scale = Vector3(1, 1, 1)
@@ -277,7 +341,6 @@ bones/23/rotation = Quaternion(4.05541e-07, 4.43489e-07, -1.63138e-07, 1)
 bones/23/scale = Vector3(1, 1, 1)
 bones/24/position = Vector3(-0.00428868, 0.0727917, 0.0506558)
 bones/24/rotation = Quaternion(-4.06154e-08, -1.85678e-07, -4.07157e-08, 1)
-bones/24/scale = Vector3(1, 1, 1)
 bones/26/position = Vector3(0.748673, -0.365612, -0.0074059)
 bones/26/rotation = Quaternion(0.00187945, 0.0533111, 0.997956, -0.0351985)
 bones/26/scale = Vector3(0.999999, 1, 0.999998)

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cl3loksef5qaj"
+path="res://.godot/imported/32a_nos_vamos_a_llenar.ogg-892490477d1fe0dc360003b1b7f9211c.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/Voices/Voice Lines/32a_nos_vamos_a_llenar.ogg"
+dest_files=["res://.godot/imported/32a_nos_vamos_a_llenar.ogg-892490477d1fe0dc360003b1b7f9211c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
