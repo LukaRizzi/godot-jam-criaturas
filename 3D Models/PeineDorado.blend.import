@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://btooy0d5snudp"
-path="res://.godot/imported/Tararera.blend-998c3d391efb3b68d20a562577a7ef28.scn"
+uid="uid://dowphug2mlcia"
+path="res://.godot/imported/PeineDorado.blend-5df1e8791dd21779bd46574486a21265.scn"
 
 [deps]
 
-source_file="res://3D Models/Tararera.blend"
-dest_files=["res://.godot/imported/Tararera.blend-998c3d391efb3b68d20a562577a7ef28.scn"]
+source_file="res://3D Models/PeineDorado.blend"
+dest_files=["res://.godot/imported/PeineDorado.blend-5df1e8791dd21779bd46574486a21265.scn"]
 
 [params]
 
@@ -32,14 +32,7 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={
-"materials": {
-"Material": {
-"use_external/enabled": true,
-"use_external/path": "uid://bxr4x7gdv7pyq"
-}
-}
-}
+_subresources={}
 blender/nodes/visible=0
 blender/nodes/active_collection_only=false
 blender/nodes/punctual_lights=true
