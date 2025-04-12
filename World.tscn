@@ -239,10 +239,12 @@ transform = Transform3D(0.85723, -0.367847, -0.360336, 0.0870289, 0.793206, -0.6
 
 [node name="Sirena fea" parent="." instance=ExtResource("16_1fphk")]
 transform = Transform3D(0.7976, 0, -0.0619181, 0, 0.8, 0, 0.0619181, 0, 0.7976, -5.87073, -6.81951, -6.17666)
+visible = false
 script = ExtResource("15_sjtuv")
 
 [node name="Sirena" parent="." instance=ExtResource("16_6w02q")]
 transform = Transform3D(0.798039, 0, 0.0559862, 0, 0.8, 0, -0.0559862, 0, 0.798039, -4.98685, -6.7274, -8.58681)
+visible = false
 script = ExtResource("15_sjtuv")
 
 [node name="AnimationPlayer" parent="Sirena" index="1"]
