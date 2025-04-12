@@ -37,7 +37,9 @@ sky_material = SubResource("ProceduralSkyMaterial_c6gwx")
 [sub_resource type="Environment" id="Environment_bcbcq"]
 background_mode = 2
 sky = SubResource("Sky_2dftf")
-ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_source = 3
+ambient_light_color = Color(0.942823, 0.942823, 0.942823, 1)
+ambient_light_energy = 0.08
 tonemap_mode = 2
 tonemap_exposure = 0.3
 glow_enabled = true
@@ -318,9 +320,10 @@ script = ExtResource("20_6tx0c")
 one_shot = true
 
 [node name="River" parent="." instance=ExtResource("4_js7pq")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -15.4651, -4.11529, 3.03413)
+transform = Transform3D(0.139173, 0, -0.990268, 0, 1, 0, 0.990268, 0, 0.139173, -98.1285, -4.11529, 23.1415)
 
-[node name="Trees" type="Node" parent="."]
+[node name="Trees" type="Node3D" parent="."]
+transform = Transform3D(-0.992966, 0, -0.118404, 0, 1, 0, 0.118404, 0, -0.992966, -82.6634, 0, 20.1073)
 
 [node name="Tree" parent="Trees" instance=ExtResource("21_5j71u")]
 transform = Transform3D(-0.587489, 0, -0.809232, 0, 1, 0, 0.809232, 0, -0.587489, -14.5963, 0, -99.0535)
@@ -484,7 +487,8 @@ transform = Transform3D(-0.202565, 0, -0.979269, 0, 1, 0, 0.979269, 0, -0.202565
 [node name="Tree54" parent="Trees" instance=ExtResource("21_5j71u")]
 transform = Transform3D(-0.988407, 0, 0.15183, 0, 1, 0, -0.15183, 0, -0.988407, -588.022, -3.99736, 215.877)
 
-[node name="BGs" type="Node" parent="."]
+[node name="BGs" type="Node3D" parent="."]
+transform = Transform3D(-0.994914, 0, -0.100726, 0, 1, 0, 0.100726, 0, -0.994914, -108.446, 0, 77.0242)
 
 [node name="BG" parent="BGs" instance=ExtResource("23_jyqkj")]
 transform = Transform3D(1, 0, 0, 0, 0.0787722, -0.996893, 0, 0.996893, 0.0787722, -173.88, 38.0153, -219.397)
@@ -497,6 +501,12 @@ transform = Transform3D(1, 0, 0, 0, 0.0787722, -0.996893, 0, 0.996893, 0.0787722
 
 [node name="BG4" parent="BGs" instance=ExtResource("23_jyqkj")]
 transform = Transform3D(0.0426255, -0.995987, -0.0787006, 0, 0.0787722, -0.996893, 0.999091, 0.042493, 0.0033577, 543.023, 38.0153, 46.9579)
+
+[node name="BG13" parent="BGs" instance=ExtResource("23_jyqkj")]
+transform = Transform3D(0.78814, -0.613584, -0.048484, 0, 0.0787722, -0.996893, 0.615497, 0.785691, 0.0620835, 544.122, 38.0154, -221.523)
+
+[node name="BG14" parent="BGs" instance=ExtResource("23_jyqkj")]
+transform = Transform3D(0.976796, 0.213507, 0.0168709, 0, 0.0787722, -0.996893, -0.214173, 0.97376, 0.0769444, 343.14, 38.0154, -309.187)
 
 [node name="BG5" parent="BGs" instance=ExtResource("23_jyqkj")]
 transform = Transform3D(-0.680094, -0.730847, -0.0577499, 0, 0.0787722, -0.996893, 0.733125, -0.677981, -0.0535725, 422.294, 38.0153, 263.4)
