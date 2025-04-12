@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cf6w50wenbbpq"
+path="res://.godot/imported/25_que_viste_el_dorado.ogg-fd6efbca522037e11008768294be0318.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/Voices/Voice Lines/25_que_viste_el_dorado.ogg"
+dest_files=["res://.godot/imported/25_que_viste_el_dorado.ogg-fd6efbca522037e11008768294be0318.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

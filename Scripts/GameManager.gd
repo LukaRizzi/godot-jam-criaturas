@@ -16,7 +16,7 @@ func _ready() -> void:
 
 func _ended_segment():
 	game_state += 1
-	#game_state = max(game_state, 3) # SACAR ESTO AL FINAL
+	game_state = max(game_state, 3) # SACAR ESTO AL FINAL
 	_play_current_segment()
 
 func _play_current_segment():
@@ -26,13 +26,36 @@ func _play_current_segment():
 			fishingManager.current_fish = 0
 		2:
 			dialogue._start_next_dialogue()
-		3: #sequencia final
+		3:
+			dialogue._start_next_dialogue()
+		4:
+			fishingManager.can_fish = true
+			fishingManager.current_fish = 0
+		5:
+			dialogue._start_next_dialogue()
+		6:
+			fishingManager.can_fish = true
+			fishingManager.current_fish = 0
+		7:
+			dialogue._start_next_dialogue()
+		8:
+			dialogue._start_next_dialogue()
+		9:
+			dialogue._start_next_dialogue()
+		10:
+			dialogue._start_next_dialogue()
+		11:
+			fishingManager.can_fish = true
+			fishingManager.current_fish = 0	
+		12:
+			dialogue._start_next_dialogue()
+		13: #sequencia final
 			beer_can_in_hand.visible = false
 			fishingManager.can_fish = true
 			fishingManager.current_fish = -1
 			sirena.visible = true
-			sirena.play_animation("Move")
-		4:
+			sirena.play_animation("Move")			
+		14:
 			ending_sequence._play(0)
 
 func _lost_fishing_minigame():

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://8rqttdjevwq8"
+path="res://.godot/imported/41_los_mitos.ogg-ba70a554f96d8f97736f6dfbe976fec9.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/Voices/Voice Lines/41_los_mitos.ogg"
+dest_files=["res://.godot/imported/41_los_mitos.ogg-ba70a554f96d8f97736f6dfbe976fec9.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

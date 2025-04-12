@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dmn8rmw4g50lb"
+path="res://.godot/imported/35_ta_perfecto.ogg-8bbcbf0ed74bf42fcdd33efceb80c9b9.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/Voices/Voice Lines/35_ta_perfecto.ogg"
+dest_files=["res://.godot/imported/35_ta_perfecto.ogg-8bbcbf0ed74bf42fcdd33efceb80c9b9.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

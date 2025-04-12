@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ckhasfripe4iv"
+path="res://.godot/imported/34_volver_a_probar.ogg-68329f985f9238ee13386b58117da97d.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/Voices/Voice Lines/34_volver_a_probar.ogg"
+dest_files=["res://.godot/imported/34_volver_a_probar.ogg-68329f985f9238ee13386b58117da97d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

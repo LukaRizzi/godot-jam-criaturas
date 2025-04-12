@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://50nyhjbkoo1d"
+path="res://.godot/imported/33_a_ver_pibe.ogg-f1cceffa7b9135944376f8f8a32e6992.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/Voices/Voice Lines/33_a_ver_pibe.ogg"
+dest_files=["res://.godot/imported/33_a_ver_pibe.ogg-f1cceffa7b9135944376f8f8a32e6992.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

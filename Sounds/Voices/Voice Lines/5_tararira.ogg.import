@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bn7hcrqnjaate"
+path="res://.godot/imported/5_tararira.ogg-76667c2e0b5c46d56dc99ab3ed663d07.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/Voices/Voice Lines/5_tararira.ogg"
+dest_files=["res://.godot/imported/5_tararira.ogg-76667c2e0b5c46d56dc99ab3ed663d07.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

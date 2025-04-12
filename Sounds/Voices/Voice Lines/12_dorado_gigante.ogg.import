@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c0slt2yu6vcex"
+path="res://.godot/imported/12_dorado_gigante.ogg-1eb85fca7c18b8b9a11b323a6e276872.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/Voices/Voice Lines/12_dorado_gigante.ogg"
+dest_files=["res://.godot/imported/12_dorado_gigante.ogg-1eb85fca7c18b8b9a11b323a6e276872.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

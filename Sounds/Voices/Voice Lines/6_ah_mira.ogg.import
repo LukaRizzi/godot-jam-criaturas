@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bxq1bs4tw0104"
+path="res://.godot/imported/6_ah_mira.ogg-d8047faa037112bdbf2cd0fb2252e52c.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/Voices/Voice Lines/6_ah_mira.ogg"
+dest_files=["res://.godot/imported/6_ah_mira.ogg-d8047faa037112bdbf2cd0fb2252e52c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bnnpq0a1htcv4"
+path="res://.godot/imported/44_yo_averigue.ogg-f2e9928a6cfa8ed5801527338c8b12a3.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/Voices/Voice Lines/44_yo_averigue.ogg"
+dest_files=["res://.godot/imported/44_yo_averigue.ogg-f2e9928a6cfa8ed5801527338c8b12a3.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

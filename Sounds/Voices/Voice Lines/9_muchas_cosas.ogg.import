@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dbuox5egoq3di"
+path="res://.godot/imported/9_muchas_cosas.ogg-309e28f8f51d308ef15ca88cb9b78c04.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/Voices/Voice Lines/9_muchas_cosas.ogg"
+dest_files=["res://.godot/imported/9_muchas_cosas.ogg-309e28f8f51d308ef15ca88cb9b78c04.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

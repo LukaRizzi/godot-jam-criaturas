@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://2lhvr5cvsi25"
+path="res://.godot/imported/26_vos_crees.ogg-9ebcb23aec85b07fbe5b1d2a8945c4a1.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/Voices/Voice Lines/26_vos_crees.ogg"
+dest_files=["res://.godot/imported/26_vos_crees.ogg-9ebcb23aec85b07fbe5b1d2a8945c4a1.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

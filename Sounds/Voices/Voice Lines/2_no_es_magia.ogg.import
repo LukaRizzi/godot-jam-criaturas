@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cuib7e4bgkeo3"
+path="res://.godot/imported/2_no_es_magia.ogg-f3e87307f203f99e9c94703e4422d6a0.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/Voices/Voice Lines/2_no_es_magia.ogg"
+dest_files=["res://.godot/imported/2_no_es_magia.ogg-f3e87307f203f99e9c94703e4422d6a0.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

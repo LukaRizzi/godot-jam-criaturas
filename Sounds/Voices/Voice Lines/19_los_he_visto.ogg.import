@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dofev07u1vuoj"
+path="res://.godot/imported/19_los_he_visto.ogg-b54ad1058e1409253c99c87a32487ae8.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/Voices/Voice Lines/19_los_he_visto.ogg"
+dest_files=["res://.godot/imported/19_los_he_visto.ogg-b54ad1058e1409253c99c87a32487ae8.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

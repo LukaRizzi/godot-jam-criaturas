@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dgl42cho4p7eo"
+path="res://.godot/imported/10_una_de_esas_cosas.ogg-31924d7c22267f4c4a4676b2b6140cce.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/Voices/Voice Lines/10_una_de_esas_cosas.ogg"
+dest_files=["res://.godot/imported/10_una_de_esas_cosas.ogg-31924d7c22267f4c4a4676b2b6140cce.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

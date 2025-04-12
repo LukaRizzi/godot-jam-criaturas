@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://7ylxg6d4lnrn"
+path="res://.godot/imported/21_de_eso_me_ocupo.ogg-bbd150dce5778cdb8b88e99b205f5918.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/Voices/Voice Lines/21_de_eso_me_ocupo.ogg"
+dest_files=["res://.godot/imported/21_de_eso_me_ocupo.ogg-bbd150dce5778cdb8b88e99b205f5918.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://wyyqxxdtxw1g"
+path="res://.godot/imported/16_por_que_traerme.ogg-95b6d40ce1de4855f2d8e9d1dad85664.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/Voices/Voice Lines/16_por_que_traerme.ogg"
+dest_files=["res://.godot/imported/16_por_que_traerme.ogg-95b6d40ce1de4855f2d8e9d1dad85664.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

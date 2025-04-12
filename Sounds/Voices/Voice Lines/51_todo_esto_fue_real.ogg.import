@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://fm3h7q8pocr6"
+path="res://.godot/imported/51_todo_esto_fue_real.ogg-eca80dfd93b1e3c78938e0b2af4ce7e7.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/Voices/Voice Lines/51_todo_esto_fue_real.ogg"
+dest_files=["res://.godot/imported/51_todo_esto_fue_real.ogg-eca80dfd93b1e3c78938e0b2af4ce7e7.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

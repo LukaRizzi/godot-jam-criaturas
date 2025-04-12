@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bt44jngdci36g"
+path="res://.godot/imported/38_sabalo.ogg-1a743398132a582e50ed57f93304508f.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/Voices/Voice Lines/38_sabalo.ogg"
+dest_files=["res://.godot/imported/38_sabalo.ogg-1a743398132a582e50ed57f93304508f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dsbtvj4i2cpv"
+path="res://.godot/imported/20_estas_seguro.ogg-1fc35fd6d94d38c4cce53e087983c58c.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/Voices/Voice Lines/20_estas_seguro.ogg"
+dest_files=["res://.godot/imported/20_estas_seguro.ogg-1fc35fd6d94d38c4cce53e087983c58c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

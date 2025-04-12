@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dfpnfjklqgj12"
+path="res://.godot/imported/7_la_primera_vez.ogg-55d6a85b6b092c587a04b2bcb398061d.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/Voices/Voice Lines/7_la_primera_vez.ogg"
+dest_files=["res://.godot/imported/7_la_primera_vez.ogg-55d6a85b6b092c587a04b2bcb398061d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

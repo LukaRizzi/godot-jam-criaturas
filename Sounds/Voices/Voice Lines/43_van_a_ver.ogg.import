@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://85yw5kv56jrw"
+path="res://.godot/imported/43_van_a_ver.ogg-6f175a393610a6a851a6a4be02328300.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/Voices/Voice Lines/43_van_a_ver.ogg"
+dest_files=["res://.godot/imported/43_van_a_ver.ogg-6f175a393610a6a851a6a4be02328300.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

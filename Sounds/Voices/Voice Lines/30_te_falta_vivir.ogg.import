@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://1djxurvro3vt"
+path="res://.godot/imported/30_te_falta_vivir.ogg-68f9c37f05e7cd5c29548dd9e4c69506.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/Voices/Voice Lines/30_te_falta_vivir.ogg"
+dest_files=["res://.godot/imported/30_te_falta_vivir.ogg-68f9c37f05e7cd5c29548dd9e4c69506.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

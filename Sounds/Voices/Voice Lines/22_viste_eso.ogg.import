@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bgd4oj7micde6"
+path="res://.godot/imported/22_viste_eso.ogg-8525dc954bfa17d984d60b1e1581bee4.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/Voices/Voice Lines/22_viste_eso.ogg"
+dest_files=["res://.godot/imported/22_viste_eso.ogg-8525dc954bfa17d984d60b1e1581bee4.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

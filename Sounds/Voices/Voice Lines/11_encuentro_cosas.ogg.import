@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://doxdbvt6oea25"
+path="res://.godot/imported/11_encuentro_cosas.ogg-f86eacf41813b47146046fbf83259a4d.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/Voices/Voice Lines/11_encuentro_cosas.ogg"
+dest_files=["res://.godot/imported/11_encuentro_cosas.ogg-f86eacf41813b47146046fbf83259a4d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

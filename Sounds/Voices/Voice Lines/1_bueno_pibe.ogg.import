@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cgw7clsc4a2jf"
+path="res://.godot/imported/1_bueno_pibe.ogg-42e2f2cf3673d77de619947b0bba17ff.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/Voices/Voice Lines/1_bueno_pibe.ogg"
+dest_files=["res://.godot/imported/1_bueno_pibe.ogg-42e2f2cf3673d77de619947b0bba17ff.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

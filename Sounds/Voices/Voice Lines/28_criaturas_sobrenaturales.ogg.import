@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://tgoq15seketo"
+path="res://.godot/imported/28_criaturas_sobrenaturales.ogg-abbdc6538fb9d9e885497d29d8f2d167.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/Voices/Voice Lines/28_criaturas_sobrenaturales.ogg"
+dest_files=["res://.godot/imported/28_criaturas_sobrenaturales.ogg-abbdc6538fb9d9e885497d29d8f2d167.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

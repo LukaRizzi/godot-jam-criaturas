@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ieerbjeigo68"
+path="res://.godot/imported/36_silencio.ogg-b5b23f30ded79396a2d8084576d2cbd4.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/Voices/Voice Lines/36_silencio.ogg"
+dest_files=["res://.godot/imported/36_silencio.ogg-b5b23f30ded79396a2d8084576d2cbd4.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

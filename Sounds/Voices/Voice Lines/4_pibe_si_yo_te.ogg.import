@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cxstiessslv0u"
+path="res://.godot/imported/4_pibe_si_yo_te.ogg-d77745b33cab5688bc79e65423a43aac.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/Voices/Voice Lines/4_pibe_si_yo_te.ogg"
+dest_files=["res://.godot/imported/4_pibe_si_yo_te.ogg-d77745b33cab5688bc79e65423a43aac.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
