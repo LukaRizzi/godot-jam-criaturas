@@ -42,10 +42,10 @@ func _on_dialogue_generated(response: DialogueResponse) -> void:
 		game_manager._ended_segment()
 
 func _on_timer_timeout() -> void:
-	if !is_one_shot:
-		next()
+	next()
 
 func _start_next_dialogue():
+	is_one_shot = false
 	start_dialogue(dialogues[current_dialogue], state)
 
 func say_custom(text : String):
@@ -68,4 +68,5 @@ func say_custom(text : String):
 			audio_player.play()
 
 func _on_audio_stream_player_3d_finished() -> void:
-	timer.start(.5)
+	if !is_one_shot:
+		timer.start(.5)
