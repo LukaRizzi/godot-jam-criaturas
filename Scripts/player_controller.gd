@@ -77,6 +77,9 @@ func _process(delta):
 		
 		_update_fishing_spot(delta)
 	else:
+		if !reel_sound.playing:
+			reel_sound.play()
+		
 		yaw -= mouse_movement_x * mouse_sensitivity
 		yaw = clamp(yaw, deg_to_rad(-110), deg_to_rad(80))
 		pitch -= mouse_movement_y * mouse_sensitivity
