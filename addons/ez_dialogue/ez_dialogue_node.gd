@@ -49,7 +49,22 @@ func _start_next_dialogue():
 
 func say_custom(text : String):
 	is_one_shot = true
-	label.text = text
+	var text_parts = text.split("|")
+	label.text = text_parts[0]
+	
+	if text_parts.size() > 1:
+		match text_parts[1]:
+			"player":
+				label.text = "[color=white]" + label.text + "[/color]"
+			"willemdafoe":
+				label.text = "[color=yellow]" + label.text + "[/color]"
+				pass
+	
+	if text_parts.size() > 2:
+		var dialogue_voice_index = int(text_parts[2])
+		if dialogue_voice_index < dialogue_voices.size():
+			audio_player.stream = dialogue_voices[dialogue_voice_index]
+			audio_player.play()
 
 func _on_audio_stream_player_3d_finished() -> void:
 	timer.start(.5)
