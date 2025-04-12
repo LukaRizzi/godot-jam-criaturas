@@ -27,7 +27,7 @@
 [ext_resource type="JSON" path="res://Dialogues/dialogue3YVosQueHaces.json" id="19_pn1ak"]
 [ext_resource type="Script" uid="uid://ho8ssu1n0178" path="res://Scripts/ending_sequence.gd" id="20_6tx0c"]
 [ext_resource type="JSON" path="res://Dialogues/dialogue4Bagre.json" id="20_i1svi"]
-[ext_resource type="PackedScene" uid="uid://cujughsivf6bs" path="res://3D Models/tree.blend" id="21_5j71u"]
+[ext_resource type="PackedScene" uid="uid://cujughsivf6bs" path="res://3D Models/Tree.blend" id="21_5j71u"]
 [ext_resource type="JSON" path="res://Dialogues/dialogue5PorqueYo.json" id="21_o57cg"]
 [ext_resource type="JSON" path="res://Dialogues/dialogue6Soco.json" id="22_ac58q"]
 [ext_resource type="PackedScene" uid="uid://bb8kdm1dlkvn3" path="res://3D Models/BG.blend" id="23_jyqkj"]
@@ -638,6 +638,7 @@ transform = Transform3D(0.423346, 0.903153, 0.0713652, 2.44627e-09, 0.0787722, -
 [connection signal="dialogue_generated" from="DialogueBox" to="DialogueBox" method="_on_dialogue_generated"]
 [connection signal="end_of_dialogue_reached" from="DialogueBox" to="DialogueBox" method="_on_end_of_dialogue_reached"]
 [connection signal="timeout" from="DialogueBox/AdvanceDialogueTimer" to="DialogueBox" method="_on_timer_timeout"]
+[connection signal="finished" from="DialogueBox/AudioStreamPlayer3D" to="DialogueBox" method="_on_audio_stream_player_3d_finished"]
 [connection signal="timeout" from="EndingSequence/Timer" to="EndingSequence" method="_on_timer_timeout"]
 
 [editable path="Camera3D/FishingRod"]

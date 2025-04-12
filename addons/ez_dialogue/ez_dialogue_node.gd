@@ -39,12 +39,12 @@ func _on_dialogue_generated(response: DialogueResponse) -> void:
 		is_one_shot = false
 		timer.start(3)
 	else:
+		current_dialogue += 1
 		game_manager._ended_segment()
 		audio_player.stop()
-		current_dialogue += 1
 
 func _on_timer_timeout() -> void:
-	next()
+	pass
 
 func _start_next_dialogue():
 	start_dialogue(dialogues[current_dialogue], state)
@@ -54,3 +54,7 @@ func say_custom(text : String):
 	is_one_shot = true
 	label.text = text
 	timer.start(3)
+
+
+func _on_audio_stream_player_3d_finished() -> void:
+	next()
