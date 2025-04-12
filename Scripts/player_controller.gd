@@ -131,8 +131,6 @@ func do_mermaid_sequence(delta):
 			fish_indicator.visible = false
 			can_fish = false
 			game_manager._ended_segment()
-			fishes[current_fish].visible = true
-			fish_showcase_timer.start(3)
 			return
 	
 	var forward_vec = fish_position - Vector3(-7.283, -6.638, -6.622)

@@ -16,10 +16,10 @@ func _ready() -> void:
 
 func _ended_segment():
 	game_state += 1
+	game_state = max(game_state, 3) # SACAR ESTO AL FINAL
 	_play_current_segment()
 
 func _play_current_segment():
-	game_state = 3 #SACAR ESTO AL FINAL
 	match game_state:
 		1:
 			fishingManager.can_fish = true
