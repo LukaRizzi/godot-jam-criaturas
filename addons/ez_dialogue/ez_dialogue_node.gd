@@ -42,7 +42,8 @@ func _on_dialogue_generated(response: DialogueResponse) -> void:
 		game_manager._ended_segment()
 
 func _on_timer_timeout() -> void:
-	next()
+	if !is_one_shot:
+		next()
 
 func _start_next_dialogue():
 	start_dialogue(dialogues[current_dialogue], state)
