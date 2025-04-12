@@ -1,1 +1,62 @@
-[{"commands_raw":"Che, se esta haciendo tarde… no deberiamos ir volviendo?|player|32\n\n?> -> dialogue1_1","gnode_name":"start","id":0,"name":"start","position":[560.0,520.0]},{"commands_raw":"A ver pibe la concha de tu madre vinimos hasta aca y no me pienso ir con las manos vacias.|willemdafoe|33\n\n?> -> dialogue1_2","gnode_name":"dialogue1_1","id":1,"name":"dialogue1_1","position":[720.0,520.0]},{"commands_raw":"Esta bien, pero podemos volver a probar mañana...|player|34\n\n?> -> dialogue1_3","gnode_name":"dialogue1_2","id":2,"name":"dialogue1_2","position":[940.0,520.0]},{"commands_raw":"Esta perfecto, la dejamos aca, pero vos a Buenos Aires te vas a tener que volver a pata eh.|willemdafoe|35\n\n?> -> dialogue1_4","gnode_name":"dialogue1_3","id":3,"name":"dialogue1_3","position":[1140.0,520.0]},{"commands_raw":"...|player|36\n\n?> -> dialogue1_5","gnode_name":"dialogue1_4","id":4,"name":"dialogue1_4","position":[1300.0,520.0]},{"commands_raw":"Me parecia… Vos confia pibe que yo tengo nariz para estas cosas|willemdafoe|37","gnode_name":"dialogue1_5","id":5,"name":"dialogue1_5","position":[1480.0,520.0]}]
+[
+	{
+		"commands_raw": "Che, se esta haciendo tarde… ¿No deberíamos ir volviendo?|player|32\n\n?> -> dialogue1_1",
+		"gnode_name": "start",
+		"id": 0.0,
+		"name": "start",
+		"position": [
+			560.0,
+			520.0
+		]
+	},
+	{
+		"commands_raw": "A ver pibe, la concha de tu madre, vinimos hasta acá y no me pienso ir con las manos vacías.|willemdafoe|33\n\n?> -> dialogue1_2",
+		"gnode_name": "dialogue1_1",
+		"id": 1.0,
+		"name": "dialogue1_1",
+		"position": [
+			720.0,
+			520.0
+		]
+	},
+	{
+		"commands_raw": "Esta bien, pero podemos volver a probar mañana...|player|34\n\n?> -> dialogue1_3",
+		"gnode_name": "dialogue1_2",
+		"id": 2.0,
+		"name": "dialogue1_2",
+		"position": [
+			940.0,
+			520.0
+		]
+	},
+	{
+		"commands_raw": "Esta perfecto, la dejamos aca, pero vos a Buenos Aires te vas a tener que volver a pata eh.|willemdafoe|35\n\n?> -> dialogue1_4",
+		"gnode_name": "dialogue1_3",
+		"id": 3.0,
+		"name": "dialogue1_3",
+		"position": [
+			1140.0,
+			520.0
+		]
+	},
+	{
+		"commands_raw": "...|player|36\n\n?> -> dialogue1_5",
+		"gnode_name": "dialogue1_4",
+		"id": 4.0,
+		"name": "dialogue1_4",
+		"position": [
+			1300.0,
+			520.0
+		]
+	},
+	{
+		"commands_raw": "Me parecia… Vos confia pibe que yo tengo nariz para estas cosas.|willemdafoe|37",
+		"gnode_name": "dialogue1_5",
+		"id": 5.0,
+		"name": "dialogue1_5",
+		"position": [
+			1480.0,
+			520.0
+		]
+	}
+]

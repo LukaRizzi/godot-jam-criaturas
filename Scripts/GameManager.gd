@@ -33,19 +33,19 @@ func _play_current_segment():
 		5:
 			dialogue._start_next_dialogue()
 		6:
+			dialogue._start_next_dialogue()
+		7:
 			fishingManager.can_fish = true
 			fishingManager.current_fish = 2
-		7:
-			dialogue._start_next_dialogue()
 		8:
 			dialogue._start_next_dialogue()
 		9:
 			dialogue._start_next_dialogue()
 		10:
-			dialogue._start_next_dialogue()
-		11:
 			fishingManager.can_fish = true
 			fishingManager.current_fish = 3
+		11:
+			dialogue._start_next_dialogue()
 		12:
 			dialogue._start_next_dialogue()
 		13: #sequencia final
