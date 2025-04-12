@@ -150,7 +150,7 @@ func do_mermaid_sequence(delta):
 	forward_vec = forward_vec.normalized()
 	
 	if mouse_movement_y != 0:
-		fish_position += forward_vec * min(max(-5 * delta, -mouse_movement_y * .1), 0)
+		fish_position += forward_vec * min(max(-2 * delta, -mouse_movement_y * .1), 0)
 	
 	mouse_movement_x = 0
 	mouse_movement_y = 0
