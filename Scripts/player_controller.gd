@@ -140,6 +140,7 @@ func do_mermaid_sequence(delta):
 	if dist < 8.3:
 		fishing_timer -= delta
 		if fishing_timer <= 0:
+			reel_sound.stop()
 			game_manager.dialogue.say_custom("Vaaaamos pibe, pero mira lo que es ésto, es de oro sólido, y cómo es la cosa, ahora te pedimos un deseo?|willemdafoe|49")
 			fishing = false
 			fish_indicator.visible = false
