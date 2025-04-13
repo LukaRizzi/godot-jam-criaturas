@@ -293,11 +293,14 @@ dialogue_voices = Array[AudioStream]([ExtResource("29_npddc"), ExtResource("30_y
 metadata/_custom_type_script = "uid://cr5vcyq10fcdo"
 
 [node name="Label" type="RichTextLabel" parent="DialogueBox"]
-anchors_preset = -1
-anchor_bottom = 0.146605
-offset_top = 528.0
-offset_right = 1152.0
-offset_bottom = 551.0
+custom_minimum_size = Vector2(0, 80)
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/normal_font_size = 12
 bbcode_enabled = true
 text = "holaasdadad"
 scroll_active = false
@@ -332,7 +335,6 @@ bones/5/rotation = Quaternion(8.60267e-11, 0, 0, 1)
 bones/5/scale = Vector3(1, 1, 1)
 bones/6/position = Vector3(1.73472e-18, 1.81312, -0.0094988)
 bones/6/rotation = Quaternion(0, 0, 0, 1)
-bones/6/scale = Vector3(1, 1, 1)
 bones/8/position = Vector3(0.547238, 0.873637, 0.000954369)
 bones/8/rotation = Quaternion(0.549598, 0.445105, -0.548636, 0.445894)
 bones/8/scale = Vector3(1, 1, 1)
@@ -356,7 +358,6 @@ bones/14/rotation = Quaternion(3.30727e-07, -1.67522e-08, -1.31575e-08, 1)
 bones/14/scale = Vector3(1, 1, 1)
 bones/15/position = Vector3(0.00967506, 0.0298376, 0.0629327)
 bones/15/rotation = Quaternion(1.09114e-08, -6.08152e-08, 3.00662e-09, 1)
-bones/15/scale = Vector3(1, 1, 1)
 bones/17/position = Vector3(-0.547238, 0.873633, 0.000360738)
 bones/17/rotation = Quaternion(0.549302, -0.445344, 0.548935, 0.445652)
 bones/17/scale = Vector3(1, 1, 1)
@@ -1884,6 +1885,7 @@ parameters/looping = true
 
 [node name="Filter PSX" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_mmptr")
+custom_minimum_size = Vector2(0, 120)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
