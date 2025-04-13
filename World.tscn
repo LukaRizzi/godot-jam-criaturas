@@ -415,6 +415,18 @@ transform = Transform3D(-0.711147, -0.644079, -0.948197, 0.0287926, 1.10547, -0.
 [node name="BeerCan" parent="." instance=ExtResource("14_gn8l5")]
 transform = Transform3D(0.999999, 1.49012e-08, -2.23517e-08, 0, 0.999998, -4.65661e-10, 1.86265e-09, 0, 0.999998, -7.47264, -4.96045, -1.43381)
 
+[node name="BeerCan5" parent="." instance=ExtResource("14_gn8l5")]
+transform = Transform3D(0.34664, -0.102561, -0.932372, 0.906768, 0.290992, 0.305111, 0.240021, -0.95121, 0.193868, -17.7276, -5.14348, -9.83749)
+
+[node name="BeerCan2" parent="." instance=ExtResource("14_gn8l5")]
+transform = Transform3D(0.999999, 1.49012e-08, -2.23517e-08, 0, 0.999998, -4.65661e-10, 1.86265e-09, 0, 0.999998, -13.1612, -3.01296, 1.112)
+
+[node name="BeerCan3" parent="." instance=ExtResource("14_gn8l5")]
+transform = Transform3D(0.999999, 1.49012e-08, -2.23517e-08, 0, 0.999998, -4.65661e-10, 1.86265e-09, 0, 0.999998, -13.1612, -3.01296, 1.56949)
+
+[node name="BeerCan4" parent="." instance=ExtResource("14_gn8l5")]
+transform = Transform3D(0.999999, 1.49012e-08, -2.23517e-08, 0, 0.999998, -4.65661e-10, 1.86265e-09, 0, 0.999998, -13.1631, -3.01296, 0.647997)
+
 [node name="Sirena" parent="." instance=ExtResource("16_6w02q")]
 transform = Transform3D(0.798039, 0, 0.0559862, 0, 0.8, 0, -0.0559862, 0, 0.798039, -7.28257, -14.8971, -6.62203)
 script = ExtResource("15_sjtuv")
@@ -1451,7 +1463,7 @@ transform = Transform3D(3.87294, 0, -1.00017, 0, 4, 0, 1.00017, 0, 3.87294, -11.
 transform = Transform3D(3.98874, -0.210909, 0.213338, 0.206404, 3.99368, 0.0891137, -0.217699, -0.0778543, 3.99332, -18.2203, -8.23468, -3.59525)
 
 [node name="Grupo42" type="Node3D" parent="RiverBushes"]
-transform = Transform3D(0.956622, 0, 0.291338, 0, 1, 0, -0.291338, 0, 0.956622, -531.467, 0, 165.624)
+transform = Transform3D(0.956622, 0, 0.291338, 0, 1, 0, -0.291338, 0, 0.956622, -530.374, 0, 154.82)
 
 [node name="plantita rio" parent="RiverBushes/Grupo42" instance=ExtResource("92_ac58q")]
 transform = Transform3D(4, 0, 3.8743e-07, 0, 4, 0, -3.8743e-07, 0, 4, 0, -8.23468, 0)
