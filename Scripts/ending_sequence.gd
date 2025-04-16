@@ -85,7 +85,5 @@ func _process(delta: float) -> void:
 
 @onready var color_rect: ColorRect = $"../FadeOut/ColorRect"
 
-@onready var fadeout: AnimationPlayer = $"../FadeOut/AnimationPlayer"
-
 func _on_timer_timeout() -> void:
 	_play(timer_id)
