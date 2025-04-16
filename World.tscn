@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=3 uid="uid://br8pkh1gfqnj0"]
+[gd_scene load_steps=105 format=3 uid="uid://br8pkh1gfqnj0"]
 
 [ext_resource type="Script" uid="uid://60j47smb1y1x" path="res://Scripts/GameManager.gd" id="1_bah7m"]
 [ext_resource type="PackedScene" uid="uid://ci3e6q6b5b7ti" path="res://3D Models/FishingRod.glb" id="1_c6gwx"]
@@ -96,6 +96,7 @@
 [ext_resource type="PackedScene" uid="uid://docffn3kgxtqd" path="res://3D Models/plantita rio.blend" id="92_ac58q"]
 [ext_resource type="Script" uid="uid://dw63hxh3m7rk8" path="res://world_move.gd" id="92_mmptr"]
 [ext_resource type="Shader" uid="uid://cyertq1jcau4w" path="res://Scripts/psxshader.gdshader" id="95_hejkj"]
+[ext_resource type="Script" uid="uid://dhq6roagpp0gy" path="res://riverMoveUV.gd" id="97_6jkyd"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_jyqkj"]
 resource_local_to_scene = true
@@ -198,11 +199,6 @@ fishes_in_bucket = [NodePath("../Bucket/Tararera"), NodePath("../Bucket/Bagre"),
 
 [node name="FishingRod" parent="Camera3D" instance=ExtResource("1_c6gwx")]
 transform = Transform3D(0.112806, -0.0194365, -0.993427, 0.862922, 0.497571, 0.0882518, 0.492585, -0.867206, 0.0729011, 2.61335, -1.18776, -1.45687)
-
-[node name="Skeleton3D" parent="Camera3D/FishingRod/Armature" index="0"]
-bones/7/position = Vector3(0.00111724, 0.902129, -0.0229305)
-bones/7/rotation = Quaternion(0.0578168, -0.11601, 0.449341, 0.883907)
-bones/7/scale = Vector3(1, 1, 1)
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="Camera3D/FishingRod/Armature/Skeleton3D" index="1"]
 transform = Transform3D(0.569268, -0.807767, -0.153125, 0.780937, 0.589499, -0.206466, 0.257043, -0.00204685, 0.966398, 0.00111723, 15.7541, -0.0229305)
@@ -2031,6 +2027,9 @@ transform = Transform3D(-0.988407, 0, 0.15183, 0, 1, 0, -0.15183, 0, -0.988407, 
 transform = Transform3D(0.139173, 0, -0.990268, 0, 1, 0, 0.990268, 0, 0.139173, -98.1285, -4.11529, 23.1415)
 script = ExtResource("92_mmptr")
 timing = 1.5
+
+[node name="River" parent="3DWorld/River" index="0"]
+script = ExtResource("97_6jkyd")
 
 [node name="BeerCan" parent="3DWorld/River" instance=ExtResource("14_gn8l5")]
 transform = Transform3D(0.285928, -0.956227, 0.0622203, 0.906768, 0.290992, 0.305111, -0.309862, -0.0308199, 0.95028, -21.4684, -1.02819, -84.2082)
