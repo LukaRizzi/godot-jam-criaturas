@@ -26,11 +26,13 @@ var mouse_movement_y : float = 0
 var can_fish : bool = false
 var current_fish : int = 0
 var played_sound : bool = false
+var just_catched : bool = false
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	cast_idx = skeleton_3d.find_bone("Cast")  # Change "Hand" to your bone's name
+	cast_idx = skeleton_3d.find_bone("Cast")
 	ogPos = bone.position
+	_setup_fishing()
 
 func _input(event):
 	if event is InputEventMouseMotion:
@@ -55,6 +57,7 @@ func _process(delta):
 		else:
 			if dist < 13:
 				fishing_timer -= delta
+				just_catched = true
 				if fishing_timer <= 0:
 					reel_sound.stop()
 					catch_sound.play()
@@ -71,9 +74,9 @@ func _process(delta):
 		forward_vec = forward_vec.normalized()
 		
 		if mouse_movement_x != 0:
-			fish_position += forward_vec.cross(Vector3.UP).normalized() * mouse_movement_x * .1
+			fish_position += forward_vec.cross(Vector3.UP).normalized() * mouse_movement_x * .05
 		if mouse_movement_y != 0:
-			fish_position += forward_vec * -mouse_movement_y * .1
+			fish_position += forward_vec * -mouse_movement_y * .025
 		
 		_update_fishing_spot(delta)
 	else:
@@ -85,19 +88,16 @@ func _process(delta):
 		rotation.y = yaw
 		rotation.x = pitch
 		
-		bone.position = lerp(bone.position, ogPos, delta * 20)
-		if can_fish && Input.is_action_just_pressed("Click"):
+		if just_catched:
+			bone.position = lerp(bone.position, ogPos, delta * 10)
+		else:
+			bone.global_position = lerp(bone.global_position, fish_position, delta * 50)
+		
+		if can_fish:
 			reel_sound.play()
 			fishing = true
-			fish_indicator.visible = true
 			_update_fishing_spot(delta)
 			fishing_timer = 5
-			var distance = 15.0
-			var forward_vec = -global_transform.basis.z
-			forward_vec.y = 0
-			forward_vec = forward_vec.normalized()
-			fish_position = global_transform.origin + forward_vec * distance
-			fish_position.y = -4.4
 			fishing_angle = fish_position - global_position
 			fishing_angle.y = 0
 			fishing_angle = fishing_angle.normalized()
@@ -110,6 +110,7 @@ func _process(delta):
 				pitch = -.28
 				rotation.y = yaw
 				rotation.x = pitch
+	
 	mouse_movement_x = 0
 	mouse_movement_y = 0
 
@@ -119,13 +120,25 @@ func _update_fishing_spot(delta):
 			if new_fishing_angle.dot(og_fishing_angle) > 0.2:
 				fishing_angle = new_fishing_angle
 			fish_position += fishing_angle * delta * 10;
-			
 			fish_indicator.global_position = fish_position
 			bone.global_position = lerp(bone.global_position, fish_position, delta * 20);
 
 func _on_fish_showcase_timer_timeout() -> void:
 	fishes[current_fish].visible = false
 	fishes_in_bucket[current_fish].visible = true
+	just_catched = false
+	_setup_fishing()
+
+func _setup_fishing():
+	fish_indicator.visible = true
+	var distance = 15.0
+	var forward_vec = -global_transform.basis.z
+	forward_vec.y = 0
+	forward_vec = forward_vec.normalized()
+	fish_position = global_transform.origin + forward_vec * distance
+	fish_position.y = -4.4
+	bone.global_position = fish_position
+	fish_indicator.global_position = fish_position
 
 @onready var sirena: PlayAnimation = $"../Sirena"
 @onready var sirena_fea: PlayAnimation = $"../Sirena fea"
