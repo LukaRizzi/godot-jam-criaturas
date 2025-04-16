@@ -51,8 +51,11 @@ func _process(delta):
 		var dist = global_position.distance_to(fish_position)
 		if dist > 26:
 			reel_sound.stop()
+			just_catched = true
 			fishing = false
 			fish_indicator.visible = false
+			_update_fishing_spot_stationary(delta)
+			fish_showcase_timer.start(2)
 			game_manager._lost_fishing_minigame()
 		else:
 			if dist < 13:
@@ -94,7 +97,7 @@ func _process(delta):
 			_update_fishing_spot_stationary(delta)
 			bone.global_position = lerp(bone.global_position, fish_position, delta * 50)
 		
-		if can_fish:
+		if can_fish && !just_catched:
 			reel_sound.play()
 			fishing = true
 			fishing_timer = 5
@@ -120,16 +123,14 @@ func _update_fishing_spot(delta):
 		if new_fishing_angle.dot(og_fishing_angle) > 0.2:
 			fishing_angle = new_fishing_angle
 		fish_position += fishing_angle * delta * 10;
-		if fish_position.z >= 0 && fish_position.x <= 0:
+		if fish_position.z >= -3 && fish_position.x <= 0:
 			var vec = -global_transform.basis.z
 			vec.y = 0
 			vec = vec.normalized()
 			
-			while fish_position.z >= 0 && fish_position.x <= .5:
+			while fish_position.z >= -3 && fish_position.x <= .5:
 				fish_position += vec
 		
-		fish_position.z = min(fish_position.z, 0)
-		fish_position.x = max(fish_position.x, 0)
 		fish_indicator.global_position = fish_position
 		bone.global_position = lerp(bone.global_position, fish_position, delta * 20);
 
