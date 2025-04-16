@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="Godot JAM Criaturas"
-run/main_scene="uid://br8pkh1gfqnj0"
+config/name="Fishing Night"
+run/main_scene="uid://b3etdpc70ij0r"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 

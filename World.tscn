@@ -94,9 +94,9 @@
 [ext_resource type="AudioStream" uid="uid://cxswv84d58qi0" path="res://Sounds/Voices/Voice Lines/53_dale_campeon.ogg" id="80_pn1ak"]
 [ext_resource type="AudioStream" uid="uid://nbg70ur5b31f" path="res://Sounds/amb_natural_all_loop.ogg" id="91_i1svi"]
 [ext_resource type="PackedScene" uid="uid://docffn3kgxtqd" path="res://3D Models/plantita rio.blend" id="92_ac58q"]
-[ext_resource type="Script" uid="uid://dw63hxh3m7rk8" path="res://world_move.gd" id="92_mmptr"]
+[ext_resource type="Script" uid="uid://dw63hxh3m7rk8" path="res://Scripts/world_move.gd" id="92_mmptr"]
 [ext_resource type="Shader" uid="uid://cyertq1jcau4w" path="res://Scripts/psxshader.gdshader" id="95_hejkj"]
-[ext_resource type="Script" uid="uid://dhq6roagpp0gy" path="res://riverMoveUV.gd" id="97_6jkyd"]
+[ext_resource type="Script" uid="uid://dhq6roagpp0gy" path="res://Scripts/riverMoveUV.gd" id="97_6jkyd"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_jyqkj"]
 resource_local_to_scene = true
@@ -193,12 +193,18 @@ visible = false
 
 [node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("fishes", "fishes_in_bucket")]
 transform = Transform3D(0.880146, 0, -0.474703, 0, 1, 0, 0.474703, 0, 0.880146, -4.67114, 1.18776, -1.12051)
+current = true
 script = ExtResource("2_bcbcq")
 fishes = [NodePath("Tararera"), NodePath("Bagre"), NodePath("Soco"), NodePath("Sabaco")]
 fishes_in_bucket = [NodePath("../Bucket/Tararera"), NodePath("../Bucket/Bagre"), NodePath("../Bucket/Soco"), NodePath("../Bucket/Sabaco")]
 
 [node name="FishingRod" parent="Camera3D" instance=ExtResource("1_c6gwx")]
 transform = Transform3D(0.112806, -0.0194365, -0.993427, 0.862922, 0.497571, 0.0882518, 0.492585, -0.867206, 0.0729011, 2.61335, -1.18776, -1.45687)
+
+[node name="Skeleton3D" parent="Camera3D/FishingRod/Armature" index="0"]
+bones/7/position = Vector3(0.00111724, 0.902129, -0.0229305)
+bones/7/rotation = Quaternion(0.0578168, -0.11601, 0.449341, 0.883907)
+bones/7/scale = Vector3(1, 1, 1)
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="Camera3D/FishingRod/Armature/Skeleton3D" index="1"]
 transform = Transform3D(0.569268, -0.807767, -0.153125, 0.780937, 0.589499, -0.206466, 0.257043, -0.00204685, 0.966398, 0.00111723, 15.7541, -0.0229305)
