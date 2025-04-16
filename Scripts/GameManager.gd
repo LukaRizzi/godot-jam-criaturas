@@ -18,6 +18,7 @@ func _ready() -> void:
 
 func _ended_segment():
 	game_state += 1
+	#game_state = 14
 	_play_current_segment()
 
 func _play_current_segment():

@@ -25,6 +25,7 @@ func _play(value : int):
 			peine_dorado.visible = true
 			peine_feo.visible = true
 		2:
+			dialogue.say_custom("Ey pará, ¿Dónde esta mi oro? Sirena del orto devolvem-|willemdafoe|50")
 			lerp_alpha = true
 			_material1 = peine_dorado.get_active_material(0)
 			_material2 = peine_feo.get_active_material(0)
@@ -67,7 +68,6 @@ func _process(delta: float) -> void:
 		_material2.albedo_color.a = lerp(0, 1, opacity)
 		_material3.albedo_color.a = lerp(1, 0, opacity)
 		_material4.albedo_color.a = lerp(0, 1, opacity)
-		dialogue.say_custom("Ey pará, qué es esto, qué mierda esta pasando, dónde esta mi oro, sirena del orto devolvem-|willemdafoe|50")
 		if opacity == 1:
 			sirena.visible = false
 			lerp_alpha = false
@@ -80,8 +80,10 @@ func _process(delta: float) -> void:
 			lerp_dorado = false
 		return
 	if fade_out:
-		fadeout.play("Fade_out")
+		color_rect.color.a += 1 * delta
 		return
+
+@onready var color_rect: ColorRect = $"../FadeOut/ColorRect"
 
 @onready var fadeout: AnimationPlayer = $"../FadeOut/AnimationPlayer"
 

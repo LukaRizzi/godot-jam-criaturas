@@ -1,4 +1,4 @@
-[gd_scene load_steps=106 format=3 uid="uid://br8pkh1gfqnj0"]
+[gd_scene load_steps=103 format=3 uid="uid://br8pkh1gfqnj0"]
 
 [ext_resource type="Script" uid="uid://60j47smb1y1x" path="res://Scripts/GameManager.gd" id="1_bah7m"]
 [ext_resource type="PackedScene" uid="uid://ci3e6q6b5b7ti" path="res://3D Models/FishingRod.glb" id="1_c6gwx"]
@@ -89,8 +89,8 @@
 [ext_resource type="AudioStream" uid="uid://dqdpq3edsa7c3" path="res://Sounds/Voices/Voice Lines/47_algo_raro.ogg" id="76_78tn5"]
 [ext_resource type="AudioStream" uid="uid://b5oajd6k8j1a4" path="res://Sounds/Voices/Voice Lines/48_traela_al_bote.ogg" id="77_gjihl"]
 [ext_resource type="AudioStream" uid="uid://0e6mqsgxdou0" path="res://Sounds/Voices/Voice Lines/49_deseo.ogg" id="78_um2m0"]
-[ext_resource type="AudioStream" uid="uid://buhfshljr1lc7" path="res://Sounds/Voices/Voice Lines/50_sirena_del_orto.ogg" id="79_bvnna"]
 [ext_resource type="AudioStream" uid="uid://fm3h7q8pocr6" path="res://Sounds/Voices/Voice Lines/51_todo_esto_fue_real.ogg" id="80_aktbs"]
+[ext_resource type="AudioStream" uid="uid://orrmdicwj6f0" path="res://Sounds/Voices/50_sirena_del_orto2.ogg" id="80_hejkj"]
 [ext_resource type="AudioStream" uid="uid://cxswv84d58qi0" path="res://Sounds/Voices/Voice Lines/53_dale_campeon.ogg" id="80_pn1ak"]
 [ext_resource type="AudioStream" uid="uid://nbg70ur5b31f" path="res://Sounds/amb_natural_all_loop.ogg" id="91_i1svi"]
 [ext_resource type="PackedScene" uid="uid://docffn3kgxtqd" path="res://3D Models/plantita rio.blend" id="92_ac58q"]
@@ -134,43 +134,6 @@ data = [{
 "name": "start",
 "position": [280.0, 240.0]
 }]
-
-[sub_resource type="Animation" id="Animation_0to5b"]
-resource_name = "Fade_out"
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_5j71u"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_jyqkj"]
-_data = {
-&"Fade_out": SubResource("Animation_0to5b"),
-&"RESET": SubResource("Animation_5j71u")
-}
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mmptr"]
 shader = ExtResource("95_hejkj")
@@ -289,7 +252,7 @@ mesh = SubResource("PlaneMesh_js7pq")
 [node name="DialogueBox" type="Node" parent="."]
 script = ExtResource("6_p1v5b")
 dialogues = Array[JSON]([ExtResource("7_wygdx"), ExtResource("9_fv4w7"), ExtResource("19_pn1ak"), ExtResource("20_i1svi"), ExtResource("21_o57cg"), ExtResource("22_ac58q"), ExtResource("23_v1pkh"), ExtResource("24_hejkj"), ExtResource("25_mmptr"), ExtResource("26_6jkyd"), ExtResource("27_ntswa"), SubResource("JSON_av2ye")])
-dialogue_voices = Array[AudioStream]([ExtResource("29_npddc"), ExtResource("30_ymcl6"), ExtResource("31_yp71y"), ExtResource("32_gpw4f"), ExtResource("33_6fgup"), ExtResource("34_d8xu2"), ExtResource("35_3k5od"), ExtResource("36_xq1iw"), ExtResource("37_oi2wb"), ExtResource("38_bvno0"), ExtResource("39_rpm7y"), ExtResource("40_dg2i1"), ExtResource("41_pn1ak"), ExtResource("42_mdca4"), ExtResource("43_7h5j5"), ExtResource("44_mjdub"), ExtResource("45_oor4l"), ExtResource("46_yfycu"), ExtResource("47_ovskc"), ExtResource("48_f366x"), ExtResource("49_7qq70"), ExtResource("50_liur3"), ExtResource("51_j6o5d"), ExtResource("52_tt81a"), ExtResource("53_74p3j"), ExtResource("54_pelt2"), ExtResource("55_k738s"), ExtResource("56_tgbay"), ExtResource("57_xsm2m"), ExtResource("58_au851"), ExtResource("59_ceqik"), ExtResource("60_o4crb"), ExtResource("61_cd3li"), ExtResource("62_08w2q"), ExtResource("63_3vo7e"), ExtResource("64_3iu3c"), ExtResource("65_2rfk5"), ExtResource("66_g6ria"), ExtResource("67_e1pfh"), ExtResource("68_0figy"), ExtResource("69_unmma"), ExtResource("70_v5idl"), ExtResource("71_vo3dn"), ExtResource("72_owyqb"), ExtResource("73_p0d1i"), ExtResource("74_wromm"), ExtResource("75_qhemt"), ExtResource("76_78tn5"), ExtResource("77_gjihl"), ExtResource("78_um2m0"), ExtResource("79_bvnna"), ExtResource("80_aktbs"), ExtResource("80_pn1ak")])
+dialogue_voices = Array[AudioStream]([ExtResource("29_npddc"), ExtResource("30_ymcl6"), ExtResource("31_yp71y"), ExtResource("32_gpw4f"), ExtResource("33_6fgup"), ExtResource("34_d8xu2"), ExtResource("35_3k5od"), ExtResource("36_xq1iw"), ExtResource("37_oi2wb"), ExtResource("38_bvno0"), ExtResource("39_rpm7y"), ExtResource("40_dg2i1"), ExtResource("41_pn1ak"), ExtResource("42_mdca4"), ExtResource("43_7h5j5"), ExtResource("44_mjdub"), ExtResource("45_oor4l"), ExtResource("46_yfycu"), ExtResource("47_ovskc"), ExtResource("48_f366x"), ExtResource("49_7qq70"), ExtResource("50_liur3"), ExtResource("51_j6o5d"), ExtResource("52_tt81a"), ExtResource("53_74p3j"), ExtResource("54_pelt2"), ExtResource("55_k738s"), ExtResource("56_tgbay"), ExtResource("57_xsm2m"), ExtResource("58_au851"), ExtResource("59_ceqik"), ExtResource("60_o4crb"), ExtResource("61_cd3li"), ExtResource("62_08w2q"), ExtResource("63_3vo7e"), ExtResource("64_3iu3c"), ExtResource("65_2rfk5"), ExtResource("66_g6ria"), ExtResource("67_e1pfh"), ExtResource("68_0figy"), ExtResource("69_unmma"), ExtResource("70_v5idl"), ExtResource("71_vo3dn"), ExtResource("72_owyqb"), ExtResource("73_p0d1i"), ExtResource("74_wromm"), ExtResource("75_qhemt"), ExtResource("76_78tn5"), ExtResource("77_gjihl"), ExtResource("78_um2m0"), ExtResource("80_hejkj"), ExtResource("80_aktbs"), ExtResource("80_pn1ak")])
 metadata/_custom_type_script = "uid://cr5vcyq10fcdo"
 
 [node name="Label" type="RichTextLabel" parent="DialogueBox"]
@@ -420,21 +383,6 @@ reset_on_save = false
 [node name="BeerCanInHand" parent="WillemDafoe" instance=ExtResource("14_gn8l5")]
 transform = Transform3D(-0.711147, -0.644079, -0.948197, 0.0287926, 1.10547, -0.7725, 1.1459, -0.427493, -0.569043, 0.09743, 2.92129, 3.11651)
 
-[node name="BeerCan" parent="." instance=ExtResource("14_gn8l5")]
-transform = Transform3D(0.999999, 1.49012e-08, -2.23517e-08, 0, 0.999998, -4.65661e-10, 1.86265e-09, 0, 0.999998, -7.47264, -4.96045, -1.43381)
-
-[node name="BeerCan5" parent="." instance=ExtResource("14_gn8l5")]
-transform = Transform3D(0.34664, -0.102561, -0.932372, 0.906768, 0.290992, 0.305111, 0.240021, -0.95121, 0.193868, -17.7276, -5.14348, -9.83749)
-
-[node name="BeerCan2" parent="." instance=ExtResource("14_gn8l5")]
-transform = Transform3D(0.999999, 1.49012e-08, -2.23517e-08, 0, 0.999998, -4.65661e-10, 1.86265e-09, 0, 0.999998, -13.1612, -3.01296, 1.112)
-
-[node name="BeerCan3" parent="." instance=ExtResource("14_gn8l5")]
-transform = Transform3D(0.999999, 1.49012e-08, -2.23517e-08, 0, 0.999998, -4.65661e-10, 1.86265e-09, 0, 0.999998, -13.1612, -3.01296, 1.56949)
-
-[node name="BeerCan4" parent="." instance=ExtResource("14_gn8l5")]
-transform = Transform3D(0.999999, 1.49012e-08, -2.23517e-08, 0, 0.999998, -4.65661e-10, 1.86265e-09, 0, 0.999998, -13.1631, -3.01296, 0.647997)
-
 [node name="Sirena" parent="." instance=ExtResource("16_6w02q")]
 transform = Transform3D(0.798039, 0, 0.0559862, 0, 0.8, 0, -0.0559862, 0, 0.798039, -7.28257, -14.8971, -6.62203)
 script = ExtResource("15_sjtuv")
@@ -460,11 +408,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="FadeOut"]
-libraries = {
-&"": SubResource("AnimationLibrary_jyqkj")
-}
 
 [node name="EndingSequence" type="Node" parent="."]
 script = ExtResource("20_6tx0c")
@@ -1890,6 +1833,23 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Beer" type="Node3D" parent="."]
+
+[node name="BeerCan" parent="Beer" instance=ExtResource("14_gn8l5")]
+transform = Transform3D(0.999999, 1.49012e-08, -2.23517e-08, 0, 0.999998, -4.65661e-10, 1.86265e-09, 0, 0.999998, -7.47264, -4.96045, -1.43381)
+
+[node name="BeerCan5" parent="Beer" instance=ExtResource("14_gn8l5")]
+transform = Transform3D(0.34664, -0.102561, -0.932372, 0.906768, 0.290992, 0.305111, 0.240021, -0.95121, 0.193868, -17.7276, -5.14348, -9.83749)
+
+[node name="BeerCan2" parent="Beer" instance=ExtResource("14_gn8l5")]
+transform = Transform3D(0.999999, 1.49012e-08, -2.23517e-08, 0, 0.999998, -4.65661e-10, 1.86265e-09, 0, 0.999998, -13.1612, -3.01296, 1.112)
+
+[node name="BeerCan3" parent="Beer" instance=ExtResource("14_gn8l5")]
+transform = Transform3D(0.999999, 1.49012e-08, -2.23517e-08, 0, 0.999998, -4.65661e-10, 1.86265e-09, 0, 0.999998, -13.1612, -3.01296, 1.56949)
+
+[node name="BeerCan4" parent="Beer" instance=ExtResource("14_gn8l5")]
+transform = Transform3D(0.999999, 1.49012e-08, -2.23517e-08, 0, 0.999998, -4.65661e-10, 1.86265e-09, 0, 0.999998, -13.1631, -3.01296, 0.647997)
 
 [connection signal="timeout" from="Camera3D/FishShowcaseTimer" to="Camera3D" method="_on_fish_showcase_timer_timeout"]
 [connection signal="dialogue_generated" from="DialogueBox" to="DialogueBox" method="_on_dialogue_generated"]
