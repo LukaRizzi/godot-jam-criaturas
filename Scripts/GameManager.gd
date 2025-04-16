@@ -18,7 +18,7 @@ func _ready() -> void:
 
 func _ended_segment():
 	game_state += 1
-	#game_state = 14
+	#game_state = max(13, game_state)
 	_play_current_segment()
 
 func _play_current_segment():
@@ -56,6 +56,7 @@ func _play_current_segment():
 			beer_can_in_hand.visible = false
 			fishingManager.can_fish = true
 			fishingManager.current_fish = -1
+			fishingManager.fish_position = fishingManager.mermaidPos #-12.5 Y
 			sirena.visible = true
 			sirena.play_animation("Move")
 		14:

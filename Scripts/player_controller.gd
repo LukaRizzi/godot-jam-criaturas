@@ -40,82 +40,100 @@ func _input(event):
 		mouse_movement_y += event.relative.y
 
 func _process(delta):
-	if fishes[current_fish].visible:
-		fishes[current_fish].position = fishes[current_fish].position.move_toward(Vector3(0.167, -0.35, -3.722), 6 * delta)
-	
-	if fishing:
-		if current_fish == -1:
-			do_mermaid_sequence(delta)
-			return
+	if !finished_game:
+		if fishes[current_fish].visible:
+			fishes[current_fish].position = fishes[current_fish].position.move_toward(Vector3(0.167, -0.35, -3.722), 6 * delta)
 		
-		var dist = global_position.distance_to(fish_position)
-		if dist > 26:
-			reel_sound.stop()
-			just_catched = true
-			fishing = false
-			fish_indicator.visible = false
-			_update_fishing_spot_stationary(delta)
-			fish_showcase_timer.start(2)
-			game_manager._lost_fishing_minigame()
-		else:
-			if dist < 13:
-				fishing_timer -= delta
+		if fishing:
+			if current_fish == -1:
+				do_mermaid_sequence(delta)
+				return
+			
+			var dist = global_position.distance_to(fish_position)
+			if dist > 26:
+				reel_sound.stop()
 				just_catched = true
-				if fishing_timer <= 0:
-					reel_sound.stop()
-					catch_sound.play()
-					fishing = false
-					fish_indicator.visible = false
-					can_fish = false
-					game_manager._ended_segment()
-					fishes[current_fish].visible = true
-					fish_showcase_timer.start(3)
-					return
-		
-		var forward_vec = -global_transform.basis.z
-		forward_vec.y = 0
-		forward_vec = forward_vec.normalized()
-		
-		if mouse_movement_x != 0:
-			fish_position += forward_vec.cross(Vector3.UP).normalized() * mouse_movement_x * .05
-		if mouse_movement_y != 0:
-			fish_position += forward_vec * -mouse_movement_y * .025
-		
-		_update_fishing_spot(delta)
+				fishing = false
+				fish_indicator.visible = false
+				_update_fishing_spot_stationary(delta)
+				fish_showcase_timer.start(2)
+				game_manager._lost_fishing_minigame()
+			else:
+				if dist < 13:
+					fishing_timer -= delta
+					just_catched = true
+					if fishing_timer <= 0:
+						reel_sound.stop()
+						catch_sound.play()
+						fishing = false
+						fish_indicator.visible = false
+						can_fish = false
+						game_manager._ended_segment()
+						fishes[current_fish].visible = true
+						fish_showcase_timer.start(3)
+						return
+			
+			var forward_vec = -global_transform.basis.z
+			forward_vec.y = 0
+			forward_vec = forward_vec.normalized()
+			
+			if mouse_movement_x != 0:
+				fish_position += forward_vec.cross(Vector3.UP).normalized() * mouse_movement_x * .05
+			if mouse_movement_y != 0:
+				fish_position += forward_vec * -mouse_movement_y * .025
+			
+			_update_fishing_spot(delta)
+			
+			mouse_movement_x = 0
+			mouse_movement_y = 0
+		else:
+			yaw -= mouse_movement_x * mouse_sensitivity
+			yaw = clamp(yaw, deg_to_rad(-110), deg_to_rad(80))
+			pitch -= mouse_movement_y * mouse_sensitivity
+			pitch = clamp(pitch, deg_to_rad(-30), deg_to_rad(60)) # limit up/down look
+			
+			rotation.y = yaw
+			rotation.x = pitch
+			
+			if just_catched:
+				bone.position = lerp(bone.position, ogPos, delta * 10)
+			else:
+				_update_fishing_spot_stationary(delta)
+				bone.global_position = lerp(bone.global_position, fish_position, delta * 50)
+			
+			if can_fish && !just_catched:
+				reel_sound.play()
+				fishing = true
+				fishing_timer = 5
+				fishing_angle = fish_position - global_position
+				fishing_angle.y = 0
+				fishing_angle = fishing_angle.normalized()
+				og_fishing_angle = fishing_angle
+				
+				if current_fish == -1: #Setup Mermaid
+					fishing_timer = 0
+					#fish_position = mermaidPos #-12.5 Y
+					#yaw = mermaidYaw
+					#pitch = mermaidPitch
+					rotation.y = yaw
+					rotation.x = pitch
 	else:
+		bone.position = lerp(bone.position, ogPos, delta * 10)
+		
 		yaw -= mouse_movement_x * mouse_sensitivity
 		yaw = clamp(yaw, deg_to_rad(-110), deg_to_rad(80))
 		pitch -= mouse_movement_y * mouse_sensitivity
-		pitch = clamp(pitch, deg_to_rad(-30), deg_to_rad(60)) # limit up/down look
+		pitch = clamp(pitch, deg_to_rad(-30), deg_to_rad(60))
 		
 		rotation.y = yaw
 		rotation.x = pitch
-		
-		if just_catched:
-			bone.position = lerp(bone.position, ogPos, delta * 10)
-		else:
-			_update_fishing_spot_stationary(delta)
-			bone.global_position = lerp(bone.global_position, fish_position, delta * 50)
-		
-		if can_fish && !just_catched:
-			reel_sound.play()
-			fishing = true
-			fishing_timer = 5
-			fishing_angle = fish_position - global_position
-			fishing_angle.y = 0
-			fishing_angle = fishing_angle.normalized()
-			og_fishing_angle = fishing_angle
-			
-			if current_fish == -1: #Setup Mermaid
-				fishing_timer = 0
-				fish_position = Vector3(-4, -4.4, -21.5) #-12.5 Y
-				yaw = .29
-				pitch = -.28
-				rotation.y = yaw
-				rotation.x = pitch
 	
 	mouse_movement_x = 0
 	mouse_movement_y = 0
+
+var mermaidPos = Vector3(-4, -4.4, -21.5)
+var mermaidYaw = .29
+var mermaidPitch = -.28
 
 func _update_fishing_spot(delta):
 	if cast_idx != -1 && fishing:
@@ -165,8 +183,15 @@ func _setup_fishing():
 @onready var sirena: PlayAnimation = $"../Sirena"
 @onready var sirena_fea: PlayAnimation = $"../Sirena fea"
 
+var finished_game : bool = false
+
 func do_mermaid_sequence(delta):
 	var dist = global_position.distance_to(fish_position)
+	
+	yaw = lerp(yaw, mermaidYaw, delta * 5)
+	pitch = lerp(pitch, mermaidPitch, delta * 5)
+	rotation.y = yaw
+	rotation.x = pitch
 	
 	if dist < 16 && !played_sound:
 		played_sound = true
@@ -184,6 +209,7 @@ func do_mermaid_sequence(delta):
 			sirena_fea.visible = true
 			sirena_fea.play_animation("Move")
 			sirena_fea.animation_player.seek(sirena.animation_player.current_animation_position, true)
+			finished_game = true
 			game_manager._ended_segment()
 			return
 	
