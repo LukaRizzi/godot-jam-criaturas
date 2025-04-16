@@ -120,6 +120,16 @@ func _update_fishing_spot(delta):
 		if new_fishing_angle.dot(og_fishing_angle) > 0.2:
 			fishing_angle = new_fishing_angle
 		fish_position += fishing_angle * delta * 10;
+		if fish_position.z >= 0 && fish_position.x <= 0:
+			var vec = -global_transform.basis.z
+			vec.y = 0
+			vec = vec.normalized()
+			
+			while fish_position.z >= 0 && fish_position.x <= .5:
+				fish_position += vec
+		
+		fish_position.z = min(fish_position.z, 0)
+		fish_position.x = max(fish_position.x, 0)
 		fish_indicator.global_position = fish_position
 		bone.global_position = lerp(bone.global_position, fish_position, delta * 20);
 
@@ -130,7 +140,7 @@ func _update_fishing_spot_stationary(delta):
 	forward_vec = forward_vec.normalized()
 	var ideal_pos = global_transform.origin + forward_vec * distance
 	ideal_pos.y = -4.4
-	fish_position = fish_position.move_toward(ideal_pos, delta * .5)
+	fish_position = fish_position.move_toward(ideal_pos, delta)# * .5)
 	bone.global_position = fish_position
 	fish_indicator.global_position = fish_position
 
