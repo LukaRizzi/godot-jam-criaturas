@@ -47,7 +47,7 @@ shader_parameter/dithering = true
 shader_parameter/colors = 12
 shader_parameter/dither_size = 1
 
-[node name="World" type="Node3D"]
+[node name="Menu" type="Node3D"]
 script = ExtResource("1_xucoo")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -104,15 +104,6 @@ stream = ExtResource("90_iquux")
 volume_db = -28.0
 autoplay = true
 parameters/looping = true
-
-[node name="Filter PSX" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_mmptr")
-custom_minimum_size = Vector2(0, 120)
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 
 [node name="3DWorld" type="Node3D" parent="."]
 script = ExtResource("92_facvd")
@@ -1701,6 +1692,15 @@ transform = Transform3D(0.285928, -0.956227, 0.0622203, 0.906768, 0.290992, 0.30
 script = ExtResource("92_facvd")
 magnitude = 0.2
 timing = 2.0
+
+[node name="Filter PSX" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_mmptr")
+custom_minimum_size = Vector2(0, 120)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
