@@ -51,7 +51,7 @@
 [ext_resource type="AudioStream" uid="uid://dgl42cho4p7eo" path="res://Sounds/Voices/Voice Lines/10_una_de_esas_cosas.ogg" id="38_bvno0"]
 [ext_resource type="AudioStream" uid="uid://doxdbvt6oea25" path="res://Sounds/Voices/Voice Lines/11_encuentro_cosas.ogg" id="39_rpm7y"]
 [ext_resource type="AudioStream" uid="uid://c0slt2yu6vcex" path="res://Sounds/Voices/Voice Lines/12_dorado_gigante.ogg" id="40_dg2i1"]
-[ext_resource type="AudioStream" uid="uid://bu22kr1v6hegj" path="res://Sounds/Voices/Voice Lines/52_a_seguir_pescando.ogg" id="41_pn1ak"]
+[ext_resource type="AudioStream" uid="uid://bu22kr1v6hegj" path="res://Sounds/Voices/Voice Lines/13_a_seguir_pescando.ogg" id="41_pn1ak"]
 [ext_resource type="AudioStream" uid="uid://ctsn2pvcwi3cl" path="res://Sounds/Voices/Voice Lines/14_bagre.ogg" id="42_mdca4"]
 [ext_resource type="AudioStream" uid="uid://cr0dk652ntkgq" path="res://Sounds/Voices/Voice Lines/15_vos_encontra.ogg" id="43_7h5j5"]
 [ext_resource type="AudioStream" uid="uid://wyyqxxdtxw1g" path="res://Sounds/Voices/Voice Lines/16_por_que_traerme.ogg" id="44_mjdub"]

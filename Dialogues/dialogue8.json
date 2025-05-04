@@ -18,5 +18,25 @@
 			420.0,
 			240.0
 		]
+	},
+	{
+		"commands_raw": "I’m gonna make so much money off this…|willemdafoe|30\n\n?> -> dialogo2_1",
+		"gnode_name": "inicio",
+		"id": 2.0,
+		"name": "inicio",
+		"position": [
+			260.0,
+			340.0
+		]
+	},
+	{
+		"commands_raw": "I mean, WE are gonna make so much money.|willemdafoe|31",
+		"gnode_name": "dialogo2_1",
+		"id": 3.0,
+		"name": "dialogo2_1",
+		"position": [
+			420.0,
+			340.0
+		]
 	}
 ]

@@ -88,5 +88,95 @@
 			2040.0,
 			520.0
 		]
+	},
+	{
+		"commands_raw": "Did you see that?|willemdafoe|21\n\n?> -> dialogo1_1",
+		"gnode_name": "inicio",
+		"id": 9.0,
+		"name": "inicio",
+		"position": [
+			540.0,
+			640.0
+		]
+	},
+	{
+		"commands_raw": "Where?|player|22\n\n?> -> dialogo1_2",
+		"gnode_name": "dialogo1_1",
+		"id": 10.0,
+		"name": "dialogo1_1",
+		"position": [
+			700.0,
+			640.0
+		]
+	},
+	{
+		"commands_raw": "Over there, you didn’t see it?|willemdafoe|23\n\n?> -> dialogo1_3",
+		"gnode_name": "dialogo1_2",
+		"id": 11.0,
+		"name": "dialogo1_2",
+		"position": [
+			940.0,
+			640.0
+		]
+	},
+	{
+		"commands_raw": "No, what did you see? The Dorado?|player|24\n\n?> -> dialogo1_4",
+		"gnode_name": "dialogo1_3",
+		"id": 12.0,
+		"name": "dialogo1_3",
+		"position": [
+			1140.0,
+			640.0
+		]
+	},
+	{
+		"commands_raw": "Do you believe in the supernatural?|willemdafoe|25\n\n?> -> dialogo1_5",
+		"gnode_name": "dialogo1_4",
+		"id": 13.0,
+		"name": "dialogo1_4",
+		"position": [
+			1320.0,
+			640.0
+		]
+	},
+	{
+		"commands_raw": "My parents raised me Catholic…|player|26\n\n?> -> dialogo1_6",
+		"gnode_name": "dialogo1_5",
+		"id": 14.0,
+		"name": "dialogo1_5",
+		"position": [
+			1500.0,
+			640.0
+		]
+	},
+	{
+		"commands_raw": "No kid, I mean supernatural creatures, the werewolf, the nahuelito, river mermaids, the luz mala.|willemdafoe|27\n\n?> -> dialogo1_7",
+		"gnode_name": "dialogo1_6",
+		"id": 15.0,
+		"name": "dialogo1_6",
+		"position": [
+			1700.0,
+			640.0
+		]
+	},
+	{
+		"commands_raw": "I don’t know… Maybe.|player|28\n\n?> -> dialogo1_8",
+		"gnode_name": "dialogo1_7",
+		"id": 16.0,
+		"name": "dialogo1_7",
+		"position": [
+			1880.0,
+			640.0
+		]
+	},
+	{
+		"commands_raw": "You are too young, one sees things in life, especially in places like this, alone, in the middle of nowhere, things that have no reasonable explanation.|willemdafoe|29",
+		"gnode_name": "dialogo1_8",
+		"id": 17.0,
+		"name": "dialogo1_8",
+		"position": [
+			2060.0,
+			640.0
+		]
 	}
 ]

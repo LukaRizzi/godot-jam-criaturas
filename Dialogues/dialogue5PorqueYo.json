@@ -18,5 +18,25 @@
 			720.0,
 			520.0
 		]
+	},
+	{
+		"commands_raw": "And why bring me all the way from Buenos Aires?|player|15\n\n?> -> dialogo1_1",
+		"gnode_name": "inicio",
+		"id": 2.0,
+		"name": "inicio",
+		"position": [
+			540.0,
+			620.0
+		]
+	},
+	{
+		"commands_raw": "You won that fishing tournament. And I made sure that you were a good kid, I don't like to be fucked with.|willemdafoe|16",
+		"gnode_name": "diag node",
+		"id": 3.0,
+		"name": "Diag Node",
+		"position": [
+			720.0,
+			620.0
+		]
 	}
 ]

@@ -10,7 +10,7 @@
 		]
 	},
 	{
-		"commands_raw": "Los he visto mas grandes.|willemdafoe|18\n\n?> -> dialogue1_2",
+		"commands_raw": "Los he visto más grandes.|willemdafoe|18\n\n?> -> dialogue1_2",
 		"gnode_name": "dialogue1_1",
 		"id": 1.0,
 		"name": "dialogue1_1",
@@ -37,6 +37,46 @@
 		"position": [
 			1140.0,
 			520.0
+		]
+	},
+	{
+		"commands_raw": "Wow, this laiza is huge.|player|17\n\n?> -> dialogo1_1",
+		"gnode_name": "inicio",
+		"id": 4.0,
+		"name": "inicio",
+		"position": [
+			540.0,
+			620.0
+		]
+	},
+	{
+		"commands_raw": "I’ve seen bigger.|willemdafoe|18\n\n?> -> dialogo1_2",
+		"gnode_name": "dialogo1_1",
+		"id": 5.0,
+		"name": "dialogo1_1",
+		"position": [
+			720.0,
+			620.0
+		]
+	},
+	{
+		"commands_raw": "Are you sure we can fish all we want here? Aren’t there any limits?|player|19\n\n?> -> dialogo1_3",
+		"gnode_name": "dialogo1_2",
+		"id": 6.0,
+		"name": "dialogo1_2",
+		"position": [
+			920.0,
+			620.0
+		]
+	},
+	{
+		"commands_raw": "That’s for me to worry about, you worry about fishing, since that's what I pay you for, and I’m not paying cheap either.|willemdafoe|20",
+		"gnode_name": "dialogo1_3",
+		"id": 7.0,
+		"name": "dialogo1_3",
+		"position": [
+			1140.0,
+			620.0
 		]
 	}
 ]
